@@ -20,7 +20,7 @@
 		</dict>
 	</array>
 	<key>CFBundleExecutable</key>
-	<string>Quake</string>
+	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleGetInfoString</key>
 	<string>Quake 1.2.1; ©2001-2013 Fruitz Of Dojo</string>
 	<key>CFBundleHelpBookFolder</key>
@@ -30,7 +30,7 @@
 	<key>CFBundleIconFile</key>
 	<string>Quake</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.fruitz-of-dojo.quake</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -46,7 +46,7 @@
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.action-games</string>
 	<key>LSMinimumSystemVersion</key>
-	<string>10.6.0</string>
+	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>NSAppleScriptEnabled</key>
 	<true/>
 	<key>NSMainNibFile</key>
