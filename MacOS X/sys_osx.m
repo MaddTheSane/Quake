@@ -303,7 +303,7 @@ void	Sys_Error (const char* pFormat, ...)
     
     NSString* msg = [NSString stringWithCString: buffer encoding: NSASCIIStringEncoding];
     
-    NSRunCriticalAlertPanel (@"An error has occured:", msg, nil, nil, nil);
+    NSRunCriticalAlertPanel (@"An error has occured:", @"%@", nil, nil, nil, msg);
     NSLog (@"An error has occured: %@\n", msg);
 
 #endif // SERVERONLY

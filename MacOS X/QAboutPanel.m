@@ -48,11 +48,12 @@
 - (NSToolbarItem*) toolbarItem
 {
     NSToolbarItem* item = [super toolbarItem];
+	NSImage	* aboutImg	= [[NSWorkspace sharedWorkspace] iconForFileType:NSFileTypeForHFSTypeCode(kToolbarInfoIcon)];
     
     [item setLabel: @"About"];
     [item setPaletteLabel: @"About"];
     [item setToolTip: @"About Quake."];
-    [item setImage: [NSImage imageNamed: @"About.icns"]];
+    [item setImage: aboutImg];
     
     return item;
 }

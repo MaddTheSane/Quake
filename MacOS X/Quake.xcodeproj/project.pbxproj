@@ -351,18 +351,10 @@
 		D2C49EB114F05E3C00E07CC4 /* Quake.help in Resources */ = {isa = PBXBuildFile; fileRef = D2C49EAE14F05E3C00E07CC4 /* Quake.help */; };
 		D2C49EB214F05E3C00E07CC4 /* Quake.help in Resources */ = {isa = PBXBuildFile; fileRef = D2C49EAE14F05E3C00E07CC4 /* Quake.help */; };
 		D2C49EB314F05E3C00E07CC4 /* Quake.help in Resources */ = {isa = PBXBuildFile; fileRef = D2C49EAE14F05E3C00E07CC4 /* Quake.help */; };
-		D2C6A2DF14F05B0500CDC3D1 /* About.icns in Resources */ = {isa = PBXBuildFile; fileRef = D2C6A2D814F05B0500CDC3D1 /* About.icns */; };
-		D2C6A2E014F05B0500CDC3D1 /* About.icns in Resources */ = {isa = PBXBuildFile; fileRef = D2C6A2D814F05B0500CDC3D1 /* About.icns */; };
-		D2C6A2E114F05B0500CDC3D1 /* About.icns in Resources */ = {isa = PBXBuildFile; fileRef = D2C6A2D814F05B0500CDC3D1 /* About.icns */; };
-		D2C6A2E214F05B0500CDC3D1 /* About.icns in Resources */ = {isa = PBXBuildFile; fileRef = D2C6A2D814F05B0500CDC3D1 /* About.icns */; };
 		D2C6A2E314F05B0500CDC3D1 /* Arguments.icns in Resources */ = {isa = PBXBuildFile; fileRef = D2C6A2D914F05B0500CDC3D1 /* Arguments.icns */; };
 		D2C6A2E414F05B0500CDC3D1 /* Arguments.icns in Resources */ = {isa = PBXBuildFile; fileRef = D2C6A2D914F05B0500CDC3D1 /* Arguments.icns */; };
 		D2C6A2E514F05B0500CDC3D1 /* Arguments.icns in Resources */ = {isa = PBXBuildFile; fileRef = D2C6A2D914F05B0500CDC3D1 /* Arguments.icns */; };
 		D2C6A2E614F05B0500CDC3D1 /* Arguments.icns in Resources */ = {isa = PBXBuildFile; fileRef = D2C6A2D914F05B0500CDC3D1 /* Arguments.icns */; };
-		D2C6A2E714F05B0500CDC3D1 /* AudioCD.icns in Resources */ = {isa = PBXBuildFile; fileRef = D2C6A2DA14F05B0500CDC3D1 /* AudioCD.icns */; };
-		D2C6A2E814F05B0500CDC3D1 /* AudioCD.icns in Resources */ = {isa = PBXBuildFile; fileRef = D2C6A2DA14F05B0500CDC3D1 /* AudioCD.icns */; };
-		D2C6A2E914F05B0500CDC3D1 /* AudioCD.icns in Resources */ = {isa = PBXBuildFile; fileRef = D2C6A2DA14F05B0500CDC3D1 /* AudioCD.icns */; };
-		D2C6A2EA14F05B0500CDC3D1 /* AudioCD.icns in Resources */ = {isa = PBXBuildFile; fileRef = D2C6A2DA14F05B0500CDC3D1 /* AudioCD.icns */; };
 		D2C6A2EB14F05B0500CDC3D1 /* Displays.icns in Resources */ = {isa = PBXBuildFile; fileRef = D2C6A2DB14F05B0500CDC3D1 /* Displays.icns */; };
 		D2C6A2EC14F05B0500CDC3D1 /* Displays.icns in Resources */ = {isa = PBXBuildFile; fileRef = D2C6A2DB14F05B0500CDC3D1 /* Displays.icns */; };
 		D2C6A2ED14F05B0500CDC3D1 /* Displays.icns in Resources */ = {isa = PBXBuildFile; fileRef = D2C6A2DB14F05B0500CDC3D1 /* Displays.icns */; };
@@ -881,9 +873,7 @@
 		D2C49EBE14F0653C00E07CC4 /* FDViewInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDViewInternal.h; path = FDFramework/FDViewInternal.h; sourceTree = SOURCE_ROOT; };
 		D2C6A29314EE19B200CDC3D1 /* FDAudioInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDAudioInternal.h; path = FDFramework/FDAudioInternal.h; sourceTree = SOURCE_ROOT; };
 		D2C6A2C114EEC32300CDC3D1 /* QPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QPrefix.pch; sourceTree = SOURCE_ROOT; };
-		D2C6A2D814F05B0500CDC3D1 /* About.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = About.icns; path = Resources/Icons/About.icns; sourceTree = "<group>"; };
 		D2C6A2D914F05B0500CDC3D1 /* Arguments.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Arguments.icns; path = Resources/Icons/Arguments.icns; sourceTree = "<group>"; };
-		D2C6A2DA14F05B0500CDC3D1 /* AudioCD.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = AudioCD.icns; path = Resources/Icons/AudioCD.icns; sourceTree = "<group>"; };
 		D2C6A2DB14F05B0500CDC3D1 /* Displays.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Displays.icns; path = Resources/Icons/Displays.icns; sourceTree = "<group>"; };
 		D2C6A2DC14F05B0500CDC3D1 /* Quake.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Quake.icns; path = Resources/Icons/Quake.icns; sourceTree = "<group>"; };
 		D2C6A2DD14F05B0500CDC3D1 /* Sound.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Sound.icns; path = Resources/Icons/Sound.icns; sourceTree = "<group>"; };
@@ -1011,6 +1001,7 @@
 				D246F59E149B07FE003433EB /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		D246F59E149B07FE003433EB /* Products */ = {
 			isa = PBXGroup;
@@ -1131,9 +1122,7 @@
 		D262F25B14D28AE800186F6D /* Icons */ = {
 			isa = PBXGroup;
 			children = (
-				D2C6A2D814F05B0500CDC3D1 /* About.icns */,
 				D2C6A2D914F05B0500CDC3D1 /* Arguments.icns */,
-				D2C6A2DA14F05B0500CDC3D1 /* AudioCD.icns */,
 				D2C6A2DB14F05B0500CDC3D1 /* Displays.icns */,
 				D2C6A2DC14F05B0500CDC3D1 /* Quake.icns */,
 				D2C6A2FB14F05B1200CDC3D1 /* ReadMe.icns */,
@@ -2128,9 +2117,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2C6A2DF14F05B0500CDC3D1 /* About.icns in Resources */,
 				D2C6A2E314F05B0500CDC3D1 /* Arguments.icns in Resources */,
-				D2C6A2E714F05B0500CDC3D1 /* AudioCD.icns in Resources */,
 				D2C6A2EB14F05B0500CDC3D1 /* Displays.icns in Resources */,
 				D2C6A2EF14F05B0500CDC3D1 /* Quake.icns in Resources */,
 				D2C6A2F314F05B0500CDC3D1 /* Sound.icns in Resources */,
@@ -2155,9 +2142,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2C6A2E114F05B0500CDC3D1 /* About.icns in Resources */,
 				D2C6A2E514F05B0500CDC3D1 /* Arguments.icns in Resources */,
-				D2C6A2E914F05B0500CDC3D1 /* AudioCD.icns in Resources */,
 				D2C6A2ED14F05B0500CDC3D1 /* Displays.icns in Resources */,
 				D2C6A2F114F05B0500CDC3D1 /* Quake.icns in Resources */,
 				D2C6A2F514F05B0500CDC3D1 /* Sound.icns in Resources */,
@@ -2191,9 +2176,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2C6A2E014F05B0500CDC3D1 /* About.icns in Resources */,
 				D2C6A2E414F05B0500CDC3D1 /* Arguments.icns in Resources */,
-				D2C6A2E814F05B0500CDC3D1 /* AudioCD.icns in Resources */,
 				D2C6A2EC14F05B0500CDC3D1 /* Displays.icns in Resources */,
 				D2C6A2F014F05B0500CDC3D1 /* Quake.icns in Resources */,
 				D2C6A2F414F05B0500CDC3D1 /* Sound.icns in Resources */,
@@ -2219,9 +2202,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2C6A2E214F05B0500CDC3D1 /* About.icns in Resources */,
 				D2C6A2E614F05B0500CDC3D1 /* Arguments.icns in Resources */,
-				D2C6A2EA14F05B0500CDC3D1 /* AudioCD.icns in Resources */,
 				D2C6A2EE14F05B0500CDC3D1 /* Displays.icns in Resources */,
 				D2C6A2F214F05B0500CDC3D1 /* Quake.icns in Resources */,
 				D2C6A2F614F05B0500CDC3D1 /* Sound.icns in Resources */,
