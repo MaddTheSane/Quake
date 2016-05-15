@@ -93,7 +93,7 @@ static NSString*    sQSettingsNewGameToolbarItem = @"Quake Start ToolbarItem";
     [item setPaletteLabel: @"Play"];
     [item setToolTip: @"Start the game."];
     [item setTarget: self];
-    [item setImage: [NSImage imageNamed: @"Start.icns"]];
+    [item setImage: [NSImage imageNamed: @"Start"]];
     [item setAction: @selector (newGame:)];
     
     [mToolbarItems setObject: item forKey: sQSettingsNewGameToolbarItem];
