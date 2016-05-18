@@ -12,9 +12,9 @@
 #import "FDHIDActuator.h"
 
 #import <Cocoa/Cocoa.h>
-#import <ForceFeedback/ForceFeedback.h>
-#import <IOKit/hidsystem/IOHIDLib.h>
-#import <IOKit/hid/IOHIDLib.h>
+#include <ForceFeedback/ForceFeedback.h>
+#include <IOKit/hidsystem/IOHIDLib.h>
+#include <IOKit/hid/IOHIDLib.h>
 
 //----------------------------------------------------------------------------------------------------------------------------
 

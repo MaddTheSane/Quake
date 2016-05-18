@@ -13,9 +13,9 @@
 #import "FDDebug.h"
 
 #import <Cocoa/Cocoa.h>
-#import <OpenGL/OpenGL.h>
-#import <OpenGL/gl.h>
-#import <OpenGL/glext.h>
+#include <OpenGL/OpenGL.h>
+#include <OpenGL/gl.h>
+#include <OpenGL/glext.h>
 
 //----------------------------------------------------------------------------------------------------------------------------
 

@@ -11,7 +11,7 @@
 #import "FDHIDDevice.h"
 
 #import <Cocoa/Cocoa.h>
-#import <IOKit/hid/IOHIDLib.h>
+#include <IOKit/hid/IOHIDLib.h>
 
 //----------------------------------------------------------------------------------------------------------------------------
 

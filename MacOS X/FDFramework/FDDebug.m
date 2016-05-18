@@ -11,8 +11,8 @@
 #import "FDDefines.h"
 
 #import <Cocoa/Cocoa.h>
-#import <stdarg.h>
-#import <sys/sysctl.h>
+#include <stdarg.h>
+#include <sys/sysctl.h>
 
 //----------------------------------------------------------------------------------------------------------------------------
 

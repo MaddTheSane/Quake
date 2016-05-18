@@ -11,7 +11,7 @@
 #import "FDDefines.h"
 
 #import <Cocoa/Cocoa.h>
-#import <ApplicationServices/ApplicationServices.h>
+#include <ApplicationServices/ApplicationServices.h>
 
 //----------------------------------------------------------------------------------------------------------------------------
 

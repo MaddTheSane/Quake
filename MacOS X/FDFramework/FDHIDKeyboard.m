@@ -14,9 +14,9 @@
 #import "FDDefines.h"
 
 #import <Cocoa/Cocoa.h>
-#import <IOKit/hidsystem/IOHIDLib.h>
-#import <IOKit/hid/IOHIDLib.h>
-#import <Carbon/Carbon.h>
+#include <IOKit/hidsystem/IOHIDLib.h>
+#include <IOKit/hid/IOHIDLib.h>
+#include <Carbon/Carbon.h>
 
 //----------------------------------------------------------------------------------------------------------------------------
 

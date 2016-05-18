@@ -32,13 +32,13 @@
 //----------------------------------------------------------------------------------------------------------------------------
 
 #import <AppKit/AppKit.h>
-#import <OpenGL/gl.h>
+#include <OpenGL/gl.h>
 
 #import "FDFramework/FDFramework.h"
 
 #import "QShared.h"
-#import "quakedef.h"
-#import "d_local.h"
+#include "quakedef.h"
+#include "d_local.h"
 #import "in_osx.h"
 #import "vid_osx.h"
 

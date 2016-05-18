@@ -10,10 +10,10 @@
 //----------------------------------------------------------------------------------------------------------------------------
 
 #import <Cocoa/Cocoa.h>
-#import <fcntl.h>
-#import <unistd.h>
+#include <fcntl.h>
+#include <unistd.h>
 
-#import "quakedef.h"
+#include "quakedef.h"
 #import "QController.h"
 #import "QArguments.h"
 #import "QShared.h"

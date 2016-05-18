@@ -13,9 +13,9 @@
 #import "FDDefines.h"
 #import "FDPreferences.h"
 
-#import <IOKit/IOKitLib.h>
-#import <IOKit/hidsystem/IOHIDLib.h>
-#import <IOKit/hid/IOHIDLib.h>
+#include <IOKit/IOKitLib.h>
+#include <IOKit/hidsystem/IOHIDLib.h>
+#include <IOKit/hid/IOHIDLib.h>
 
 //----------------------------------------------------------------------------------------------------------------------------
 

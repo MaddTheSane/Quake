@@ -12,8 +12,8 @@
 #import "FDDebug.h"
 
 #import <Cocoa/Cocoa.h>
-#import <CoreAudio/CoreAudio.h>
-#import <AudioToolbox/AudioToolbox.h>
+#include <CoreAudio/CoreAudio.h>
+#include <AudioToolbox/AudioToolbox.h>
 
 //----------------------------------------------------------------------------------------------------------------------------
 

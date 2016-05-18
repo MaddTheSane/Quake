@@ -10,7 +10,7 @@
 #if defined (__OBJC__)
 
 #import <Cocoa/Cocoa.h>
-#import <ApplicationServices/ApplicationServices.h>
+#include <ApplicationServices/ApplicationServices.h>
 
 #endif
 

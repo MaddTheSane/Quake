@@ -10,7 +10,7 @@
 #import "FDAudioMixer.h"
 
 #import <Cocoa/Cocoa.h>
-#import <AudioToolbox/AudioToolbox.h>
+#include <AudioToolbox/AudioToolbox.h>
 
 //----------------------------------------------------------------------------------------------------------------------------
 
