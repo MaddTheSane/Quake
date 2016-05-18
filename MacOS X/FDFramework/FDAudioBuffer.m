@@ -40,7 +40,7 @@ static OSStatus FDAudioBuffer_AudioUnitCallback (void*, AudioUnitRenderActionFla
     AudioUnitElement        mBusNumber;
 }
 
-- (id) init
+- (instancetype) init
 {
     self = [super init];
     
@@ -55,7 +55,7 @@ static OSStatus FDAudioBuffer_AudioUnitCallback (void*, AudioUnitRenderActionFla
 
 //----------------------------------------------------------------------------------------------------------------------------
 
-- (id) initWithMixer: (FDAudioMixer*) mixer
+- (instancetype) initWithMixer: (FDAudioMixer*) mixer
            frequency: (NSUInteger) frequency
       bitsPerChannel: (NSUInteger) bitsPerChannel
             channels: (NSUInteger) numChannels
@@ -75,7 +75,7 @@ static OSStatus FDAudioBuffer_AudioUnitCallback (void*, AudioUnitRenderActionFla
         {
             mMixer      = [mixer retain];
             mBusNumber  = [mixer allocateBus];
-            audioGraph  = [mixer audioGraph];
+            audioGraph  = mixer.audioGraph;
             
             err = AUGraphIsRunning (audioGraph, &graphWasRunning);
         }
@@ -138,7 +138,7 @@ static OSStatus FDAudioBuffer_AudioUnitCallback (void*, AudioUnitRenderActionFla
         
         if (err == noErr)
         {
-            AUNode  mixerNode = [mixer mixerNode];
+            AUNode  mixerNode = mixer.mixerNode;
             
             err = AUGraphConnectNodeInput (audioGraph, mConverterNode, 0, mixerNode, mBusNumber);
         }
@@ -157,7 +157,7 @@ static OSStatus FDAudioBuffer_AudioUnitCallback (void*, AudioUnitRenderActionFla
         if (err != noErr)
         {
             [self release];
-            self = nil;
+            return nil;
         }
     }
     
@@ -170,8 +170,8 @@ static OSStatus FDAudioBuffer_AudioUnitCallback (void*, AudioUnitRenderActionFla
 {
     if (mMixer != nil)
     {
-        AUGraph     audioGraph      = [mMixer audioGraph];
-        AUNode      mixerNode       = [mMixer mixerNode];
+        AUGraph     audioGraph      = mMixer.audioGraph;
+        AUNode      mixerNode       = mMixer.mixerNode;
         Boolean     graphWasRunning = false;
         
         AUGraphIsRunning (audioGraph, &graphWasRunning);

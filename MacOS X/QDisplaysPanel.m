@@ -29,9 +29,9 @@
     
     [self selectDisplayFromDescription: [[FDPreferences sharedPrefs] stringForKey: QUAKE_PREFS_KEY_SW_DISPLAY]];
     
-    [mFadeAllCheckBox setState: [[FDPreferences sharedPrefs] boolForKey: QUAKE_PREFS_KEY_SW_FADE_ALL]];
+    mFadeAllCheckBox.state = [[FDPreferences sharedPrefs] boolForKey: QUAKE_PREFS_KEY_SW_FADE_ALL];
     
-    if ([mDisplayPopUp numberOfItems] <= 1)
+    if (mDisplayPopUp.numberOfItems <= 1)
     {
         [mDisplayPopUp setEnabled: NO];
         [mFadeAllCheckBox setEnabled: NO];
@@ -42,7 +42,7 @@
         [mFadeAllCheckBox setEnabled: YES];
     }
     
-    [self setTitle: @"Displays"];
+    self.title = @"Displays";
 }
 
 //----------------------------------------------------------------------------------------------------------------------------
@@ -58,10 +58,10 @@
 {
     NSToolbarItem* item = [super toolbarItem];
     
-    [item setLabel: @"Displays"];
-    [item setPaletteLabel: @"Displays"];
-    [item setToolTip: @"Change display settings."];
-    [item setImage: [NSImage imageNamed: @"Displays"]];
+    item.label = @"Displays";
+    item.paletteLabel = @"Displays";
+    item.toolTip = @"Change display settings.";
+    item.image = [NSImage imageNamed: @"Displays"];
     
     return item;
 }
@@ -78,8 +78,8 @@
     {
         NSMenuItem* item = [[NSMenuItem alloc] initWithTitle: [display description] action: nil keyEquivalent: key];
         
-        [item setRepresentedObject: display];
-        [[mDisplayPopUp menu] addItem: [item autorelease]];        
+        item.representedObject = display;
+        [mDisplayPopUp.menu addItem: [item autorelease]];        
     }
     
     [mDisplayPopUp selectItemAtIndex: 0];
@@ -90,11 +90,11 @@
 
 - (void) selectDisplayFromDescription: (NSString*) description
 {
-    const NSInteger numItems = [mDisplayPopUp numberOfItems];
+    const NSInteger numItems = mDisplayPopUp.numberOfItems;
     
     for (NSInteger i = 0; i < numItems; ++i)
     {
-        if ([[[[mDisplayPopUp itemAtIndex: i] representedObject] description] isEqualToString: description] == YES)
+        if ([[[mDisplayPopUp itemAtIndex: i].representedObject description] isEqualToString: description] == YES)
         {
             [mDisplayPopUp selectItemAtIndex: i];
             

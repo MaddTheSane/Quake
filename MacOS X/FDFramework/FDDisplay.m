@@ -36,7 +36,7 @@ typedef struct
 @interface FDDisplayMode ()
 
 - (instancetype) initWithCGDisplayMode: (CGDisplayModeRef) mode;
-- (CGDisplayModeRef) cgDisplayMode;
+@property (readonly) CGDisplayModeRef cgDisplayMode;
 
 @end
 
@@ -122,7 +122,7 @@ typedef struct
     
     for (FDDisplay* display in [FDDisplay displays])
     {
-        if ([display isMainDisplay] == YES)
+        if (display.mainDisplay == YES)
         {
             mainDisplay = display;
             break;
@@ -214,7 +214,7 @@ typedef struct
     
     for (FDDisplay* display in [FDDisplay displays])
     {
-        isAnyCaptured = [display isCaptured];
+        isAnyCaptured = display.captured;
         
         if (isAnyCaptured == YES)
         {
@@ -227,7 +227,7 @@ typedef struct
 
 //----------------------------------------------------------------------------------------------------------------------------
 
-- (id) init
+- (instancetype) init
 {
     self = [super init];
     
@@ -242,7 +242,7 @@ typedef struct
 
 //----------------------------------------------------------------------------------------------------------------------------
 
-- (id) initWithCGDisplayID: (CGDirectDisplayID) displayId
+- (instancetype) initWithCGDisplayID: (CGDirectDisplayID) displayId
 {
     self = [super init];
     
@@ -257,7 +257,7 @@ typedef struct
         }
         else
         {
-            displayName = [NSString stringWithFormat: @"%lu", (unsigned long) [sDisplays count]];
+            displayName = [NSString stringWithFormat: @"%lu", (unsigned long) sDisplays.count];
         }
         
         if (CGDisplayIsBuiltin (displayId) == YES)
@@ -287,7 +287,7 @@ typedef struct
                 
                 if (displayMode != nil)
                 {
-                    NSUInteger          bitsPerPixel    = [displayMode bitsPerPixel];
+                    NSUInteger          bitsPerPixel    = displayMode.bitsPerPixel;
                     BOOL                isValid         = (bitsPerPixel == 32) || (bitsPerPixel == 16);
                     
                     if (isValid == YES)
@@ -491,7 +491,7 @@ typedef struct
 
 - (void) setGamma: (float) gamma update: (BOOL) doUpdate 
 {
-    if ([self isCaptured])
+    if (self.captured)
     {
         if (mCGGamma != gamma)
         {
@@ -561,7 +561,7 @@ typedef struct
 
 - (void) captureDisplay
 {
-    if ([self isCaptured] == NO)
+    if (self.captured == NO)
     {
         CGDisplayCapture (mCGDisplayId);
     }
@@ -571,7 +571,7 @@ typedef struct
 
 - (void) releaseDisplay
 {
-    if ([self isCaptured] == YES)
+    if (self.captured == YES)
     {
         CGDisplayRelease (mCGDisplayId);
     }

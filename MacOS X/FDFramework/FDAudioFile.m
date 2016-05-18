@@ -59,7 +59,7 @@ static void FDAudioFile_CompletionProc (void* pUserData, ScheduledAudioFileRegio
 }
 @synthesize loops = mIsLooping;
 
-- (id) init
+- (instancetype) init
 {
     self = [super init];
     
@@ -74,7 +74,7 @@ static void FDAudioFile_CompletionProc (void* pUserData, ScheduledAudioFileRegio
 
 //----------------------------------------------------------------------------------------------------------------------------
 
-- (id) initWithMixer: (FDAudioMixer*) mixer
+- (instancetype) initWithMixer: (FDAudioMixer*) mixer
 {
     self = [super init];
     
@@ -88,7 +88,7 @@ static void FDAudioFile_CompletionProc (void* pUserData, ScheduledAudioFileRegio
         {
             mMixer      = [mixer retain];
             mBusNumber  = [mixer allocateBus];
-            audioGraph  = [mixer audioGraph];
+            audioGraph  = mixer.audioGraph;
             
             err = AUGraphIsRunning (audioGraph, &graphWasRunning);
             
@@ -117,7 +117,7 @@ static void FDAudioFile_CompletionProc (void* pUserData, ScheduledAudioFileRegio
         
         if (err == noErr)
         {
-            AUNode  mixerNode = [mixer mixerNode];
+            AUNode  mixerNode = mixer.mixerNode;
             
             err = AUGraphConnectNodeInput (audioGraph, mAudioNode, 0, mixerNode, mBusNumber);
         }
@@ -140,7 +140,7 @@ static void FDAudioFile_CompletionProc (void* pUserData, ScheduledAudioFileRegio
         if (err != noErr)
         {
             [self release];
-            self = nil;
+            return nil;
         }
     }
     
@@ -153,8 +153,8 @@ static void FDAudioFile_CompletionProc (void* pUserData, ScheduledAudioFileRegio
 {
     if (mMixer != nil)
     {
-        AUGraph     audioGraph      = [mMixer audioGraph];
-        AUNode      mixerNode       = [mMixer mixerNode];
+        AUGraph     audioGraph      = mMixer.audioGraph;
+        AUNode      mixerNode       = mMixer.mixerNode;
         Boolean     graphWasRunning = false;
         
         [self stop];
@@ -270,7 +270,7 @@ static void FDAudioFile_CompletionProc (void* pUserData, ScheduledAudioFileRegio
 {
     [self stop];
     
-    const char* path    = [[url path] fileSystemRepresentation];
+    const char* path    = url.path.fileSystemRepresentation;
     CFIndex     pathLen = strlen (path);
     CFURLRef    cfPath  = CFURLCreateFromFileSystemRepresentation (kCFAllocatorDefault, (const UInt8*) path, pathLen, false);
     OSStatus    err     = AudioFileOpenURL (cfPath, kAudioFileReadPermission, 0, &mFileId);

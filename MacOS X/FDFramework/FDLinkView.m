@@ -33,7 +33,7 @@
 
 //----------------------------------------------------------------------------------------------------------------------------
 
-- (id) initWithFrame: (NSRect) frameRect
+- (instancetype) initWithFrame: (NSRect) frameRect
 {
     self = [super initWithFrame: frameRect];
 	
@@ -58,15 +58,13 @@
 
 - (NSDictionary *) fontAttributesWithColor: (NSColor *) color
 {
-    NSArray* keys = [NSArray arrayWithObjects: NSFontAttributeName,
+    NSArray* keys = @[NSFontAttributeName,
                      NSForegroundColorAttributeName,
-                     NSUnderlineStyleAttributeName,
-                     nil];
+                     NSUnderlineStyleAttributeName];
     
-    NSArray* objects = [NSArray arrayWithObjects: [NSFont systemFontOfSize: [NSFont systemFontSize]],
+    NSArray* objects = @[[NSFont systemFontOfSize: [NSFont systemFontSize]],
                         color,
-                        [NSNumber numberWithInt: NSSingleUnderlineStyle],
-                        nil];
+                        @(NSSingleUnderlineStyle)];
     
     return [[NSDictionary alloc] initWithObjects: objects forKeys: keys];
 }
@@ -92,7 +90,7 @@
     
     if (displayString == nil)
     {
-        displayString = [url absoluteString];
+        displayString = url.absoluteString;
     }
 
     mDisplayString  = [displayString retain];
@@ -140,9 +138,9 @@
                                        untilDate: [NSDate distantFuture]
                                           inMode: NSEventTrackingRunLoopMode
                                          dequeue: YES];
-        location = [self convertPoint: [nextEvent locationInWindow] fromView: nil];
+        location = [self convertPoint: nextEvent.locationInWindow fromView: nil];
         
-        if (NSMouseInRect (location, [self bounds], NO))
+        if (NSMouseInRect (location, self.bounds, NO))
         {
             [[NSWorkspace sharedWorkspace] openURL: mURL];
         }
@@ -163,7 +161,7 @@
         
         [cursor setOnMouseEntered: YES];
         
-        [self addCursorRect: [self bounds] cursor: cursor];
+        [self addCursorRect: self.bounds cursor: cursor];
     }
 }
 

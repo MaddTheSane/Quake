@@ -53,7 +53,7 @@ static FDAudioMixer*    sFDAudioMixerShared     = nil;
     return sFDAudioMixerShared;
 }
 
-- (id) init
+- (instancetype) init
 {
     self = [super init];
     
@@ -128,7 +128,7 @@ static FDAudioMixer*    sFDAudioMixerShared     = nil;
         if (err != noErr)
         {
             [self release];
-            self = nil;
+            return nil;
         }
     }
     

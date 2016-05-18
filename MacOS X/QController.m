@@ -38,7 +38,7 @@ extern void     M_Menu_Quit_f (void);
 + (void) initialize
 {
     FDPreferences*  prefs       = [FDPreferences sharedPrefs];
-    NSString*       defaultPath = [[[NSBundle mainBundle] bundlePath] stringByDeletingLastPathComponent];
+    NSString*       defaultPath = [NSBundle mainBundle].bundlePath.stringByDeletingLastPathComponent;
     
     defaultPath = [defaultPath stringByAppendingPathComponent: QUAKE_PREFS_VALUE_BASE_PATH];    
     
@@ -59,7 +59,7 @@ extern void     M_Menu_Quit_f (void);
 
 //----------------------------------------------------------------------------------------------------------------------------
 
-- (id) init
+- (instancetype) init
 {
     self = [super init];
     
@@ -68,7 +68,7 @@ extern void     M_Menu_Quit_f (void);
         QArguments* arguments = [QArguments sharedArguments];
         
         [arguments setArgumentsFromProccessInfo];
-        [arguments setEditable: ([[arguments arguments] count] == 0)];
+        [arguments setEditable: ([arguments arguments].count == 0)];
         
         mRequestedCommands = [[NSMutableArray alloc] init];
     }
@@ -109,18 +109,18 @@ extern void     M_Menu_Quit_f (void);
             Sys_Error ("The dragged item is not a folder!");
         }
         
-        if ([[filePath lastPathComponent] caseInsensitiveCompare: @"hipnotic"] == NSOrderedSame)
+        if ([filePath.lastPathComponent caseInsensitiveCompare: @"hipnotic"] == NSOrderedSame)
         {
             [arguments addObject: @"-hipnotic"];
         }
-        else if ([[filePath lastPathComponent] caseInsensitiveCompare: @"rogue"] == NSOrderedSame)
+        else if ([filePath.lastPathComponent caseInsensitiveCompare: @"rogue"] == NSOrderedSame)
         {
             [arguments addObject: @"-rogue"];            
         }
         else
         {
             [arguments addObject: @"-game"];
-            [arguments addObject: [filePath lastPathComponent]];
+            [arguments addObject: filePath.lastPathComponent];
         }
         
         [[QArguments sharedArguments] setArgumentsFromArray: arguments];
@@ -164,14 +164,14 @@ extern void     M_Menu_Quit_f (void);
     
     if ([self hostInitialized] == YES)
     {
-        if ([NSApp isHidden] == YES || [NSApp isActive] == NO)
+        if (NSApp.hidden == YES || NSApp.active == NO)
         {
             [NSApp activateIgnoringOtherApps: YES];
         }
         
         if (gVidDisplayFullscreen == NO && gVidWindow != NULL)
         {
-            if ([gVidWindow isMiniaturized] == YES)
+            if (gVidWindow.miniaturized == YES)
             {
                 [gVidWindow deminiaturize: NULL];
             }
@@ -297,7 +297,7 @@ extern void     M_Menu_Quit_f (void);
         
         if ([[NSFileManager defaultManager] fileExistsAtPath: validationFile] == YES)
         {
-            char*   pBaseDir    = (char*) [basePath fileSystemRepresentation];
+            char*   pBaseDir    = (char*) basePath.fileSystemRepresentation;
             size_t  pathLength  = strlen (pBaseDir);
             
             if (pathLength >= 3)
@@ -335,7 +335,7 @@ extern void     M_Menu_Quit_f (void);
     
     if (!success)
     {
-        NSString* basePath = [[[NSBundle mainBundle] bundlePath] stringByDeletingLastPathComponent];
+        NSString* basePath = [NSBundle mainBundle].bundlePath.stringByDeletingLastPathComponent;
         
         success = [self validateIdDirectory: [basePath stringByAppendingPathComponent: QUAKE_PREFS_VALUE_BASE_PATH]];
     }
@@ -350,13 +350,13 @@ extern void     M_Menu_Quit_f (void);
     
     while (!success)
     {
-        NSAutoreleasePool*  pool        = [[NSAutoreleasePool alloc] init];
+        @autoreleasepool {
 		NSOpenPanel*        openPanel   = [[[NSOpenPanel alloc] init] autorelease];
         
 		[openPanel setAllowsMultipleSelection: NO];
 		[openPanel setCanChooseFiles: NO];
 		[openPanel setCanChooseDirectories: YES];
-		[openPanel setTitle: @"Please locate the \"id1\" folder:"];
+		openPanel.title = @"Please locate the \"id1\" folder:";
         
         if ([openPanel runModal] == NSCancelButton)
         {
@@ -364,9 +364,9 @@ extern void     M_Menu_Quit_f (void);
             break;
         }
         
-        success = [self validateIdDirectory: [[openPanel directoryURL] path]];
+        success = [self validateIdDirectory: openPanel.directoryURL.path];
 		
-		[pool release];
+        }
         
         if (!success)
         {
@@ -385,7 +385,7 @@ extern void     M_Menu_Quit_f (void);
     BOOL        isDirectory = NO;
     NSString*   path        = [[FDPreferences sharedPrefs] stringForKey: QUAKE_PREFS_KEY_AUDIO_PATH];
     
-    if ([path length] > 0)
+    if (path.length > 0)
     {
         const BOOL pathExists = [[NSFileManager defaultManager] fileExistsAtPath: path isDirectory: &isDirectory];
         
@@ -408,7 +408,7 @@ extern void     M_Menu_Quit_f (void);
 {
     FD_UNUSED (data);
     
-    NSArray*    pasteboardTypes = [pasteboard types];
+    NSArray*    pasteboardTypes = pasteboard.types;
     
     if ([pasteboardTypes containsObject: NSStringPboardType])
     {
@@ -516,11 +516,11 @@ extern void     M_Menu_Quit_f (void);
     int             argc = 0;
     char**          argv = [[QArguments sharedArguments] cArguments: &argc];
     
-    [[FDDebug sharedDebug] setLogHandler: &Con_Printf];
-    [[FDDebug sharedDebug] setErrorHandler: &Sys_Error];
+    [FDDebug sharedDebug].logHandler = &Con_Printf;
+    [FDDebug sharedDebug].errorHandler = &Sys_Error;
     
-    [pasteMenuItem setTarget: self];
-    [pasteMenuItem setAction: @selector (pasteString:)];
+    pasteMenuItem.target = self;
+    pasteMenuItem.action = @selector (pasteString:);
 
     // prepare host init:
     signal (SIGFPE, SIG_IGN);
@@ -550,7 +550,7 @@ extern void     M_Menu_Quit_f (void);
     Host_Init (&parameters);
     
     [self setHostInitialized: YES];
-    [NSApp setServicesProvider: self];
+    NSApp.servicesProvider = self;
 
 #ifdef QUAKE_WORLD
 
@@ -588,9 +588,9 @@ extern void     M_Menu_Quit_f (void);
 #endif /* QUAKE_WORLD */
 
     // did we receive an AppleScript command?
-    while ([mRequestedCommands count] > 0)
+    while (mRequestedCommands.count > 0)
     {
-        NSString*   command = [mRequestedCommands objectAtIndex: 0];
+        NSString*   command = mRequestedCommands[0];
 
         Cbuf_AddText (va ("%s\n", [command cStringUsingEncoding: NSASCIIStringEncoding]));
         
@@ -629,7 +629,7 @@ extern void     M_Menu_Quit_f (void);
 {
     FD_UNUSED (timer);
     
-    if ([NSApp isHidden] == NO)
+    if (NSApp.hidden == NO)
     {
 #ifdef QUAKE_WORLD
         

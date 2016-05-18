@@ -24,12 +24,12 @@
 - (void) initGrowBoxTexture;
 - (void) drawGrowbox;
 
-- (void) setOpenGLContext: (NSOpenGLContext*) openGLContext;
+@property (readwrite, strong) NSOpenGLContext *openGLContext;
 
 - (void) setResizeHandler: (FDResizeHandler) pResizeHandler forContext: (void*) pContext;
 - (void) onResizeView: (NSNotification*) notification;
 
-- (NSBitmapImageRep*) bitmapRepresentation;
+@property (readonly, copy) NSBitmapImageRep *bitmapRepresentation;
 
 @end
 
@@ -47,8 +47,9 @@
     GLuint              mGrowBoxTexture;
     BOOL                mGrowBoxIsInitialized;
 }
+@synthesize openGLContext = mOpenGLContext;
 
-- (id)initWithFrame:(NSRect) frameRect
+- (instancetype)initWithFrame:(NSRect) frameRect
 {
     self = [super initWithFrame: frameRect];
     
@@ -136,7 +137,7 @@
         
         mCursor = [cursor retain];
         
-        [[self window] invalidateCursorRectsForView: self];
+        [self.window invalidateCursorRectsForView: self];
     }
 }
 
@@ -151,7 +152,7 @@
 
 - (void) resetCursorRects
 {
-    [self addCursorRect: [self bounds] cursor: [self cursor]];
+    [self addCursorRect: self.bounds cursor: self.cursor];
 }
 
 //----------------------------------------------------------------------------------------------------------------------------
@@ -215,7 +216,7 @@
     
     if (openGLContext != nil)
     {
-        [openGLContext setView: self];
+        openGLContext.view = self;
         
         mOpenGLContext = [openGLContext retain];
     }
@@ -251,11 +252,11 @@
 
 - (NSBitmapImageRep*) bitmapRepresentation
 {
-    const NSRect      frame   = [self frame];
+    const NSRect      frame   = self.frame;
     const NSUInteger  width   = NSWidth (frame);
     const NSUInteger  height  = NSHeight (frame);
     
-    if ((mBitmapRep == nil) || ([mBitmapRep pixelsWide] != width) || ([mBitmapRep pixelsHigh] != height))
+    if ((mBitmapRep == nil) || (mBitmapRep.pixelsWide != width) || (mBitmapRep.pixelsHigh != height))
     {
         [mBitmapRep release];
         
@@ -273,13 +274,13 @@
     
     if ((mBitmapRep != nil) && (mOpenGLContext != nil))
     {
-        UInt8*	pBitmapBuffer = (UInt8*) [mBitmapRep bitmapData];
+        UInt8*	pBitmapBuffer = (UInt8*) mBitmapRep.bitmapData;
         
         if (pBitmapBuffer != NULL)
         {
             const UInt8*	pBitmapBufferEnd = pBitmapBuffer + (width << 2) * height;
             
-            CGLFlushDrawable ([mOpenGLContext CGLContextObj]);
+            CGLFlushDrawable (mOpenGLContext.CGLContextObj);
             
             glReadPixels (0, 0, (GLsizei) width, (GLsizei) height, GL_RGBA, GL_UNSIGNED_BYTE, pBitmapBuffer);
             
@@ -302,7 +303,7 @@
 {
     if (mOpenGLContext != nil)
     {
-        const NSRect    rect    = [self frame];
+        const NSRect    rect    = self.frame;
         const CGFloat   width   = NSWidth (rect);
         const CGFloat   height  = NSHeight (rect);
         

@@ -21,11 +21,11 @@
     IBOutlet NSButton*      mOptionCheckBox;
 }
 
-- (NSString*) nibName;
+@property (readonly, copy) NSString *nibName;
 - (void) awakeFromNib;
 
-- (NSString*) toolbarIdentifier;
-- (NSToolbarItem*) toolbarItem;
+@property (readonly, copy) NSString *toolbarIdentifier;
+@property (readonly, copy) NSToolbarItem *toolbarItem;
 
 - (IBAction) toggleOptionCheckbox: (id) sender;
 

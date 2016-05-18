@@ -380,7 +380,7 @@ static const UInt8  sFDHIDInNumPadKey[] =
 + (NSUInteger) usagePage;
 + (NSUInteger) usage;
 
-- (id) initWithDevice: (IOHIDDeviceRef) pDevice deviceDescriptors: (const FDHIDDeviceDesc*) pDeviceDescriptors;
+- (instancetype) initWithDevice: (IOHIDDeviceRef) pDevice deviceDescriptors: (const FDHIDDeviceDesc*) pDeviceDescriptors NS_DESIGNATED_INITIALIZER;
 
 - (void) setFnKeyState: (BOOL) isDown;
 - (void) evaluateEvent: (NSEvent*) event;
@@ -408,7 +408,7 @@ static const UInt8  sFDHIDInNumPadKey[] =
             
 //----------------------------------------------------------------------------------------------------------------------------
 
-- (id) initWithDevice: (IOHIDDeviceRef) pDevice deviceDescriptors: (const FDHIDDeviceDesc*) pDeviceDescriptors
+- (instancetype) initWithDevice: (IOHIDDeviceRef) pDevice deviceDescriptors: (const FDHIDDeviceDesc*) pDeviceDescriptors
 {
     self = [super initWithDevice: pDevice deviceDescriptors: pDeviceDescriptors];
     
@@ -452,7 +452,7 @@ static const UInt8  sFDHIDInNumPadKey[] =
 
 - (void) evaluateEvent: (NSEvent*) event
 {
-    const NSEventType   eventType = [event type];
+    const NSEventType   eventType = event.type;
     FDHIDEvent          keyEvent = { 0 };
     
     keyEvent.mDevice    = self;
@@ -463,14 +463,14 @@ static const UInt8  sFDHIDInNumPadKey[] =
         case NSKeyDown:
         case NSKeyUp:
             {
-                NSString*           characters      = [event charactersIgnoringModifiers];
-                const NSUInteger    numCharacters   = [characters length];
+                NSString*           characters      = event.charactersIgnoringModifiers;
+                const NSUInteger    numCharacters   = characters.length;
                 
                 keyEvent.mBoolVal = (eventType == NSKeyDown);
                 
                 for (NSUInteger i = 0; i < numCharacters; ++i)
                 {
-                    NSUInteger  flags       = [event modifierFlags];
+                    NSUInteger  flags       = event.modifierFlags;
                     unichar     character   = [characters characterAtIndex: i];
                     
                     if ((character & 0xFF00) ==  0xF700)
@@ -495,7 +495,7 @@ static const UInt8  sFDHIDInNumPadKey[] =
                     {
                         if (flags & NSNumericPadKeyMask)
                         {
-                            UInt16 keyPad = [event keyCode];
+                            UInt16 keyPad = event.keyCode;
                             
                             if (keyPad < FD_SIZE_OF_ARRAY (sFDHIDInNumPadKey))
                             {
@@ -528,7 +528,7 @@ static const UInt8  sFDHIDInNumPadKey[] =
         case NSFlagsChanged:
             {
                 static NSUInteger   lastFlags       = 0;
-                const NSUInteger    flags           = [event modifierFlags];
+                const NSUInteger    flags           = event.modifierFlags;
                 const NSUInteger    filteredFlags   = flags ^ lastFlags;
                 
                 lastFlags = flags;

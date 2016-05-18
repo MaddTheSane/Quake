@@ -140,7 +140,7 @@ const char*	Sys_FixFileNameCase (const char* pPath)
         
         if ([path completePathIntoString: &outName caseSensitive: NO matchesIntoArray: &outArray filterTypes: nil] > 0)
         {
-            pPath = [outName fileSystemRepresentation];
+            pPath = outName.fileSystemRepresentation;
         }
     }
     
@@ -299,9 +299,9 @@ void	Sys_Error (const char* pFormat, ...)
 #else
 
     Host_Shutdown();
-    [[NSApp delegate] setHostInitialized: NO];
+    [(QController*)NSApp.delegate setHostInitialized: NO];
     
-    NSString* msg = [NSString stringWithCString: buffer encoding: NSASCIIStringEncoding];
+    NSString* msg = @(buffer);
     
     NSRunCriticalAlertPanel (@"An error has occured:", @"%@", nil, nil, nil, msg);
     NSLog (@"An error has occured: %@\n", msg);
@@ -396,7 +396,7 @@ void	Sys_Quit (void)
 
     // shutdown host:
     Host_Shutdown ();
-    [[NSApp delegate] setHostInitialized: NO];
+    [(QController*)NSApp.delegate setHostInitialized: NO];
     fcntl (0, F_SETFL, fcntl (0, F_GETFL, 0) & ~FNDELAY);
     fflush (stdout);
     
@@ -506,13 +506,13 @@ void	Sys_DebugLog (char* pPath, char* pFormat, ...)
 char*	Sys_GetClipboardData (void)
 {
     NSPasteboard*   pasteboard  = [NSPasteboard generalPasteboard];
-    NSArray*        types       = [pasteboard types];
+    NSArray*        types       = pasteboard.types;
     
     if ([types containsObject: NSStringPboardType])
     {
         NSString* clipboardString = [pasteboard stringForType: NSStringPboardType];
         
-        if (clipboardString != NULL && [clipboardString length] > 0)
+        if (clipboardString != NULL && clipboardString.length > 0)
         {
             return strdup ([clipboardString cStringUsingEncoding: NSASCIIStringEncoding]);
         }
@@ -620,11 +620,11 @@ int	main (int argc, const char** pArgv)
 
 #else
 
-    NSAutoreleasePool *	pool        = [[NSAutoreleasePool alloc] init];
+    @autoreleasepool {
     NSUserDefaults *	defaults    = [NSUserDefaults standardUserDefaults];
 
-    [defaults registerDefaults: [NSDictionary dictionaryWithObject: @"YES" forKey: @"AppleDockIconEnabled"]];
-    [pool release];
+    [defaults registerDefaults: @{@"AppleDockIconEnabled": @YES}];
+    }
 
     return NSApplicationMain (argc, pArgv);
 

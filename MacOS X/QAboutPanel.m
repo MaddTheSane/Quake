@@ -26,14 +26,14 @@
 
 - (void) awakeFromNib
 {
-    NSString* appName = [[NSRunningApplication currentApplication] localizedName];
+    NSString* appName = [NSRunningApplication currentApplication].localizedName;
     
     [mLinkView setURL: [NSURL URLWithString: FRUITZ_OF_DOJO_URL]];
     
-    [mTitle setStringValue: [NSString stringWithFormat: @"%@ for MacOS X", appName]];
-    [mOptionCheckBox setState: [[FDPreferences sharedPrefs] boolForKey: QUAKE_PREFS_KEY_OPTION_KEY]];
+    mTitle.stringValue = [NSString stringWithFormat: @"%@ for MacOS X", appName];
+    mOptionCheckBox.state = [[FDPreferences sharedPrefs] boolForKey: QUAKE_PREFS_KEY_OPTION_KEY];
     
-    [self setTitle: @"About"];
+    self.title = @"About";
 }
 
 //----------------------------------------------------------------------------------------------------------------------------
@@ -50,10 +50,10 @@
     NSToolbarItem* item = [super toolbarItem];
 	NSImage	* aboutImg	= [[NSWorkspace sharedWorkspace] iconForFileType:NSFileTypeForHFSTypeCode(kToolbarInfoIcon)];
     
-    [item setLabel: @"About"];
-    [item setPaletteLabel: @"About"];
-    [item setToolTip: @"About Quake."];
-    [item setImage: aboutImg];
+    item.label = @"About";
+    item.paletteLabel = @"About";
+    item.toolTip = @"About Quake.";
+    item.image = aboutImg;
     
     return item;
 }

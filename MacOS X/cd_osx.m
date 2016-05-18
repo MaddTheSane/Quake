@@ -94,7 +94,7 @@ void	CDAudio_AddTracks2List (NSString* mountPath, NSArray* extensions, NSConditi
         
     if (dirEnum != nil)
     {
-        NSUInteger  extensionCount  = [extensions count];
+        NSUInteger  extensionCount  = extensions.count;
         NSString*   filePath        = nil;
 
         Con_Print ("Scanning for audio tracks. Be patient!\n");
@@ -105,7 +105,7 @@ void	CDAudio_AddTracks2List (NSString* mountPath, NSArray* extensions, NSConditi
             {
                 [stopConditionLock lock];
                 
-                const BOOL doStop = ([stopConditionLock condition] != 0);
+                const BOOL doStop = (stopConditionLock.condition != 0);
                 
                 [stopConditionLock unlock];
                 
@@ -117,7 +117,7 @@ void	CDAudio_AddTracks2List (NSString* mountPath, NSArray* extensions, NSConditi
 
             for (NSUInteger i = 0; i < extensionCount; ++i)
             {
-                if ([[filePath pathExtension] isEqualToString: [extensions objectAtIndex: i]])
+                if ([filePath.pathExtension isEqualToString: extensions[i]])
                 {
                     NSString*   fullPath = [mountPath stringByAppendingPathComponent: filePath];
 
@@ -146,7 +146,7 @@ BOOL	CDAudio_ScanForMedia (NSString* mediaFolder, NSConditionLock* stopCondition
     // Get the current MP3 listing or retrieve the TOC of the AudioCD:
     if (mediaFolder != nil)
     {        
-        CDAudio_AddTracks2List (mediaFolder, [NSArray arrayWithObjects: @"mp3", @"mp4", @"m4a", nil], stopConditionLock);
+        CDAudio_AddTracks2List (mediaFolder, @[@"mp3", @"mp4", @"m4a"], stopConditionLock);
     }
     else
     {
@@ -179,9 +179,9 @@ BOOL	CDAudio_ScanForMedia (NSString* mediaFolder, NSConditionLock* stopCondition
                 continue;
             }
             
-            mediaFolder = [NSString stringWithCString: mountList[mountCount].f_mntonname encoding: NSASCIIStringEncoding];
+            mediaFolder = @(mountList[mountCount].f_mntonname);
             
-            CDAudio_AddTracks2List (mediaFolder, [NSArray arrayWithObjects: @"aiff", @"cdda", nil], stopConditionLock);
+            CDAudio_AddTracks2List (mediaFolder, @[@"aiff", @"cdda"], stopConditionLock);
             
             break;
         }
@@ -189,7 +189,7 @@ BOOL	CDAudio_ScanForMedia (NSString* mediaFolder, NSConditionLock* stopCondition
 
     [pool release];
     
-    if ([sCDAudioTrackList count] == 0)
+    if (sCDAudioTrackList.count == 0)
     {
         [sCDAudioTrackList release];
         sCDAudioTrackList = nil;
@@ -208,14 +208,14 @@ void	CDAudio_Play (byte track, qboolean loop)
 {
     if (sCDAudio != nil)
     {
-        if ((track <= 0) || (track > [sCDAudioTrackList count]))
+        if ((track <= 0) || (track > sCDAudioTrackList.count))
         {
             track = 1;
         }
         
         if (sCDAudioTrackList != nil)
         {
-            if ([sCDAudio startFile: [sCDAudioTrackList objectAtIndex: track - 1] loop: (loop != false)])
+            if ([sCDAudio startFile: sCDAudioTrackList[track - 1] loop: (loop != false)])
             {
                 sCDAudioTrack = track;
             }
@@ -263,9 +263,9 @@ void	CDAudio_Update (void)
 {
     if (sCDAudio != nil)
     {
-        [sCDAudio setVolume: bgmvolume.value];
+        sCDAudio.volume = bgmvolume.value;
         
-        if (([sCDAudio loops] == NO) && ([sCDAudio isFinished] == YES))
+        if ((sCDAudio.loops == NO) && (sCDAudio.finished == YES))
         {
             CDAudio_Play (sCDAudioTrack + 1, 0);
         }
@@ -324,16 +324,16 @@ void	CD_f (void)
     {
         CDAudio_Stop ();
         
-        if (CDAudio_ScanForMedia ([[NSApp delegate] mediaFolder], nil))
+        if (CDAudio_ScanForMedia ([(QController*)NSApp.delegate mediaFolder], nil))
         {
             NSUInteger  numTracks = 0;
             
             if (sCDAudioTrackList != nil)
             {
-                numTracks = [sCDAudioTrackList count];
+                numTracks = sCDAudioTrackList.count;
             }
             
-            if ([[NSApp delegate] mediaFolder] == nil)
+            if ([(QController*)NSApp.delegate mediaFolder] == nil)
             {
                 Con_Print ("CD");
             }
@@ -350,7 +350,7 @@ void	CD_f (void)
     // the following commands require a valid track array, so build it, if not present:
     if (sCDAudioTrackList == nil)
     {
-        if (!CDAudio_ScanForMedia ([[NSApp delegate] mediaFolder], nil))
+        if (!CDAudio_ScanForMedia ([(QController*)NSApp.delegate mediaFolder], nil))
         {
             return;
         }
@@ -399,7 +399,7 @@ void	CD_f (void)
     // eject the CD:
     if (Q_strcasecmp (arg, "eject") == 0)
     {
-        if (([[NSApp delegate] mediaFolder] == nil) && (sCDAudioMountPath != nil))
+        if (([(QController*)NSApp.delegate mediaFolder] == nil) && (sCDAudioMountPath != nil))
         {
             NSURL*      url = [NSURL fileURLWithPath: sCDAudioMountPath];
             NSError*    err = nil;
@@ -428,10 +428,10 @@ void	CD_f (void)
         }
         else
         {
-            const NSUInteger    numTracks = [sCDAudioTrackList count];
+            const NSUInteger    numTracks = sCDAudioTrackList.count;
             const char*         mountPath = [sCDAudioMountPath cStringUsingEncoding: NSASCIIStringEncoding];
             
-            if ([sCDAudio isPlaying] == YES)
+            if (sCDAudio.playing == YES)
             {
                 Con_Printf ("Playing track %d of %d (\"%s\").\n", sCDAudioTrack, numTracks, mountPath);
             }

@@ -18,7 +18,7 @@
 @property (nonatomic, retain) NSCursor *cursor;
 @property BOOL vsync;
 
-- (NSOpenGLContext*) openGLContext;
+@property (readonly, strong) NSOpenGLContext *openGLContext;
 
 @end
 

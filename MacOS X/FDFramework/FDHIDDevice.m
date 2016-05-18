@@ -54,7 +54,7 @@
     NSNumber*   pageVal     = @(pUsageMap->mUsagePage);
     NSNumber*   usageVal    = @(pUsageMap->mUsage);
     
-    return [NSDictionary dictionaryWithObjectsAndKeys: pageVal, pageKey, usageVal, usageKey, nil];
+    return @{pageKey: pageVal, usageKey: usageVal};
 }
 
 //----------------------------------------------------------------------------------------------------------------------------
@@ -99,7 +99,7 @@
 
 //----------------------------------------------------------------------------------------------------------------------------
 
-- (id) initWithDevice: (IOHIDDeviceRef) pDevice deviceDescriptors: (const FDHIDDeviceDesc*) pDeviceDesc
+- (instancetype) initWithDevice: (IOHIDDeviceRef) pDevice deviceDescriptors: (const FDHIDDeviceDesc*) pDeviceDesc
 {
     self = [super init];
     
@@ -138,7 +138,7 @@
         else
         {
             [self release];
-            self = nil;
+            return nil;
         }
     }
     
@@ -149,7 +149,7 @@
 
 - (void) dealloc
 {
-    FDLog (@"Lost %@ by %@\n", [self productName], [self vendorName]);
+    FDLog (@"Lost %@ by %@\n", self.productName, self.vendorName);
     
     [mActuator release];
     [mVendorName release];
@@ -193,7 +193,7 @@
 
 - (uint32_t) getDevicePropertyForKey: (CFStringRef) pKey
 {
-    IOHIDDeviceRef  pDevice     = [self iohidDeviceRef];
+    IOHIDDeviceRef  pDevice     = self.iohidDeviceRef;
 	BOOL            success     = (pDevice != nil);
 	CFTypeRef       pProperty   = NULL;
     SInt32          value       = -1;
@@ -225,7 +225,7 @@
 
 - (NSString*) getDevicePropertyStringForKey: (CFStringRef) pKey
 {
-    IOHIDDeviceRef  pDevice     = [self iohidDeviceRef];
+    IOHIDDeviceRef  pDevice     = self.iohidDeviceRef;
     BOOL            success     = (pDevice != nil);
     CFTypeRef       pProperty   = nil;
     NSString*       string      = nil;
@@ -255,10 +255,10 @@
 {
     IOHIDElementRef         pElement    = IOHIDValueGetElement (pValue);
     const uint32_t          type        = IOHIDElementGetType (pElement);
-    const FDHIDElementMap*  pElements   = [self elementMap];
+    const FDHIDElementMap*  pElements   = self.elementMap;
     const uint32_t          typeOffset  = type - pElements[0].mType;
 
-    if (typeOffset < [self elementCount])
+    if (typeOffset < self.elementCount)
     {
         pElements = &(pElements[typeOffset]);
         

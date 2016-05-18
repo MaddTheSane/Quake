@@ -124,25 +124,25 @@ static QArgumentDesc    sQArguments[] =
         
         if (pArgument->mpName != nil)
         {
-            NSString*   title = [NSString stringWithCString: pArgument->mpName encoding: NSASCIIStringEncoding];
+            NSString*   title = @(pArgument->mpName);
             
             item = [[[NSMenuItem alloc] initWithTitle: title action: nil keyEquivalent: [NSString string]] autorelease];
             
-            [item setTag: i];
-            [item setTarget: self];
-            [item setAction: @selector (selectedArgument:)];
+            item.tag = i;
+            item.target = self;
+            item.action = @selector (selectedArgument:);
         }
         else
         {
             item = [NSMenuItem separatorItem];
         }
         
-        [[mCommandPopup menu] addItem: item];
+        [mCommandPopup.menu addItem: item];
     }
     
     [mCommandPopup selectItemAtIndex: 0];
     
-    [self selectedArgument: [mCommandPopup selectedItem]];
+    [self selectedArgument: mCommandPopup.selectedItem];
 }
 
 //----------------------------------------------------------------------------------------------------------------------------
@@ -151,27 +151,27 @@ static QArgumentDesc    sQArguments[] =
 {
     NSInteger result;
     
-	[NSApp beginSheet: [self window] modalForWindow: window modalDelegate: nil didEndSelector: nil contextInfo: nil];
+	[NSApp beginSheet: self.window modalForWindow: window modalDelegate: nil didEndSelector: nil contextInfo: nil];
 	
-    result = [NSApp runModalForWindow: [self window]];
+    result = [NSApp runModalForWindow: self.window];
     
     if (result == NSOKButton)
     {
         NSCharacterSet* whitespace  = [NSCharacterSet whitespaceCharacterSet];
-        NSString*       command     = [[mCommandPopup selectedItem] title];
-        NSString*       text        = [[mArgumentTextField stringValue] stringByTrimmingCharactersInSet: whitespace];
+        NSString*       command     = mCommandPopup.selectedItem.title;
+        NSString*       text        = [mArgumentTextField.stringValue stringByTrimmingCharactersInSet: whitespace];
         
-        if ([text length] > 0)
+        if (text.length > 0)
         {
             command = [NSString stringWithFormat: @"%@ %@", command, text];
         }
         
-        [item setObject: command forKey: @"value"];
+        item[@"value"] = command;
     }
     
-	[NSApp endSheet: [self window]];
+	[NSApp endSheet: self.window];
     
-	[[self window] orderOut: self];
+	[self.window orderOut: self];
 
 	return result;
 }
@@ -201,8 +201,8 @@ static QArgumentDesc    sQArguments[] =
     
     if ((index >= 0) && (index < FD_SIZE_OF_ARRAY (sQArguments)))
     {
-        description = [NSString stringWithCString: sQArguments[index].mpDescription encoding: NSASCIIStringEncoding];
-        placeholder = [NSString stringWithCString: sQArguments[index].mpPlaceHolder encoding: NSASCIIStringEncoding];
+        description = @(sQArguments[index].mpDescription);
+        placeholder = @(sQArguments[index].mpPlaceHolder);
         canEdit     = (sQArguments[index].mpPlaceHolder[0] != '\0');
     }
     else
@@ -211,11 +211,11 @@ static QArgumentDesc    sQArguments[] =
         placeholder = [NSString string];
     }
     
-    [[mArgumentTextField cell] setPlaceholderString: placeholder];
-    [mArgumentTextField setStringValue: [NSString string]];
-    [mArgumentTextField setEnabled: canEdit];
+    [mArgumentTextField.cell setPlaceholderString: placeholder];
+    mArgumentTextField.stringValue = [NSString string];
+    mArgumentTextField.enabled = canEdit;
     
-    [mDescriptionTextField setStringValue: description];
+    mDescriptionTextField.stringValue = description;
 }
 
 @end

@@ -19,11 +19,10 @@
 
 + (QArguments*) sharedArguments;
 
-- (void) setEditable: (BOOL) canEdit;
-- (BOOL) isEditable;
+@property (getter=isEditable) BOOL editable;
 
 - (void) setArgumentsFromString: (NSString*) string;
-- (void) setArgumentsFromArray: (NSArray*) array;
+- (void) setArgumentsFromArray: (NSArray<NSString*>*) array;
 - (void) setArgumentsFromProccessInfo;
 
 - (void) setArguments: (NSArray*) arguments;
@@ -31,7 +30,7 @@
 
 - (BOOL) validateWithBasePath: (NSString*) basePath;
 
-- (char**) cArguments: (int*) count;
+- (char**) cArguments: (int*) count NS_RETURNS_INNER_POINTER;
 
 @end
 

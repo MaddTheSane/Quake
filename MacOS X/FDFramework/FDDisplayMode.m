@@ -52,7 +52,7 @@ const PixelEncodingToBitsPerPixel   skPixelEncodingToBitsPerPixel[] = {
 
 @synthesize cgDisplayMode = mCGDisplayMode;
 
-- (id) init
+- (instancetype) init
 {
     self = [super init];
     
@@ -67,7 +67,7 @@ const PixelEncodingToBitsPerPixel   skPixelEncodingToBitsPerPixel[] = {
 
 //----------------------------------------------------------------------------------------------------------------------------
 
-- (id) initWithCGDisplayMode: (CGDisplayModeRef) cgDisplayMode
+- (instancetype) initWithCGDisplayMode: (CGDisplayModeRef) cgDisplayMode
 {
     self = [super init];
     
@@ -85,7 +85,7 @@ const PixelEncodingToBitsPerPixel   skPixelEncodingToBitsPerPixel[] = {
         else
         {
             [self release];
-            self = nil;
+            return nil;
         }
     }
     
@@ -165,12 +165,12 @@ const PixelEncodingToBitsPerPixel   skPixelEncodingToBitsPerPixel[] = {
 
 - (NSString*) description
 {
-    const unsigned long width           = [self width];
-    const unsigned long height          = [self height];
-    const double        refreshReate    = [self refreshRate];
+    const unsigned long width           = self.width;
+    const unsigned long height          = self.height;
+    const double        refreshReate    = self.refreshRate;
     NSString*           description     = [NSString stringWithFormat: @"%lux%lu %.0fHz", width, height, refreshReate];
     
-    if ([self isStretched] == YES)
+    if (self.stretched == YES)
     {
         description = [description stringByAppendingString: @" (stretched)"];
     }
@@ -182,19 +182,19 @@ const PixelEncodingToBitsPerPixel   skPixelEncodingToBitsPerPixel[] = {
 
 - (BOOL) isEqualTo: (FDDisplayMode*) rhs
 {
-    return ([self width] == [rhs width]) &&
-           ([self height] == [rhs height]) &&
-           ([self bitsPerPixel] == [rhs bitsPerPixel]) &&
-           ([self isStretched] == [rhs isStretched]) &&
-           ([self refreshRate] == [rhs refreshRate]);
+    return (self.width == rhs.width) &&
+           (self.height == rhs.height) &&
+           (self.bitsPerPixel == rhs.bitsPerPixel) &&
+           (self.stretched == rhs.stretched) &&
+           (self.refreshRate == rhs.refreshRate);
 }
 
 //----------------------------------------------------------------------------------------------------------------------------
 
 - (NSComparisonResult) compare: (FDDisplayMode*) rhs
 {
-	const NSUInteger    lhsArea		= [self width] * [self height];
-	const NSUInteger    rhsArea     = [rhs width] * [rhs height];
+	const NSUInteger    lhsArea		= self.width * self.height;
+	const NSUInteger    rhsArea     = rhs.width * rhs.height;
 	NSComparisonResult  result		= NSOrderedDescending;
 	
 	if (lhsArea < rhsArea)
@@ -203,11 +203,11 @@ const PixelEncodingToBitsPerPixel   skPixelEncodingToBitsPerPixel[] = {
 	}
     else if (lhsArea == rhsArea)
     {
-        if ([self refreshRate] < [rhs refreshRate])
+        if (self.refreshRate < rhs.refreshRate)
         {
             result = NSOrderedAscending;    
         }
-        else if (([self isStretched] == NO) && ([rhs isStretched] == YES))
+        else if ((self.stretched == NO) && (rhs.stretched == YES))
         {
             result = NSOrderedAscending;
         }

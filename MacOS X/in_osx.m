@@ -32,14 +32,14 @@
 
 //----------------------------------------------------------------------------------------------------------------------------
 
-typedef enum
+typedef NS_ENUM(unsigned int, in_axismap_t)
 {
     eAxisNone,
     eAxisForward,
     eAxisSide,
     eAxisTurn,
     eAxisLook
-} in_axismap_t;
+};
 
 //----------------------------------------------------------------------------------------------------------------------------
 
@@ -144,7 +144,7 @@ void 	IN_Init (void)
     
     if (sharedInput != nil)
     {
-        NSArray* devices = [NSArray arrayWithObjects: FDHIDDeviceGamePad, FDHIDDeviceKeyboard, FDHIDDeviceMouse, nil];
+        NSArray* devices = @[FDHIDDeviceGamePad, FDHIDDeviceKeyboard, FDHIDDeviceMouse];
         
         [sharedInput setDeviceFilter: devices];
     }
@@ -160,9 +160,9 @@ void 	IN_Shutdown (void)
 {
     for (FDHIDDevice* device in [[FDHIDManager sharedHIDManager] devices])
     {
-        if ([device hasActuator])
+        if (device.hasActuator)
         {
-            [[device actuator] stop];
+            [device.actuator stop];
         }
     }
     
@@ -181,7 +181,7 @@ void	IN_MouseMove (usercmd_t *cmd)
 {
     in_mousepos_t   mousePos;
 
-    if (((gVidDisplayFullscreen == NO) && (_windowed_mouse.value == 0.0f)) || ([gVidWindow isMiniaturized] == YES))
+    if (((gVidDisplayFullscreen == NO) && (_windowed_mouse.value == 0.0f)) || (gVidWindow.miniaturized == YES))
     {
         return;
     }
@@ -369,10 +369,10 @@ void    IN_Damage (float duration)
         {
             for (FDHIDDevice* device in [[FDHIDManager sharedHIDManager] devices])
             {
-                if ([device hasActuator])
+                if (device.hasActuator)
                 {
-                    [[device actuator] setDuration: duration];
-                    [[device actuator] start];
+                    device.actuator.duration = duration;
+                    [device.actuator start];
                 }
             }
         }
@@ -389,9 +389,9 @@ void    IN_UpdateActuators ()
     {
         for (FDHIDDevice* device in [[FDHIDManager sharedHIDManager] devices])
         {
-            if ([device hasActuator])
+            if (device.hasActuator)
             {
-                [[device actuator] stop];
+                [device.actuator stop];
             }
         }
         

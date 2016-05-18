@@ -25,7 +25,7 @@ typedef NSUInteger (*FDAudioBufferCallback) (void* pDst, NSUInteger numBytes, vo
                 bitsPerChannel: (NSUInteger) bitsPerChannel
                       channels: (NSUInteger) channels
                       callback: (FDAudioBufferCallback) pCallback
-                       context: (void*) pContext;
+                       context: (void*) pContext NS_DESIGNATED_INITIALIZER;
 
 @property float volume;
 

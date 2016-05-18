@@ -36,7 +36,7 @@ static NSString*    sQSettingsNewGameToolbarItem = @"Quake Start ToolbarItem";
 
 @interface QSettingsWindow ()
 
-- (NSString*) windowNibName;
+@property (readonly, copy) NSString *windowNibName;
 - (void) awakeFromNib;
 - (BOOL) validateToolbarItem: (NSToolbarItem *) theItem;
 - (NSToolbarItem *) toolbar: (NSToolbar *) theToolbar
@@ -78,36 +78,36 @@ static NSString*    sQSettingsNewGameToolbarItem = @"Quake Start ToolbarItem";
                                                 [[[QArgumentsPanel alloc] init] autorelease],
                                                 nil];
     
-    mEmptyView      = [[[self window] contentView] retain];
+    mEmptyView      = [self.window.contentView retain];
     mToolbarItems   = [[NSMutableDictionary dictionary] retain];
   
     for (QSettingsPanel* panel in mPanels)
     {
         [panel setDelegate: self];
-        [mToolbarItems setObject: [panel toolbarItem] forKey: [panel toolbarIdentifier]];
+        mToolbarItems[[panel toolbarIdentifier]] = [panel toolbarItem];
     }
 
     NSToolbarItem* item = [[[NSToolbarItem alloc] initWithItemIdentifier: sQSettingsNewGameToolbarItem] autorelease];
     
-    [item setLabel: @"Play"];
-    [item setPaletteLabel: @"Play"];
-    [item setToolTip: @"Start the game."];
-    [item setTarget: self];
-    [item setImage: [NSImage imageNamed: @"Start"]];
-    [item setAction: @selector (newGame:)];
+    item.label = @"Play";
+    item.paletteLabel = @"Play";
+    item.toolTip = @"Start the game.";
+    item.target = self;
+    item.image = [NSImage imageNamed: @"Start"];
+    item.action = @selector (newGame:);
     
-    [mToolbarItems setObject: item forKey: sQSettingsNewGameToolbarItem];
+    mToolbarItems[sQSettingsNewGameToolbarItem] = item;
     
     NSToolbar*  toolbar = [[[NSToolbar alloc] initWithIdentifier: @"Quake Toolbar"] autorelease];
     
-    [toolbar setDelegate: self];    
+    toolbar.delegate = self;    
     [toolbar setAllowsUserCustomization: NO];
     [toolbar setAutosavesConfiguration: NO];
-    [toolbar setDisplayMode: NSToolbarDisplayModeIconAndLabel];
+    toolbar.displayMode = NSToolbarDisplayModeIconAndLabel;
     
-    [[self window] setToolbar: toolbar];
-    [self showPanel: [mPanels objectAtIndex: 0]];
-    [[self window] center];
+    self.window.toolbar = toolbar;
+    [self showPanel: mPanels[0]];
+    [self.window center];
 }
 
 //----------------------------------------------------------------------------------------------------------------------------
@@ -127,7 +127,7 @@ static NSString*    sQSettingsNewGameToolbarItem = @"Quake Start ToolbarItem";
 {
     FD_UNUSED (toolbar, flag);
     
-    return [[[mToolbarItems objectForKey: identifier] copy] autorelease];
+    return [[mToolbarItems[identifier] copy] autorelease];
 }
 
 //----------------------------------------------------------------------------------------------------------------------------
@@ -136,7 +136,7 @@ static NSString*    sQSettingsNewGameToolbarItem = @"Quake Start ToolbarItem";
 {
     FD_UNUSED (toolbar);
     
-    NSMutableArray* identifiers = [[NSMutableArray alloc] initWithCapacity: [mPanels count] + 2];
+    NSMutableArray* identifiers = [[NSMutableArray alloc] initWithCapacity: mPanels.count + 2];
     
     for (QSettingsPanel* panel in mPanels)
     {
@@ -160,33 +160,33 @@ static NSString*    sQSettingsNewGameToolbarItem = @"Quake Start ToolbarItem";
 
 - (void) showPanel: (id) panel
 {
-    NSString*   appName = [[NSRunningApplication currentApplication] localizedName];
-    NSWindow*   window  = [self window];
+    NSString*   appName = [NSRunningApplication currentApplication].localizedName;
+    NSWindow*   window  = self.window;
     NSView*     view    = [panel view];
     
-    if (view != nil && view != [[self window] contentView])
+    if (view != nil && view != self.window.contentView)
     {
-        NSRect  windowFrame = [NSWindow contentRectForFrameRect: [window frame] styleMask:[window styleMask]];
-        NSSize  newSize     = [view frame].size;
+        NSRect  windowFrame = [NSWindow contentRectForFrameRect: window.frame styleMask:window.styleMask];
+        NSSize  newSize     = view.frame.size;
         
-        if ([[window toolbar] isVisible])
+        if (window.toolbar.visible)
         {
-            const float toolbarHeight = NSHeight (windowFrame) - NSHeight ([[window contentView] frame]);
+            const float toolbarHeight = NSHeight (windowFrame) - NSHeight (window.contentView.frame);
             
             newSize.height += toolbarHeight;
         }
         
-        [mEmptyView setFrame: windowFrame];
-        [window setContentView: mEmptyView];
-        [window setTitle: [NSString stringWithFormat: @"%@ (%@)", appName, [panel title]]];
+        mEmptyView.frame = windowFrame;
+        window.contentView = mEmptyView;
+        window.title = [NSString stringWithFormat: @"%@ (%@)", appName, [panel title]];
         
         windowFrame.origin.y    += NSHeight (windowFrame) - newSize.height;
         windowFrame.size         = newSize;
         
-        windowFrame = [NSWindow frameRectForContentRect: windowFrame styleMask: [window styleMask]];
+        windowFrame = [NSWindow frameRectForContentRect: windowFrame styleMask: window.styleMask];
         
-        [window setFrame: windowFrame display: YES animate: [window isVisible]];
-        [window setContentView: view];
+        [window setFrame: windowFrame display: YES animate: window.visible];
+        window.contentView = view;
     }
 }
 

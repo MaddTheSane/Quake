@@ -40,7 +40,7 @@ static FDPreferences*   sFDPreferencesInstance  = nil;
 
 //----------------------------------------------------------------------------------------------------------------------------
 
-- (id) init
+- (instancetype) init
 {
     self = [self initSharedPreferences];
     
@@ -55,7 +55,7 @@ static FDPreferences*   sFDPreferencesInstance  = nil;
 
 //----------------------------------------------------------------------------------------------------------------------------
 
-- (id) initSharedPreferences
+- (instancetype) initSharedPreferences
 {
     self = [super init];
     
@@ -82,11 +82,11 @@ static FDPreferences*   sFDPreferencesInstance  = nil;
     }
     else if ([object isKindOfClass: [NSPopUpButton class]] == YES)
     {
-        serializable = [self serializableFromObject: [[object selectedItem] representedObject]];
+        serializable = [self serializableFromObject: [object selectedItem].representedObject];
         
         if (serializable == nil)
         {
-            serializable = [NSNumber numberWithLong: [object selectedTag]];
+            serializable = @([object selectedTag]);
         }
     }
     else if ([object isKindOfClass: [NSButton class]] == YES)
@@ -124,7 +124,7 @@ static FDPreferences*   sFDPreferencesInstance  = nil;
 
 - (void) registerDefaultObject: (NSObject*) object forKey: (NSString*) key
 {
-    [self registerDefaults: [NSDictionary dictionaryWithObject: [self serializableFromObject: object] forKey: key]];
+    [self registerDefaults: @{key: [self serializableFromObject: object]}];
 }
 
 //----------------------------------------------------------------------------------------------------------------------------

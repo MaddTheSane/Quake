@@ -52,13 +52,13 @@
 
 //----------------------------------------------------------------------------------------------------------------------------
 
-typedef enum 		{
+typedef NS_ENUM(unsigned int, vid_blitmode_t) 		{
                                 VID_BLIT_2X1 = 0,
                                 VID_BLIT_1X1,
                                 VID_BLIT_1X2,
                                 VID_BLIT_2X2,
                                 VID_BLIT_WIN
-                        } 	vid_blitmode_t;
+                        };
 
 typedef struct		{
                                 UInt16			Width;
@@ -232,7 +232,7 @@ void	VID_RenderTexture (void)
         const GLsizei   height      = gVidGraphMode.OffHeight;
         const GLfloat   s           = gVidGraphMode.OffWidth / gVidTextureSize.width;
         const GLfloat   t           = gVidGraphMode.OffHeight / gVidTextureSize.height;        
-        const NSRect    contentRect = [[gVidWindow contentView] frame];
+        const NSRect    contentRect = gVidWindow.contentView.frame;
         
         [[gVidWindow openGLContext] makeCurrentContext];
 
@@ -363,7 +363,7 @@ BOOL	VID_HideFullscreen (BOOL hide)
         }
         
         [gVidWindow orderOut: nil];
-        [gVidDisplay setDisplayMode: [gVidDisplay originalMode]];
+        [gVidDisplay setDisplayMode: gVidDisplay.originalMode];
         
         if (gVidFadeAllDisplays == YES)
         {
@@ -450,13 +450,13 @@ BOOL	VID_GetModeList (void)
     
     for (FDDisplayMode* displayMode in [gVidDisplay displayModes])
     {
-        if ([displayMode bitsPerPixel] == 32)
+        if (displayMode.bitsPerPixel == 32)
         {
             [filteredModes addObject: displayMode];
         }
     }
     
-    gVidNumModes = VID_NUM_WINDOWED_MODES + [filteredModes count];
+    gVidNumModes = VID_NUM_WINDOWED_MODES + filteredModes.count;
 
     if (gVidNumModes == 0)
     {
@@ -483,8 +483,8 @@ BOOL	VID_GetModeList (void)
     
     for (FDDisplayMode* displayMode in filteredModes)
     {
-        const NSUInteger width  = [displayMode width];
-        const NSUInteger height = [displayMode height];
+        const NSUInteger width  = displayMode.width;
+        const NSUInteger height = displayMode.height;
         
         if (i < gVidNumModes)
         {
@@ -784,7 +784,7 @@ void	VID_SetOriginalMode (float fadeDuration)
     
     if ([FDDisplay isAnyDisplayCaptured] == YES)
     {
-        [gVidDisplay setDisplayMode: [gVidDisplay originalMode]];
+        [gVidDisplay setDisplayMode: gVidDisplay.originalMode];
         
         if (gVidFadeAllDisplays == YES)
         {
@@ -819,9 +819,9 @@ void VID_SetWait (UInt32 state)
 {
     const BOOL  enable  = (state != 0);
     
-    [gVidWindow setVsync: enable];
+    gVidWindow.vsync = enable;
 
-    if (state == [gVidWindow vsync])
+    if (state == gVidWindow.vsync)
     {
         if (enable == YES)
         {
@@ -874,7 +874,7 @@ int	VID_SetMode (int mode, unsigned char* pPalette)
         {
             [FDDisplay fadeOutAllDisplays: VID_FADE_DURATION];
             
-            if ([gVidDisplay isCaptured] == NO)
+            if (gVidDisplay.captured == NO)
             {
                 [FDDisplay captureAllDisplays];
             }
@@ -883,7 +883,7 @@ int	VID_SetMode (int mode, unsigned char* pPalette)
         {
             [gVidDisplay fadeOutDisplay: VID_FADE_DURATION];
             
-            if ([gVidDisplay isCaptured] == NO)
+            if (gVidDisplay.captured == NO)
             {
                 [gVidDisplay captureDisplay];
             }
@@ -920,7 +920,7 @@ int	VID_SetMode (int mode, unsigned char* pPalette)
         
         gVidWindow = [[FDWindow alloc] initWithContentRect: contentRect];
         
-        [gVidWindow setTitle: [[NSRunningApplication currentApplication] localizedName]];
+        gVidWindow.title = [NSRunningApplication currentApplication].localizedName;
         [gVidWindow setResizeHandler: &VID_ResizeHandler forContext: nil];
         [gVidWindow centerForDisplay: gVidDisplay];
         [gVidWindow makeKeyAndOrderFront: nil];
@@ -1044,7 +1044,7 @@ void	VID_SetWindowTitle (char* pTitle)
 
 qboolean VID_Screenshot (SInt8* pFilename, void* pBitmap, UInt32 width, UInt32 height, UInt32 rowbytes)
 {
-    NSString *      pngName     = [NSString stringWithCString: (const char*) pFilename encoding: NSASCIIStringEncoding];
+    NSString *      pngName     = @((const char*) pFilename);
     const NSSize	bitmapSize	= NSMakeSize ((float) width, (float) height);
     
     return ([FDScreenshot writeToPNG: pngName fromRGB24: pBitmap withSize: bitmapSize rowbytes: rowbytes]);
@@ -1103,9 +1103,9 @@ void	VID_Update (vrect_t *theRects)
             VID_SetMode (vid_mode.value, NULL);
         }
         
-        if (cursorIsVisible != [gVidWindow isCursorVisible])
+        if (cursorIsVisible != gVidWindow.cursorVisible)
         {
-            [gVidWindow setCursorVisible: cursorIsVisible];
+            gVidWindow.cursorVisible = cursorIsVisible;
         }
 
         if (vid_wait.value != gVideoWait)

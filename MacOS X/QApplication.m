@@ -25,18 +25,18 @@
     
     if ([arguments isEditable] == YES)
     {
-        NSDictionary*   args = [command evaluatedArguments];
+        NSDictionary*   args = command.evaluatedArguments;
     
         if (args != nil)
         {
-            NSString*   params = [args objectForKey: @"QuakeParameters"];
+            NSString*   params = args[@"QuakeParameters"];
             
             if (params == nil)
             {
                 params = [NSString string];
             }
 
-            [[QArguments sharedArguments] setArgumentsFromString: [args objectForKey: @"QuakeParameters"]];
+            [[QArguments sharedArguments] setArgumentsFromString: args[@"QuakeParameters"]];
         }
         
         [[QArguments sharedArguments] setEditable: NO];
@@ -47,15 +47,15 @@
 
 - (void) handleConsoleCommand: (NSScriptCommand*) command
 {
-    NSDictionary*   args = [command evaluatedArguments];
+    NSDictionary*   args = command.evaluatedArguments;
 
     if (args != nil)
     {
-        NSString*   commandList= [args objectForKey: @"QuakeCommandlist"];
+        NSString*   commandList= args[@"QuakeCommandlist"];
         
         if (commandList != nil && [commandList isEqualToString:@""] == NO)
         {
-            QController*    controller = [self delegate];
+            QController*    controller = self.delegate;
             
             [controller requestCommand: commandList];
         }

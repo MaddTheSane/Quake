@@ -36,7 +36,7 @@ static const DWORD  sFDHIDActuatorDuration = 2 * FF_SECONDS / 100;
 
 @implementation FDHIDActuator
 
-- (id) init
+- (instancetype) init
 {
     self = [super init];
     
@@ -50,7 +50,7 @@ static const DWORD  sFDHIDActuatorDuration = 2 * FF_SECONDS / 100;
 
 //----------------------------------------------------------------------------------------------------------------------------
 
-- (id) initWithDevice: (FDHIDDevice*) device
+- (instancetype) initWithDevice: (FDHIDDevice*) device
 {
     self = [super init];
     
@@ -59,7 +59,7 @@ static const DWORD  sFDHIDActuatorDuration = 2 * FF_SECONDS / 100;
         FFCAPABILITIES          features        = { 0 };
         UInt32                  autocenter      = 0;
         UInt32                  gain            = FF_FFNOMINALMAX;
-        IOHIDDeviceRef          pDevice         = [device iohidDeviceRef];
+        IOHIDDeviceRef          pDevice         = device.iohidDeviceRef;
         CFMutableDictionaryRef  matchingDict    = nil;
         CFTypeRef               cfType          = nil;
         bool                    success         = (pDevice != nil);
@@ -183,13 +183,13 @@ static const DWORD  sFDHIDActuatorDuration = 2 * FF_SECONDS / 100;
         
         if (success)
         {
-            FDLog (@"%@ has an actuator!\n", [device productName]);
+            FDLog (@"%@ has an actuator!\n", device.productName);
         }
         
         if (!success)
         {
             [self release];
-            self = nil;
+            return nil;
         }
     }
     

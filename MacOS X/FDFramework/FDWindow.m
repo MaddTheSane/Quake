@@ -26,7 +26,7 @@
 
 - (void) setResizeHandler: (FDResizeHandler) pResizeHandler forContext: (void*) pContext;
 - (void) setOpenGLContext: (NSOpenGLContext*) openGLContext;
-- (NSBitmapImageRep*) bitmapRepresentation;
+@property (readonly, copy) NSBitmapImageRep *bitmapRepresentation;
 - (void) drawGrowbox;
 
 @end
@@ -63,28 +63,28 @@
 }
 @synthesize cursorVisible = mIsCursorVisible;
 
-- (id) initForDisplay: (FDDisplay*) display samples: (NSUInteger) samples
+- (instancetype) initForDisplay: (FDDisplay*) display samples: (NSUInteger) samples
 {
-    self = [super initWithContentRect: [display frame]
+    self = [super initWithContentRect: display.frame
                             styleMask: NSBorderlessWindowMask
                               backing: NSBackingStoreBuffered
                                 defer: NO];
     
     if (self != nil)
     {
-        const NSUInteger    bitsPerPixel    = [[display displayMode] bitsPerPixel];
-        const NSRect        frameRect       = [[self contentView] frame];
+        const NSUInteger    bitsPerPixel    = display.displayMode.bitsPerPixel;
+        const NSRect        frameRect       = self.contentView.frame;
         NSOpenGLContext*    glContext       = [self createGLContextWithBitsPerPixel: bitsPerPixel samples: samples];
         
         mView       = [[FDView alloc] initWithFrame: frameRect];
         mDisplay    = [display retain];
         
         [self initCursor];
-        [self setContentView: mView];
-        [self setLevel: CGShieldingWindowLevel()];
+        self.contentView = mView;
+        self.level = CGShieldingWindowLevel();
         [self setOpaque: YES];
         [self setHidesOnDeactivate: YES];
-        [self setBackgroundColor: [NSColor blackColor]];
+        self.backgroundColor = [NSColor blackColor];
         [self setAcceptsMouseMovedEvents: YES];
         [self disableScreenUpdatesUntilFlush];
         [self setCursorVisible: NO];
@@ -100,21 +100,21 @@
 
 //----------------------------------------------------------------------------------------------------------------------------
 
-- (id) initForDisplay: (FDDisplay*) display
+- (instancetype) initForDisplay: (FDDisplay*) display
 {
     return [self initForDisplay: display samples: 0];
 }
 
 //----------------------------------------------------------------------------------------------------------------------------
 
-- (id) initWithContentRect: (NSRect) rect
+- (instancetype) initWithContentRect: (NSRect) rect
 {
     return [self initWithContentRect: rect samples: 0];
 }
 
 //----------------------------------------------------------------------------------------------------------------------------
 
-- (id) initWithContentRect: (NSRect) rect samples: (NSUInteger) samples
+- (instancetype) initWithContentRect: (NSRect) rect samples: (NSUInteger) samples
 {
     self = [super initWithContentRect: rect
                             styleMask: NSTitledWindowMask |
@@ -126,19 +126,19 @@
     
     if (self != nil)
     {
-        const NSUInteger    bitsPerPixel    = NSBitsPerPixelFromDepth ([[self screen] depth]);
+        const NSUInteger    bitsPerPixel    = NSBitsPerPixelFromDepth (self.screen.depth);
         NSOpenGLContext*    glContext       = [self createGLContextWithBitsPerPixel: bitsPerPixel samples: samples];
         
         mView = [[FDView alloc] initWithFrame: rect];
 
         [self initCursor];
         [self setDocumentEdited: YES];
-        [self setMinSize: rect.size];
-        [self setContentAspectRatio: rect.size];
+        self.minSize = rect.size;
+        self.contentAspectRatio = rect.size;
         [self setShowsResizeIndicator: NO];
         [self setAcceptsMouseMovedEvents: YES];
-        [self setBackgroundColor: [NSColor blackColor]];
-        [self setContentView: mView];
+        self.backgroundColor = [NSColor blackColor];
+        self.contentView = mView;
         [self useOptimizedDrawing: NO];
         [self makeFirstResponder: mView];
         
@@ -209,8 +209,8 @@
 
 - (void) centerForDisplay: (FDDisplay*) display
 {
-    const NSRect    displayRect = [display frame];
-    const NSRect    windowRect  = [self frame];
+    const NSRect    displayRect = display.frame;
+    const NSRect    windowRect  = self.frame;
     NSPoint         origin;
     
     origin.x = NSMidX (displayRect) - NSWidth (windowRect) * 0.5f;
@@ -248,16 +248,16 @@
     
     if (isVisible == YES)
     {
-        [mView setCursor: [NSCursor arrowCursor]];
+        mView.cursor = [NSCursor arrowCursor];
     }
     else
     {
-        const NSRect    nsRect      = [self frame];
+        const NSRect    nsRect      = self.frame;
         const CGRect    cgRect      = CGDisplayBounds (CGMainDisplayID ());
         const NSPoint   nsCenter    = NSMakePoint (NSMidX (nsRect), NSMidY (nsRect));
         const CGPoint   cgCenter    = CGPointMake (nsCenter.x, cgRect.size.height - nsCenter.y);
         
-        [mView setCursor: mInvisibleCursor];
+        mView.cursor = mInvisibleCursor;
         
         CGWarpMouseCursorPosition (cgCenter);
     }
@@ -276,14 +276,14 @@
 
 - (void) setVsync: (BOOL) enabled
 {
-    [mView setVsync: enabled];
+    mView.vsync = enabled;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------
 
 - (BOOL) vsync
 {
-    return [mView vsync];
+    return mView.vsync;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------
@@ -297,18 +297,18 @@
 
 - (void) endFrame
 {
-    if ([self isMiniaturized] == YES)
+    if (self.miniaturized == YES)
     {
         [self drawMiniImage];
     }
     else
     {
-        if ([self isFullscreen] == NO)
+        if (self.fullscreen == NO)
         {
             [mView drawGrowbox];
         }
         
-        CGLFlushDrawable ([[self openGLContext] CGLContextObj]);
+        CGLFlushDrawable ([self openGLContext].CGLContextObj);
     }
 }
 
@@ -344,7 +344,7 @@
 
 - (BOOL) windowShouldClose: (id) sender
 {
-    const BOOL  shouldClose = [self isFullscreen];
+    const BOOL  shouldClose = self.fullscreen;
     
     if (shouldClose == NO)
     {
@@ -460,7 +460,7 @@
 
 - (void) drawMiniImage
 {
-    if ([self isMiniaturized] == YES)
+    if (self.miniaturized == YES)
     {
         if (mView != nil)
         {
@@ -468,8 +468,8 @@
             
             if (bitmap != nil)
             {
-                const NSSize size           = [mMiniImage size];
-                const NSRect contentRect    = [mView frame];
+                const NSSize size           = mMiniImage.size;
+                const NSRect contentRect    = mView.frame;
                 const float  aspect         = NSWidth (contentRect) / NSHeight (contentRect);
                 const NSRect clearRect      = NSMakeRect( 0.0, 0.0, size.width, size.height );
                 NSRect       miniImageRect  = clearRect;
@@ -491,7 +491,7 @@
                 [bitmap drawInRect: miniImageRect];
                 [mMiniImage unlockFocus];
                 
-                [self setMiniwindowImage: mMiniImage];
+                self.miniwindowImage = mMiniImage;
             }
         }
     }
@@ -521,7 +521,7 @@
 
 - (void) screenParametersDidChange: (NSNotification*) notification
 {
-    const NSRect frameRect = [self constrainFrameRect: [self frame] toScreen: [self screen]];
+    const NSRect frameRect = [self constrainFrameRect: self.frame toScreen: self.screen];
     
     [self setFrame: frameRect display: YES];
     [self center];

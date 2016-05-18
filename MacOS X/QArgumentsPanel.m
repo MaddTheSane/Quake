@@ -62,7 +62,7 @@
     mRemoveButton.enabled = isEditable;
     
     [self tableViewSelectionDidChange: nil];
-    [self setTitle: @"CLI"];
+    self.title = @"CLI";
 }
 
 //----------------------------------------------------------------------------------------------------------------------------
@@ -71,11 +71,11 @@
 {
     if (mArguments != nil)
     {
-        [[QArguments sharedArguments]  setArguments: [mArguments arrangedObjects]];
+        [[QArguments sharedArguments]  setArguments: mArguments.arrangedObjects];
 
-        if ([mTableView isEnabled] == YES)
+        if (mTableView.enabled == YES)
         {
-            [[FDPreferences sharedPrefs] setObject: [mArguments arrangedObjects] forKey: QUAKE_PREFS_KEY_ARGUMENTS];
+            [[FDPreferences sharedPrefs] setObject: mArguments.arrangedObjects forKey: QUAKE_PREFS_KEY_ARGUMENTS];
         }
     }
     
@@ -95,10 +95,10 @@
 {
     NSToolbarItem* item = [super toolbarItem];
     
-    [item setLabel: @"CLI"];
-    [item setPaletteLabel: @"CLI"];
-    [item setToolTip: @"Set command-line parameters."];
-    [item setImage: [NSImage imageNamed: @"Arguments"]];
+    item.label = @"CLI";
+    item.paletteLabel = @"CLI";
+    item.toolTip = @"Set command-line parameters.";
+    item.image = [NSImage imageNamed: @"Arguments"];
     
     return item;
 }
@@ -107,7 +107,7 @@
 
 - (NSMutableDictionary*) argumentWithState: (NSCellStateValue) state value: (NSString*) value
 {
-    NSNumber*   enabled = [NSNumber numberWithBool: (state == NSOnState)];
+    NSNumber*   enabled = @( (BOOL)(state == NSOnState));
     
     return [NSMutableDictionary dictionaryWithObjectsAndKeys: enabled, @"state", value, @"value", nil];
 }
@@ -116,17 +116,17 @@
 
 - (void) tableViewSelectionDidChange: (NSNotification*) notification
 {
-    [mRemoveButton setEnabled: ([mTableView selectedRow] != -1)];
+    mRemoveButton.enabled = (mTableView.selectedRow != -1);
 }
 
 //----------------------------------------------------------------------------------------------------------------------------
 
 - (IBAction) insertArgument: (id) sender
 {
-    const NSUInteger        idx = [mArguments selectionIndex];
+    const NSUInteger        idx = mArguments.selectionIndex;
 	NSMutableDictionary*    arg = [self argumentWithState: NSOnState value: [NSString string]];
 
-    if ([mArgumentEdit edit: arg modalForWindow: [[self view] window]] == NSOKButton)
+    if ([mArgumentEdit edit: arg modalForWindow: self.view.window] == NSOKButton)
     {
         if (idx == NSNotFound)
         {

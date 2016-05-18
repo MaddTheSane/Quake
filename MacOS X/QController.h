@@ -31,7 +31,7 @@
 }
 
 + (void) initialize;
-- (id) init;
+- (instancetype) init;
 - (void) dealloc;
 
 - (BOOL) application: (NSApplication *) sender openFile: (NSString *) filePath;
@@ -42,15 +42,14 @@
 - (void) applicationWillHide: (NSNotification *) notification;
 - (void) applicationWillUnhide: (NSNotification *) notification;
 
-- (void) setHostInitialized: (BOOL) state;
-- (BOOL) hostInitialized;
+@property BOOL hostInitialized;
 
 - (BOOL) validateIdDirectory: (NSString*) basePath;
 - (void) selectIdDirectory;
 
 - (void) requestCommand: (NSString *) theCommand;
 
-- (NSString *) mediaFolder;
+@property (readonly, copy) NSString *mediaFolder;
 
 - (void) connectToServer: (NSPasteboard*) pasteboard userData: (NSString*) data error: (NSString**) error;
 

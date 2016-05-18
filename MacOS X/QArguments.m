@@ -20,7 +20,7 @@ static QArguments*      sQArgumentsShared       = nil;
 
 @interface QArguments ()
 
-- (id) initShared;
+- (instancetype) initShared;
 
 - (NSArray*) tokenizeString: (NSString*) string;
 - (NSMutableArray*) tokenizeArguments: (NSArray*) arguments fromIndex: (NSInteger) startIndex;
@@ -31,6 +31,7 @@ static QArguments*      sQArgumentsShared       = nil;
 //----------------------------------------------------------------------------------------------------------------------------
 
 @implementation QArguments
+@synthesize editable = mIsEditable;
 
 + (QArguments*) sharedArguments
 {
@@ -41,7 +42,7 @@ static QArguments*      sQArgumentsShared       = nil;
 
 //----------------------------------------------------------------------------------------------------------------------------
 
-- (id) initShared
+- (instancetype) initShared
 {
     self = [super init];
            
@@ -99,23 +100,23 @@ static QArguments*      sQArgumentsShared       = nil;
     NSArray*        split   = [string componentsSeparatedByCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
     NSMutableArray* tokens  = [[[NSMutableArray alloc] init] autorelease];
     
-    for (NSUInteger i = 0; i < [split count]; ++i)
+    for (NSUInteger i = 0; i < split.count; ++i)
     {
-        NSString* token = [split objectAtIndex: i];
+        NSString* token = split[i];
         
         if ([token hasPrefix: @"\""] ==YES)
         {
             token = [NSString string];
             
-            for (; i < [split count]; ++i)
+            for (; i < split.count; ++i)
             {
-                if ([token length])
+                if (token.length)
                 {
-                    token = [NSString stringWithFormat: @"%@ %@", token, [split objectAtIndex: i]];
+                    token = [NSString stringWithFormat: @"%@ %@", token, split[i]];
                 }
                 else
                 {
-                    token = [split objectAtIndex: i];
+                    token = split[i];
                 }
                 
                 if ([token hasSuffix: @"\""] ==YES)
@@ -138,28 +139,28 @@ static QArguments*      sQArgumentsShared       = nil;
 - (NSMutableArray*) tokenizeArguments: (NSArray*) arguments fromIndex: (NSInteger) startIndex
 {
     NSMutableArray* dicts       = [[[NSMutableArray alloc] init] autorelease];
-    NSNumber*       onState     = [NSNumber numberWithBool: YES];
+    NSNumber*       onState     = @YES;
     
-    for (NSUInteger i = startIndex; i < [arguments count]; ++i)
+    for (NSUInteger i = startIndex; i < arguments.count; ++i)
     {
-        NSString*   arg = [arguments objectAtIndex: i];
+        NSString*   arg = arguments[i];
         
         if ([arg rangeOfCharacterFromSet: [NSCharacterSet characterSetWithCharactersInString: @"\""]].location != NSNotFound)
         {
             arg = [NSString stringWithFormat: @"\"%@\"", arg];
         }
 
-        if (([arg length] > 0) && ([arg characterAtIndex: 0] == '-'))
+        if ((arg.length > 0) && ([arg characterAtIndex: 0] == '-'))
         {
             [dicts addObject: [NSMutableDictionary dictionaryWithObjectsAndKeys: onState, @"state", arg, @"value", nil]];
         }
-        else if ([dicts count] > 0)
+        else if (dicts.count > 0)
         {
-            NSUInteger              index   = [dicts count] - 1;
-            NSMutableDictionary*    dict    = [dicts objectAtIndex: index];
+            NSUInteger              index   = dicts.count - 1;
+            NSMutableDictionary*    dict    = dicts[index];
             
-            [dict setObject: [NSString stringWithFormat: @"%@ %@", [dict objectForKey: @"value"], arg] forKey: @"value"];
-            [dicts replaceObjectAtIndex: index withObject: dict]; 
+            dict[@"value"] = [NSString stringWithFormat: @"%@ %@", dict[@"value"], arg];
+            dicts[index] = dict; 
         }
     }
     
@@ -187,7 +188,7 @@ static QArguments*      sQArgumentsShared       = nil;
 
 - (void) setArgumentsFromProccessInfo
 {
-    NSArray*        arguments = [[NSProcessInfo processInfo] arguments];
+    NSArray*        arguments = [NSProcessInfo processInfo].arguments;
     
     [self setArgumentsFromArray: arguments];
 }
@@ -197,7 +198,7 @@ static QArguments*      sQArgumentsShared       = nil;
 - (BOOL) validateGame: (NSString*) gamePath withBasePath: (NSString*) basePath
 {
     BOOL        isDirectory = NO;
-    NSString*   path        = [[basePath stringByDeletingLastPathComponent] stringByAppendingPathComponent: gamePath];
+    NSString*   path        = [basePath.stringByDeletingLastPathComponent stringByAppendingPathComponent: gamePath];
     BOOL        pathExists  = [[NSFileManager defaultManager] fileExistsAtPath: path isDirectory: &isDirectory];
     BOOL        isValid     = ((pathExists == YES) && (isDirectory == YES));
     
@@ -226,12 +227,12 @@ static QArguments*      sQArgumentsShared       = nil;
     
     for (NSDictionary* dict in mArguments)
     {
-        NSArray*    arguments       = [self tokenizeString: [dict objectForKey: @"value"]];
-        NSUInteger  numArguments    = [arguments count];
+        NSArray*    arguments       = [self tokenizeString: dict[@"value"]];
+        NSUInteger  numArguments    = arguments.count;
         
         for (NSUInteger i = 0; i < numArguments; ++i)
         {
-            NSString* argument = [arguments objectAtIndex: i];
+            NSString* argument = arguments[i];
             NSString* gamePath = nil;
             
             if ([argument isEqualToString: @"-game"] == YES)
@@ -240,7 +241,7 @@ static QArguments*      sQArgumentsShared       = nil;
                 
                 if (isValid)
                 {
-                    gamePath = [arguments objectAtIndex: i];
+                    gamePath = arguments[i];
                 }
             }
             else if ([argument isEqualToString: @"-hipnotic"] == YES)
@@ -276,23 +277,23 @@ static QArguments*      sQArgumentsShared       = nil;
     
     for (NSDictionary* dict in [self arguments])
     {
-        if ([[dict objectForKey: @"state"] boolValue] == YES)
+        if ([dict[@"state"] boolValue] == YES)
         {
-            [arguments addObjectsFromArray: [self tokenizeString: [dict objectForKey: @"value"]]];
+            [arguments addObjectsFromArray: [self tokenizeString: dict[@"value"]]];
         }
     }
     
     *pCount = 0;
-    ppArgs  = (char**) malloc (sizeof (char*) * [arguments count]);
+    ppArgs  = (char**) malloc (sizeof (char*) * arguments.count);
     
     if (ppArgs != NULL)
     {
         NSUInteger i = 0;
         
-        for (i = 0; i < [arguments count]; ++i)
+        for (i = 0; i < arguments.count; ++i)
         {
             char**      ppDst   = &(ppArgs[i]);
-            const char* pSrc    = [[arguments objectAtIndex: i] cStringUsingEncoding: NSASCIIStringEncoding];
+            const char* pSrc    = [arguments[i] cStringUsingEncoding: NSASCIIStringEncoding];
             
             *ppDst = (char*) malloc (strlen (pSrc) + 1);
             

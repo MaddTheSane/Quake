@@ -24,6 +24,7 @@
 //----------------------------------------------------------------------------------------------------------------------------
 
 @implementation QSettingsPanel
+@synthesize delegate = mDelegate;
 
 - (NSString*) toolbarIdentifier
 {
@@ -38,8 +39,8 @@
 {
     NSToolbarItem* item = [[[NSToolbarItem alloc] initWithItemIdentifier: [self toolbarIdentifier]] autorelease];
     
-    [item setTarget: self];
-    [item setAction: @selector (showPanel:)];
+    item.target = self;
+    item.action = @selector (showPanel:);
 
     return item;
 }
@@ -55,20 +56,6 @@
     {
         [mDelegate performSelector: @selector (showPanel:) withObject: self];
     }
-}
-
-//----------------------------------------------------------------------------------------------------------------------------
-
-- (void) setDelegate: (id) delegate
-{
-    mDelegate = delegate;
-}
-
-//----------------------------------------------------------------------------------------------------------------------------
-
-- (id) delegate
-{
-    return mDelegate;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------

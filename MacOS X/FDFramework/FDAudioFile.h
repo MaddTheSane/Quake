@@ -15,7 +15,7 @@
 
 @interface FDAudioFile : NSObject
 
-- (instancetype) initWithMixer: (FDAudioMixer*) mixer;
+- (instancetype) initWithMixer: (FDAudioMixer*) mixer NS_DESIGNATED_INITIALIZER;
 
 @property float volume;
 

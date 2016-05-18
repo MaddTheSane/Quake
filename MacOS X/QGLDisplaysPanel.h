@@ -23,11 +23,11 @@
     IBOutlet NSButton*          mFadeAllCheckBox;
 }
 
-- (NSString*) nibName;
+@property (readonly, copy) NSString *nibName;
 - (void) awakeFromNib;
 
-- (NSString*) toolbarIdentifier;
-- (NSToolbarItem*) toolbarItem;
+@property (readonly, copy) NSString *toolbarIdentifier;
+@property (readonly, copy) NSToolbarItem *toolbarItem;
 
 - (void) buildDisplayList;
 - (void) buildDisplayModeList;

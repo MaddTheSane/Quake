@@ -24,8 +24,8 @@ typedef void (*FDDebugLogHandler) (const char* pFormat, ...);
 + (FDDebug*) sharedDebug;
 + (BOOL) isDebuggerAttached;
 
-- (instancetype) init;
-- (instancetype) initWithName: (NSString*) name;
+- (instancetype) init NS_DESIGNATED_INITIALIZER;
+- (instancetype) initWithName: (NSString*) name NS_DESIGNATED_INITIALIZER;
 
 @property (nonatomic, copy) NSString *name;
 

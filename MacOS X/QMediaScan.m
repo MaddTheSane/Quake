@@ -19,8 +19,8 @@
 
 @interface QMediaScan ()
 
-- (id) init;
-- (id) initWithFolder: (NSString*) folder observer: (id) observer selector: (SEL) selector;
+- (instancetype) init;
+- (instancetype) initWithFolder: (NSString*) folder observer: (id) observer selector: (SEL) selector;
 
 - (void) scanComplete: (NSNotification*) notification;
 - (void) scanThread: (id) sender;
@@ -38,14 +38,14 @@
 
 //----------------------------------------------------------------------------------------------------------------------------
 
-- (id) init;
+- (instancetype) init;
 {
     self = [super init];
     
 	if (self != nil)
 	{
         [self release];
-        self = nil;
+        return nil;
     }
     
     return self;
@@ -53,7 +53,7 @@
 
 //----------------------------------------------------------------------------------------------------------------------------
 
-- (id) initWithFolder: (NSString*) folder observer: (id) observer selector: (SEL) selector
+- (instancetype) initWithFolder: (NSString*) folder observer: (id) observer selector: (SEL) selector
 {
     self = [super init];
     
@@ -91,15 +91,15 @@
 {
     if (mFolder != nil)
     {
-        [mTextField setStringValue: @"Scanning folder for audio files..."];
+        mTextField.stringValue = @"Scanning folder for audio files...";
     }
     else
     {
-        [mTextField setStringValue: @"Scanning AudioCDs..."];
+        mTextField.stringValue = @"Scanning AudioCDs...";
     }
     
-    [[self window] setTitle: [[NSRunningApplication currentApplication] localizedName]];
-    [[self window] center];
+    self.window.title = [NSRunningApplication currentApplication].localizedName;
+    [self.window center];
 }
 
 

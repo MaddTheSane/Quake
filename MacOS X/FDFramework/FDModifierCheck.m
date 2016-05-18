@@ -35,7 +35,7 @@
                                                           inMode: NSDefaultRunLoopMode
                                                          dequeue: YES];
         
-        modifierWasPressed = ([event modifierFlags] & modifierKeyMask) != 0;
+        modifierWasPressed = (event.modifierFlags & modifierKeyMask) != 0;
         
         if ((event == nil) || (modifierWasPressed == YES))
         {
@@ -83,7 +83,7 @@
 
 //----------------------------------------------------------------------------------------------------------------------------
 
-- (id) init
+- (instancetype) init
 {
     self = [super init];
     

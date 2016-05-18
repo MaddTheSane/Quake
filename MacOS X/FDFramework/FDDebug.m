@@ -80,7 +80,7 @@ static NSString*        sFDDebugDefaultName = @"";
     
     mName = [[NSString alloc] initWithString: name];
     
-    if ([name length])
+    if (name.length)
     {
         mLogPrefix = [[NSString alloc] initWithFormat: @"[%@] ", name];
     }
@@ -159,7 +159,7 @@ static NSString*        sFDDebugDefaultName = @"";
 
 - (void) exception: (NSException*) exception
 {
-    NSString*   reason = [exception reason];
+    NSString*   reason = exception.reason;
     
     if (reason == nil)
     {
@@ -260,13 +260,13 @@ static NSString*        sFDDebugDefaultName = @"";
 
 //----------------------------------------------------------------------------------------------------------------------------
 
-- (id) init
+- (instancetype) init
 {
     self = [super init];
     
     if (self !=  nil)
     {
-        [self setName: sFDDebugDefaultName];
+        self.name = sFDDebugDefaultName;
     }
     
     return self;
@@ -274,13 +274,13 @@ static NSString*        sFDDebugDefaultName = @"";
 
 //----------------------------------------------------------------------------------------------------------------------------
 
-- (id) initWithName: (NSString*) name
+- (instancetype) initWithName: (NSString*) name
 {
     self = [super init];
     
     if (self !=  nil)
     {
-        [self setName: name];
+        self.name = name;
     }
     
     return self;

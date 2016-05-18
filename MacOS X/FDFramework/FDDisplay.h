@@ -20,12 +20,12 @@
 
 @property (readonly) NSRect frame;
 
-- (NSString*) description;
+@property (readonly, copy) NSString *description;
 
 @property (readonly, retain) FDDisplayMode* displayMode;
 @property (readonly, retain) FDDisplayMode* originalMode;
 
-- (NSArray<FDDisplayMode*>*) displayModes;
+@property (readonly, copy) NSArray<FDDisplayMode *> *displayModes;
 
 - (BOOL) setDisplayMode: (FDDisplayMode*) displayMode;
 

@@ -24,13 +24,13 @@
     QArgumentEdit*              mArgumentEdit;
 }
 
-- (NSString*) nibName;
+@property (readonly, copy) NSString *nibName;
 - (void) awakeFromNib;
 
 - (void) synchronize;
 
-- (NSString*) toolbarIdentifier;
-- (NSToolbarItem*) toolbarItem;
+@property (readonly, copy) NSString *toolbarIdentifier;
+@property (readonly, copy) NSToolbarItem *toolbarItem;
 
 - (IBAction) insertArgument: (id) sender;
 

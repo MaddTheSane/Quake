@@ -39,7 +39,7 @@
 - (void) awakeFromNib
 {
     [self buildMenuForPath: [[FDPreferences sharedPrefs] stringForKey: QUAKE_PREFS_KEY_AUDIO_PATH]];
-    [self setTitle: @"Sound"];
+    self.title = @"Sound";
 }
 
 //----------------------------------------------------------------------------------------------------------------------------
@@ -55,10 +55,10 @@
 {
     NSToolbarItem* item = [super toolbarItem];
     
-    [item setLabel: @"Sound"];
-    [item setPaletteLabel: @"Sound"];
-    [item setToolTip: @"Change sound settings."];
-    [item setImage: [NSImage imageNamed: @"Sound"]];
+    item.label = @"Sound";
+    item.paletteLabel = @"Sound";
+    item.toolTip = @"Change sound settings.";
+    item.image = [NSImage imageNamed: @"Sound"];
     
     return item;
 }
@@ -70,7 +70,7 @@
 	NSImage	* cdImg	= [[NSWorkspace sharedWorkspace] iconForFileType:NSFileTypeForHFSTypeCode(kGenericCDROMIcon)];
     [mAudioPopup removeAllItems];
     
-    if ([path length] > 0)
+    if (path.length > 0)
     {
         BOOL        isDirectory = NO;
         const BOOL  pathExists  = [[NSFileManager defaultManager] fileExistsAtPath: path isDirectory: &isDirectory];
@@ -79,7 +79,7 @@
         {
             NSImage* icon = [[NSWorkspace sharedWorkspace] iconForFile: path];
             
-            [self addMenuItem: [path lastPathComponent] image: icon action: @selector (selectFolder:) object: path];
+            [self addMenuItem: path.lastPathComponent image: icon action: @selector (selectFolder:) object: path];
         }
         else
         {
@@ -106,19 +106,19 @@
         
         if (image != nil)
         {
-            [image setSize: NSMakeSize (16.0f, 16.0f)];
-            [menuItem setImage: image];
+            image.size = NSMakeSize (16.0f, 16.0f);
+            menuItem.image = image;
         }
         
-        [menuItem setRepresentedObject: object];        
-        [menuItem setTarget: self];
+        menuItem.representedObject = object;        
+        menuItem.target = self;
     }
     else
     {
         menuItem = [NSMenuItem separatorItem];
     }
     
-    [[mAudioPopup menu] addItem: menuItem];
+    [mAudioPopup.menu addItem: menuItem];
 }
 
 //----------------------------------------------------------------------------------------------------------------------------
@@ -146,17 +146,17 @@
     [openPanel setAllowsMultipleSelection: NO];
     [openPanel setCanChooseFiles: NO];
     [openPanel setCanChooseDirectories: YES];
-    [openPanel setAccessoryView: [mOpenPanelView retain]];
-    [openPanel setDirectoryURL: [NSURL URLWithString: [[FDPreferences sharedPrefs] stringForKey: QUAKE_PREFS_KEY_AUDIO_PATH]]];
-    [openPanel setTitle: @"Select the folder with the audio files:"];
+    openPanel.accessoryView = [mOpenPanelView retain];
+    openPanel.directoryURL = [NSURL URLWithString: [[FDPreferences sharedPrefs] stringForKey: QUAKE_PREFS_KEY_AUDIO_PATH]];
+    openPanel.title = @"Select the folder with the audio files:";
     
-    [openPanel beginSheetModalForWindow: [[self view] window] completionHandler: ^(NSInteger result)
+    [openPanel beginSheetModalForWindow: self.view.window completionHandler: ^(NSInteger result)
      {
          NSString* path = nil;
          
          if (result == NSFileHandlingPanelOKButton)
          {
-             path = [[openPanel directoryURL] path];
+             path = openPanel.directoryURL.path;
              
              [[FDPreferences sharedPrefs] setObject: path forKey: QUAKE_PREFS_KEY_AUDIO_PATH];
          }

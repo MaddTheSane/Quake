@@ -139,7 +139,7 @@ typedef struct
 + (void) checkForIncompatibleDevices;
 
 - (void) setDeviceFilter: (NSArray*) deviceTypes;
-- (NSArray<FDHIDDevice*>*) devices;
+@property (readonly, copy) NSArray<FDHIDDevice *> *devices;
 - (const FDHIDEvent*) nextEvent;
 
 @end

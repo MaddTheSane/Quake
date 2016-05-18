@@ -20,7 +20,7 @@
 @property (readonly, getter=isDefault) BOOL isDefault;
 @property (readonly) double refreshRate;
 
-- (NSString*) description;
+@property (readonly, copy) NSString *description;
 
 - (BOOL) isEqualTo: (FDDisplayMode*) object;
 - (NSComparisonResult) compare: (FDDisplayMode*) rhs;

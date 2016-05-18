@@ -16,11 +16,10 @@
     id      mDelegate;
 }
 
-- (NSString*) toolbarIdentifier;
-- (NSToolbarItem*) toolbarItem;
+@property (readonly, copy) NSString *toolbarIdentifier;
+@property (readonly, copy) NSToolbarItem *toolbarItem;
 
-- (void) setDelegate: (id) delegate;
-- (id) delegate;
+@property (assign) id delegate;
 
 - (void) synchronize;
 
