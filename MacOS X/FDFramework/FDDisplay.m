@@ -45,7 +45,7 @@ typedef struct
 @interface FDDisplay ()
 
 
-- (id) initWithCGDisplayID: (CGDirectDisplayID) displayId;
+- (instancetype) initWithCGDisplayID: (CGDirectDisplayID) displayId;
 - (BOOL) readGammaTable: (GammaTable*) gammaTable;
 - (void) applyGamma: (CGGammaValue) gamma withTable: (GammaTable*) gammaTable;
 

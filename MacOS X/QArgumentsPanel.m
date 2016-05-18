@@ -54,12 +54,12 @@
     
     mArgumentEdit = [[QArgumentEdit alloc] init];
     
-    [mTableView setDelegate: self];
+    mTableView.delegate = self;
     [mTableView deselectAll: nil];
     
-    [mTableView setEnabled: isEditable];
-    [mAddButton setEnabled: isEditable];
-    [mRemoveButton setEnabled: isEditable];
+    mTableView.enabled = isEditable;
+    mAddButton.enabled = isEditable;
+    mRemoveButton.enabled = isEditable;
     
     [self tableViewSelectionDidChange: nil];
     [self setTitle: @"CLI"];

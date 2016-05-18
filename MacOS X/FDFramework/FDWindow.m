@@ -445,12 +445,11 @@
     NSGraphicsContext*	graphicsContext	= nil;
     NSImage*            miniImage = [[NSImage alloc] initWithSize: size];
 	
-	[miniImage setFlipped: YES];
-    [miniImage lockFocus];
+    [miniImage lockFocusFlipped:YES];
     
     graphicsContext = [NSGraphicsContext currentContext];
-    [graphicsContext setImageInterpolation: NSImageInterpolationNone];
-    [graphicsContext setShouldAntialias: NO];
+    graphicsContext.imageInterpolation = NSImageInterpolationNone;
+    graphicsContext.shouldAntialias = NO;
     
     [miniImage unlockFocus];
     

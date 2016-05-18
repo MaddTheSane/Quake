@@ -41,6 +41,8 @@ static FDAudioMixer*    sFDAudioMixerShared     = nil;
     NSMutableSet*       mBusNumbers;
     NSMutableArray*     mObservers;
 }
+@synthesize audioGraph = mAudioGraph;
+@synthesize mixerNode = mMixerNode;
 
 //----------------------------------------------------------------------------------------------------------------------------
 
@@ -184,20 +186,6 @@ static FDAudioMixer*    sFDAudioMixerShared     = nil;
     AudioUnitGetParameter (mMixerUnit, kStereoMixerParam_Volume, kAudioUnitScope_Input, busNumber, &volume);
     
     return volume;
-}
-
-//----------------------------------------------------------------------------------------------------------------------------
-
-- (AUGraph) audioGraph
-{
-    return mAudioGraph;
-}
-
-//----------------------------------------------------------------------------------------------------------------------------
-
-- (AUNode) mixerNode
-{
-    return mMixerNode;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------
