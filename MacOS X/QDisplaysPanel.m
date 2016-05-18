@@ -76,7 +76,7 @@
     
     for (FDDisplay* display in [FDDisplay displays])
     {
-        NSMenuItem* item = [[NSMenuItem alloc] initWithTitle: [display description] action: nil keyEquivalent: key];
+        NSMenuItem* item = [[NSMenuItem alloc] initWithTitle: display.description action: nil keyEquivalent: key];
         
         item.representedObject = display;
         [mDisplayPopUp.menu addItem: [item autorelease]];        

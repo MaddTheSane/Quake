@@ -176,7 +176,7 @@ void	VID_InitializeTexture (void)
         GLint           actualTexHeight = -1;
         GLenum          error           = 0;
         
-        [[gVidWindow openGLContext] makeCurrentContext];
+        [gVidWindow.openGLContext makeCurrentContext];
         
         glGenTextures (1, &gVidTexture);
         glBindTexture (GL_TEXTURE_2D, gVidTexture);
@@ -215,7 +215,7 @@ void	VID_ShutdownTexture (void)
 {
     if (gVidTextureInitialized == YES)
     {
-        [[gVidWindow openGLContext] makeCurrentContext];
+        [gVidWindow.openGLContext makeCurrentContext];
         
         glDeleteTextures (1, &gVidTexture);
         gVidTextureInitialized = NO;
@@ -234,7 +234,7 @@ void	VID_RenderTexture (void)
         const GLfloat   t           = gVidGraphMode.OffHeight / gVidTextureSize.height;        
         const NSRect    contentRect = gVidWindow.contentView.frame;
         
-        [[gVidWindow openGLContext] makeCurrentContext];
+        [gVidWindow.openGLContext makeCurrentContext];
 
         glViewport (0, 0, (GLsizei) NSWidth (contentRect), (GLsizei) NSHeight (contentRect));
         glMatrixMode (GL_PROJECTION);
@@ -437,7 +437,7 @@ UInt16	VID_InsertMode (UInt16 index, UInt16 width, UInt16 height, FDDisplayMode*
 
 BOOL	VID_GetModeList (void)
 {
-    NSArray*        displayModes    = [gVidDisplay displayModes];
+    NSArray*        displayModes    = gVidDisplay.displayModes;
     NSMutableArray* filteredModes   = [[NSMutableArray alloc] init];
     UInt16          i               = 0;
     
@@ -448,7 +448,7 @@ BOOL	VID_GetModeList (void)
     
     gVidNumModes = VID_NUM_WINDOWED_MODES;
     
-    for (FDDisplayMode* displayMode in [gVidDisplay displayModes])
+    for (FDDisplayMode* displayMode in gVidDisplay.displayModes)
     {
         if (displayMode.bitsPerPixel == 32)
         {
@@ -683,7 +683,7 @@ BOOL	VID_SetDisplay (void)
     
     while (display = [displayEnum nextObject])
     {
-        if ([[display description] isEqualToString: displayName] == YES)
+        if ([display.description isEqualToString: displayName] == YES)
         {
             break;
         }
@@ -1029,11 +1029,11 @@ void	VID_SetWindowTitle (char* pTitle)
     {
         if (pTitle)
         {
-            [gVidWindow setTitle: [NSString stringWithCString: pTitle encoding: NSASCIIStringEncoding]];
+            gVidWindow.title = @(pTitle);
         }
         else
         {
-            [gVidWindow setTitle: [[NSRunningApplication currentApplication] localizedName]];
+            gVidWindow.title = [NSRunningApplication currentApplication].localizedName;
         }
     }
 }
