@@ -649,12 +649,12 @@
 		D26BDE1C149B265B0018D5AE /* r_surf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = r_surf.c; sourceTree = "<group>"; };
 		D26BDE1D149B265B0018D5AE /* r_vars.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = r_vars.c; sourceTree = "<group>"; };
 		D26BDE1E149B265C0018D5AE /* screen.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = screen.c; sourceTree = "<group>"; };
-		D26BDE54149B2B0F0018D5AE /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = ../../../../../../System/Library/Frameworks/ApplicationServices.framework; sourceTree = "<group>"; };
-		D26BDE56149B2B270018D5AE /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = ../../../../../../System/Library/Frameworks/IOKit.framework; sourceTree = "<group>"; };
-		D26BDE5B149D442B0018D5AE /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = ../../../../../../System/Library/Frameworks/AudioUnit.framework; sourceTree = "<group>"; };
-		D26BDE5D149D443C0018D5AE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = ../../../../../../System/Library/Frameworks/AudioToolbox.framework; sourceTree = "<group>"; };
+		D26BDE54149B2B0F0018D5AE /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
+		D26BDE56149B2B270018D5AE /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		D26BDE5B149D442B0018D5AE /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
+		D26BDE5D149D443C0018D5AE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		D26BDED1149EE9710018D5AE /* GLQuake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GLQuake.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D26BDEE2149EEBE30018D5AE /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = ../../../../../../System/Library/Frameworks/OpenGL.framework; sourceTree = "<group>"; };
+		D26BDEE2149EEBE30018D5AE /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		D26CD29614DA6EC000270FD9 /* bothdefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bothdefs.h; path = client/bothdefs.h; sourceTree = "<group>"; };
 		D26CD29714DA6EC000270FD9 /* bspfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bspfile.h; path = client/bspfile.h; sourceTree = "<group>"; };
 		D26CD29814DA6EC000270FD9 /* cmd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cmd.h; path = client/cmd.h; sourceTree = "<group>"; };
@@ -876,7 +876,7 @@
 		D2CAF3A214DA4158006CAA0D /* QShared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QShared.h; sourceTree = "<group>"; };
 		D2CAF42F14DA6761006CAA0D /* QuakeWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuakeWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2CAF4A714DA6771006CAA0D /* GLQuakeWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GLQuakeWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D2E123BD14DC44980041A7AB /* ForceFeedback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ForceFeedback.framework; path = ../../../../../../System/Library/Frameworks/ForceFeedback.framework; sourceTree = "<group>"; };
+		D2E123BD14DC44980041A7AB /* ForceFeedback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ForceFeedback.framework; path = System/Library/Frameworks/ForceFeedback.framework; sourceTree = SDKROOT; };
 		D2E123C314DDA72A0041A7AB /* FDHIDManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDHIDManager.h; sourceTree = "<group>"; };
 		D2E123C414DDA72A0041A7AB /* FDHIDManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDHIDManager.m; sourceTree = "<group>"; };
 		D2E123E314E0C20C0041A7AB /* FDHIDDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDHIDDevice.h; sourceTree = "<group>"; };
