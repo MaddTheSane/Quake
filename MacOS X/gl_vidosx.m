@@ -85,13 +85,13 @@
 
 //----------------------------------------------------------------------------------------------------------------------------
 
-typedef	enum                {
+typedef	NS_ENUM(unsigned int, vid_menuitem_t)                {
                                 VID_MENUITEM_WAIT,
                                 VID_MENUITEM_FSAA,
                                 VID_MENUITEM_ANISOTROPIC,
                                 VID_MENUITEM_MULTITEXTURE,
                                 VID_MENUITEM_TRUFORM
-                            }	vid_menuitem_t;
+                            };
 
 //----------------------------------------------------------------------------------------------------------------------------
 
@@ -344,9 +344,9 @@ void VID_SetWait (UInt32 state)
 {
     const BOOL  enable  = (state != 0);
     
-    [gVidWindow setVsync: enable];
+    gVidWindow.vsync = enable;
     
-    if (state == [gVidWindow vsync])
+    if (state == gVidWindow.vsync)
     {
         if (enable == YES)
         {
@@ -397,7 +397,7 @@ BOOL	VID_SetDisplay (void)
     
     for (display in [FDDisplay displays])
     {
-        if ([[display description] isEqualToString: displayName] == YES)
+        if ([display.description isEqualToString: displayName] == YES)
         {
             break;
         }
@@ -423,9 +423,9 @@ FDDisplayMode*    VID_FindDisplayMode (NSString* modeStr, NSUInteger bitsPerPixe
     
     if (modeStr != nil)
     {
-        for (FDDisplayMode* displayMode in [gVidDisplay displayModes])
+        for (FDDisplayMode* displayMode in gVidDisplay.displayModes)
         {
-            if (([[displayMode description] isEqualToString: modeStr] == YES) && ([displayMode bitsPerPixel] == bitsPerPixel))
+            if (([displayMode.description isEqualToString: modeStr] == YES) && (displayMode.bitsPerPixel == bitsPerPixel))
             {
                 foundMode = displayMode;
                 break;
@@ -434,9 +434,9 @@ FDDisplayMode*    VID_FindDisplayMode (NSString* modeStr, NSUInteger bitsPerPixe
     }
     else
     {
-        for (FDDisplayMode* displayMode in [gVidDisplay displayModes])
+        for (FDDisplayMode* displayMode in gVidDisplay.displayModes)
         {
-            if ([displayMode bitsPerPixel] == bitsPerPixel)
+            if (displayMode.bitsPerPixel == bitsPerPixel)
             {
                 foundMode = displayMode;
                 break;
@@ -477,13 +477,13 @@ BOOL	VID_SetDisplayMode (void)
         Sys_Error ("Failed to find valid display mode!");
     }
     
-    if ([gVidDisplay hasFSAA] == NO)
+    if (gVidDisplay.hasFSAA == NO)
     {
         numSamples = 0;
     }
     
-    gGLDisplayWidth     = [gVidDisplayMode width];
-    gGLDisplayHeight    = [gVidDisplayMode height];
+    gGLDisplayWidth     = gVidDisplayMode.width;
+    gGLDisplayHeight    = gVidDisplayMode.height;
     
     if (gVidDisplayFullscreen == YES)
     {
@@ -550,7 +550,7 @@ BOOL	VID_SetDisplayMode (void)
 
         gVidWindow = [[FDWindow alloc] initWithContentRect: contentRect samples: numSamples];
         
-        [gVidWindow setTitle: [[NSRunningApplication currentApplication] localizedName]];
+        gVidWindow.title = [NSRunningApplication currentApplication].localizedName;
         [gVidWindow setResizeHandler: &VID_ResizeHandler forContext: nil];
         [gVidWindow centerForDisplay: gVidDisplay];
         [gVidWindow makeKeyAndOrderFront: nil];
@@ -558,7 +558,7 @@ BOOL	VID_SetDisplayMode (void)
         [gVidWindow flushWindow];
     }
     
-    gGLDisplayIs8Bit = ([gVidDisplayMode bitsPerPixel] == 8);
+    gGLDisplayIs8Bit = (gVidDisplayMode.bitsPerPixel == 8);
     
     VID_SetWait ((UInt32) vid_wait.value);
     
@@ -692,7 +692,7 @@ void	VID_Shutdown (void)
 
     if ([FDDisplay isAnyDisplayCaptured] == YES)
     {
-        [gVidDisplay setDisplayMode: [gVidDisplay originalMode]];
+        [gVidDisplay setDisplayMode: gVidDisplay.originalMode];
         
         VID_SetGamma (1.0f, NO);
         
@@ -732,7 +732,7 @@ BOOL	VID_HideFullscreen (BOOL hide)
         }
         
         [gVidWindow orderOut: nil];
-        [gVidDisplay setDisplayMode: [gVidDisplay originalMode]];
+        [gVidDisplay setDisplayMode: gVidDisplay.originalMode];
         
         VID_SetGamma (1.0f, NO);
         
@@ -1277,7 +1277,7 @@ void	GL_Init (void)
 
 qboolean GL_SaveScreenshot (const char* filename)
 {
-    NSString* path = [NSString stringWithCString: filename encoding: NSASCIIStringEncoding];
+    NSString* path = @(filename);
     
     return ([FDGLScreenshot writeToPNG: path] == YES ? true : false);
 }
@@ -1324,7 +1324,7 @@ void	GL_SetFSAA (UInt32 fsaaLevel)
     }
     
     // set the level:
-    [[gVidWindow openGLContext] makeCurrentContext];
+    [gVidWindow.openGLContext makeCurrentContext];
     
     if (CGLSetParameter (CGLGetCurrentContext (), VID_ATI_FSAA_LEVEL, &actualFsaaLevel) == CGDisplayNoErr)
     {
@@ -1481,9 +1481,9 @@ void	GL_EndRendering (void)
     
     [gVidWindow endFrame];
 
-    if (cursorIsVisible != [gVidWindow isCursorVisible])
+    if (cursorIsVisible != gVidWindow.cursorVisible)
     {
-        [gVidWindow setCursorVisible: cursorIsVisible];
+        gVidWindow.cursorVisible = cursorIsVisible;
     }
 
     v_gamma.value = VID_SetGamma (v_gamma.value, YES);

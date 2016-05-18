@@ -35,9 +35,9 @@
         [mSamplesPopUp selectItemAtIndex: 0];
     }
 
-    [mFullscreenCheckBox setState: [[FDPreferences sharedPrefs] boolForKey: QUAKE_PREFS_KEY_GL_FULLSCREEN]];
-    [mFadeAllCheckBox setState: [[FDPreferences sharedPrefs] boolForKey: QUAKE_PREFS_KEY_GL_FADE_ALL]];
-    [mColorsPopUp setEnabled: ([mFullscreenCheckBox state] == NSOnState)];
+    mFullscreenCheckBox.state = [[FDPreferences sharedPrefs] boolForKey: QUAKE_PREFS_KEY_GL_FULLSCREEN];
+    mFadeAllCheckBox.state = [[FDPreferences sharedPrefs] boolForKey: QUAKE_PREFS_KEY_GL_FADE_ALL];
+    mColorsPopUp.enabled = (mFullscreenCheckBox.state == NSOnState);
     
     [self buildDisplayList];
     [self selectDisplayFromDescription: [[FDPreferences sharedPrefs] stringForKey: QUAKE_PREFS_KEY_GL_DISPLAY]];
@@ -45,7 +45,7 @@
     [self buildDisplayModeList];
     [self selectDisplayModeFromDescription:[[FDPreferences sharedPrefs] stringForKey:QUAKE_PREFS_KEY_GL_DISPLAY_MODE]];
     
-    if ([mDisplayPopUp numberOfItems] <= 1)
+    if (mDisplayPopUp.numberOfItems <= 1)
     {
         [mDisplayPopUp setEnabled: NO];
         [mFadeAllCheckBox setEnabled: NO];
@@ -56,7 +56,7 @@
         [mFadeAllCheckBox setEnabled: YES];
     }
     
-    [self setTitle: @"Displays"];
+    self.title = @"Displays";
 }
 
 //----------------------------------------------------------------------------------------------------------------------------
@@ -72,10 +72,10 @@
 {
     NSToolbarItem* item = [super toolbarItem];
     
-    [item setLabel: @"Displays"];
-    [item setPaletteLabel: @"Displays"];
-    [item setToolTip: @"Change display settings."];
-    [item setImage: [NSImage imageNamed: @"Displays"]];
+    item.label = @"Displays";
+    item.paletteLabel = @"Displays";
+    item.toolTip = @"Change display settings.";
+    item.image = [NSImage imageNamed: @"Displays"];
     
     return item;
 }
@@ -90,10 +90,10 @@
     
     for (FDDisplay* display in [FDDisplay displays])
     {
-        NSMenuItem* item = [[NSMenuItem alloc] initWithTitle: [display description] action: nil keyEquivalent: key];
+        NSMenuItem* item = [[NSMenuItem alloc] initWithTitle: display.description action: nil keyEquivalent: key];
         
-        [item setRepresentedObject: display];
-        [[mDisplayPopUp menu] addItem: [item autorelease]];
+        item.representedObject = display;
+        [mDisplayPopUp.menu addItem: [item autorelease]];
     }
     
     [mDisplayPopUp selectItemAtIndex: 0];
@@ -104,31 +104,31 @@
 
 - (void) buildDisplayModeList
 {
-    const NSInteger     bitsPerPixel    = [mColorsPopUp selectedTag];
+    const NSInteger     bitsPerPixel    = mColorsPopUp.selectedTag;
     NSString*           key             = [[[NSString alloc] init] autorelease];
-    FDDisplay*          display         = [[FDDisplay displays] objectAtIndex: [mDisplayPopUp indexOfSelectedItem]];
-    FDDisplayMode*      displayModeOld  = [[mModePopUp itemAtIndex: [mModePopUp indexOfSelectedItem]] representedObject];
+    FDDisplay*          display         = [FDDisplay displays][mDisplayPopUp.indexOfSelectedItem];
+    FDDisplayMode*      displayModeOld  = [mModePopUp itemAtIndex: mModePopUp.indexOfSelectedItem].representedObject;
     
     [mModePopUp removeAllItems];
     
-    for (FDDisplayMode* displayMode in [display displayModes])
+    for (FDDisplayMode* displayMode in display.displayModes)
     {
-        if ([displayMode bitsPerPixel] == bitsPerPixel)
+        if (displayMode.bitsPerPixel == bitsPerPixel)
         {
-            NSString*   description = [displayMode description];
+            NSString*   description = displayMode.description;
             NSMenuItem* item        = [[NSMenuItem alloc] initWithTitle: description action: nil keyEquivalent: key];
             
-            [item setRepresentedObject: displayMode];
-            [[mModePopUp menu] addItem: [item autorelease]];
+            item.representedObject = displayMode;
+            [mModePopUp.menu addItem: [item autorelease]];
             
-            if ([[displayModeOld description] isEqualToString: description])
+            if ([displayModeOld.description isEqualToString: description])
             {
                 [mModePopUp selectItem: item];
             }
         }
     }
     
-    if ([mModePopUp numberOfItems] <= 1)
+    if (mModePopUp.numberOfItems <= 1)
     {
         [mModePopUp addItemWithTitle: @"not available!"];
         [mModePopUp selectItemAtIndex: 0];
@@ -139,7 +139,7 @@
         [mModePopUp setEnabled: YES];
     }
 
-    if ([display hasFSAA] == YES)
+    if (display.hasFSAA == YES)
     {
         [mSamplesPopUp setEnabled: YES];
     }
@@ -154,11 +154,11 @@
 
 - (void) selectDisplayFromDescription: (NSString*) description
 {
-    const NSInteger numItems = [mDisplayPopUp numberOfItems];
+    const NSInteger numItems = mDisplayPopUp.numberOfItems;
     
     for (NSInteger i = 0; i < numItems; ++i)
     {
-        if ([[[[mDisplayPopUp itemAtIndex: i] representedObject] description] isEqualToString: description] == YES)
+        if ([[[mDisplayPopUp itemAtIndex: i].representedObject description] isEqualToString: description] == YES)
         {
             [mDisplayPopUp selectItemAtIndex: i];
             
@@ -171,11 +171,11 @@
 
 - (void) selectDisplayModeFromDescription: (NSString*) description
 {
-    const NSInteger numItems = [mModePopUp numberOfItems];
+    const NSInteger numItems = mModePopUp.numberOfItems;
     
     for (NSInteger i = 0; i < numItems; ++i)
     {
-        if ([[[[mModePopUp itemAtIndex: i] representedObject] description] isEqualToString: description] == YES)
+        if ([[[mModePopUp itemAtIndex: i].representedObject description] isEqualToString: description] == YES)
         {
             [mModePopUp selectItemAtIndex: i];
             
@@ -242,7 +242,7 @@
     FD_UNUSED (sender);
     
     [[FDPreferences sharedPrefs] setObject: mFullscreenCheckBox forKey: QUAKE_PREFS_KEY_GL_FULLSCREEN];
-    [mColorsPopUp setEnabled: ([mFullscreenCheckBox state] == NSOnState)];
+    mColorsPopUp.enabled = (mFullscreenCheckBox.state == NSOnState);
 }
 
 @end

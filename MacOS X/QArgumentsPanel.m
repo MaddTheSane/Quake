@@ -45,7 +45,7 @@
 
 - (void) awakeFromNib
 {
-    const BOOL isEditable = [[QArguments sharedArguments] isEditable];
+    const BOOL isEditable = [QArguments sharedArguments].editable;
     
     for (NSDictionary* argument in [[QArguments sharedArguments] arguments])
     {

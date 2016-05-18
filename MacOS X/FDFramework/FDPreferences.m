@@ -91,7 +91,7 @@ static FDPreferences*   sFDPreferencesInstance  = nil;
     }
     else if ([object isKindOfClass: [NSButton class]] == YES)
     {
-        serializable = [NSNumber numberWithBool: ([object state] == NSOnState)];
+        serializable = @((BOOL)([object state] == NSOnState));
     }
     else if ([object isKindOfClass: [NSString class]] == YES)
     {

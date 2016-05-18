@@ -158,7 +158,7 @@ void 	IN_Init (void)
 
 void 	IN_Shutdown (void)
 {
-    for (FDHIDDevice* device in [[FDHIDManager sharedHIDManager] devices])
+    for (FDHIDDevice* device in [FDHIDManager sharedHIDManager].devices)
     {
         if (device.hasActuator)
         {
@@ -367,7 +367,7 @@ void    IN_Damage (float duration)
     {
         if (sInActuatorEndTime < 0.0)
         {
-            for (FDHIDDevice* device in [[FDHIDManager sharedHIDManager] devices])
+            for (FDHIDDevice* device in [FDHIDManager sharedHIDManager].devices)
             {
                 if (device.hasActuator)
                 {
@@ -387,7 +387,7 @@ void    IN_UpdateActuators ()
 {
     if ((sInActuatorEndTime >= 0.0) && (sInActuatorEndTime < Sys_FloatTime()))
     {
-        for (FDHIDDevice* device in [[FDHIDManager sharedHIDManager] devices])
+        for (FDHIDDevice* device in [FDHIDManager sharedHIDManager].devices)
         {
             if (device.hasActuator)
             {

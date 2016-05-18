@@ -202,7 +202,7 @@
 
 - (NSOpenGLContext*) openGLContext
 {
-    return [mView openGLContext];
+    return mView.openGLContext;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------
@@ -308,7 +308,7 @@
             [mView drawGrowbox];
         }
         
-        CGLFlushDrawable ([self openGLContext].CGLContextObj);
+        CGLFlushDrawable (self.openGLContext.CGLContextObj);
     }
 }
 
@@ -464,7 +464,7 @@
     {
         if (mView != nil)
         {
-            NSBitmapImageRep* bitmap = [mView bitmapRepresentation];
+            NSBitmapImageRep* bitmap = mView.bitmapRepresentation;
             
             if (bitmap != nil)
             {

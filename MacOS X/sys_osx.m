@@ -387,7 +387,7 @@ void	Sys_Quit (void)
         numSamples = 0;
     }
     
-    [[FDPreferences sharedPrefs] setObject: [NSNumber numberWithInt: numSamples] forKey: QUAKE_PREFS_KEY_GL_SAMPLES];
+    [[FDPreferences sharedPrefs] setObject: @(numSamples) forKey: QUAKE_PREFS_KEY_GL_SAMPLES];
     [[FDPreferences sharedPrefs] synchronize];
 
 #endif /* GLQUAKE */

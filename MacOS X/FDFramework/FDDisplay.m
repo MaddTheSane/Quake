@@ -451,7 +451,7 @@ typedef struct
 
 - (BOOL) setDisplayMode: (FDDisplayMode*) displayMode;
 {
-    return CGDisplaySetDisplayMode (mCGDisplayId, [displayMode cgDisplayMode], NULL) == kCGErrorSuccess;
+    return CGDisplaySetDisplayMode (mCGDisplayId, displayMode.cgDisplayMode, NULL) == kCGErrorSuccess;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------

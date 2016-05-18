@@ -83,8 +83,8 @@ static NSString*    sQSettingsNewGameToolbarItem = @"Quake Start ToolbarItem";
   
     for (QSettingsPanel* panel in mPanels)
     {
-        [panel setDelegate: self];
-        mToolbarItems[[panel toolbarIdentifier]] = [panel toolbarItem];
+        panel.delegate = self;
+        mToolbarItems[panel.toolbarIdentifier] = panel.toolbarItem;
     }
 
     NSToolbarItem* item = [[[NSToolbarItem alloc] initWithItemIdentifier: sQSettingsNewGameToolbarItem] autorelease];
@@ -140,7 +140,7 @@ static NSString*    sQSettingsNewGameToolbarItem = @"Quake Start ToolbarItem";
     
     for (QSettingsPanel* panel in mPanels)
     {
-        [identifiers addObject: [panel toolbarIdentifier]];
+        [identifiers addObject: panel.toolbarIdentifier];
     }
     
     [identifiers addObject: NSToolbarFlexibleSpaceItemIdentifier];

@@ -245,7 +245,7 @@ static FDAudioMixer*    sFDAudioMixerShared     = nil;
 
 - (void) deallocateBus: (AudioUnitElement) busNumber
 {
-    [mBusNumbers removeObject: [NSNumber numberWithInt: busNumber]];
+    [mBusNumbers removeObject: @(busNumber)];
 }
 
 //----------------------------------------------------------------------------------------------------------------------------

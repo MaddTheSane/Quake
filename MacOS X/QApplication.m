@@ -23,7 +23,7 @@
 {
     QArguments* arguments = [QArguments sharedArguments];
     
-    if ([arguments isEditable] == YES)
+    if (arguments.editable == YES)
     {
         NSDictionary*   args = command.evaluatedArguments;
     

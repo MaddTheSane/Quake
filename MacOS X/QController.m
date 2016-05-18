@@ -68,7 +68,7 @@ extern void     M_Menu_Quit_f (void);
         QArguments* arguments = [QArguments sharedArguments];
         
         [arguments setArgumentsFromProccessInfo];
-        [arguments setEditable: ([arguments arguments].count == 0)];
+        arguments.editable = ([arguments arguments].count == 0);
         
         mRequestedCommands = [[NSMutableArray alloc] init];
     }
@@ -94,7 +94,7 @@ extern void     M_Menu_Quit_f (void);
     
     BOOL isValidFile = NO;
     
-    if ([[QArguments sharedArguments] isEditable] == YES)
+    if ([QArguments sharedArguments].editable == YES)
     {
         NSMutableArray* arguments   = [NSMutableArray arrayWithObject: @""];
         BOOL            isDirectory = NO;
@@ -162,7 +162,7 @@ extern void     M_Menu_Quit_f (void);
     
     NSApplicationTerminateReply reply = NSTerminateNow;
     
-    if ([self hostInitialized] == YES)
+    if (self.hostInitialized == YES)
     {
         if (NSApp.hidden == YES || NSApp.active == NO)
         {
@@ -214,7 +214,7 @@ extern void     M_Menu_Quit_f (void);
 {
     FD_UNUSED (notification);
     
-    if ([self hostInitialized] == YES)
+    if (self.hostInitialized == YES)
     {
         for (int i = 0; i < K_PAUSE; ++i)
         {
@@ -229,7 +229,7 @@ extern void     M_Menu_Quit_f (void);
 {
     FD_UNUSED (notification);
     
-    if ([self hostInitialized] == YES)
+    if (self.hostInitialized == YES)
     {
         S_StopAllSounds (YES);
         VID_HideFullscreen (YES);
@@ -248,7 +248,7 @@ extern void     M_Menu_Quit_f (void);
 {
     FD_UNUSED (notification);
     
-    if ([self hostInitialized] == YES)
+    if (self.hostInitialized == YES)
     {
         VID_HideFullscreen (NO);
         
@@ -275,7 +275,7 @@ extern void     M_Menu_Quit_f (void);
 
 - (void) requestCommand: (NSString *) command
 {
-    if ([self hostInitialized] == YES)
+    if (self.hostInitialized == YES)
     {
         Cbuf_AddText (va ("%s\n", [command cStringUsingEncoding: NSASCIIStringEncoding]));
     }
@@ -460,7 +460,7 @@ extern void     M_Menu_Quit_f (void);
     {
         const BOOL doCheckOption = [[FDPreferences sharedPrefs] boolForKey: QUAKE_PREFS_KEY_OPTION_KEY];
         
-        if ([[QArguments sharedArguments] isEditable] == YES)
+        if ([QArguments sharedArguments].editable == YES)
         {
             [[QArguments sharedArguments] setArguments: [[FDPreferences sharedPrefs] arrayForKey: QUAKE_PREFS_KEY_ARGUMENTS]];
         }
@@ -500,7 +500,7 @@ extern void     M_Menu_Quit_f (void);
         
         mSettingsWindow = nil;
         
-        [QMediaScan scanFolder: [self mediaFolder] observer: self selector: @selector (initGame:)];
+        [QMediaScan scanFolder: self.mediaFolder observer: self selector: @selector (initGame:)];
     }
     FD_HANDLER;
 }
