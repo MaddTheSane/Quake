@@ -1,0 +1,3 @@
+[submodule "MacOS X/FDFramework"]
+	path = MacOS X/FDFramework
+	url = https://github.com/MaddTheSane/FDFramework.git

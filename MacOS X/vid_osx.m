@@ -34,7 +34,7 @@
 #import <AppKit/AppKit.h>
 #include <OpenGL/gl.h>
 
-#import "FDFramework/FDFramework.h"
+#import <FruitzOfDojo/FruitzOfDojo.h>
 
 #import "QShared.h"
 #include "quakedef.h"
