@@ -3,9 +3,9 @@
 // "in_osx.m" - MacOS X mouse driver
 //
 // Written by:	Axel 'awe' Wefers			[mailto:awe@fruitz-of-dojo.de].
-//				©2001-2012 Fruitz Of Dojo 	[http://www.fruitz-of-dojo.de].
+//				Â©2001-2012 Fruitz Of Dojo 	[http://www.fruitz-of-dojo.de].
 //
-// Quakeª is copyrighted by id software		[http://www.idsoftware.com].
+// Quakeâ„¢ is copyrighted by id software		[http://www.idsoftware.com].
 //
 // Version History:
 // v1.2.0: Rewritten. Uses now IOHIDManager.

@@ -3,9 +3,9 @@
 // "QController.h"
 //
 // Written by:	Axel 'awe' Wefers			[mailto:awe@fruitz-of-dojo.de].
-//				©2001-2012 Fruitz Of Dojo 	[http://www.fruitz-of-dojo.de].
+//				Â©2001-2012 Fruitz Of Dojo 	[http://www.fruitz-of-dojo.de].
 //
-// Quakeª is copyrighted by id software		[http://www.idsoftware.com].
+// Quakeâ„¢ is copyrighted by id software		[http://www.idsoftware.com].
 //
 //----------------------------------------------------------------------------------------------------------------------------
 
@@ -16,7 +16,7 @@
 
 //----------------------------------------------------------------------------------------------------------------------------
 
-@interface QController : NSObject
+@interface QController : NSObject <NSApplicationDelegate>
 {
     QSettingsWindow*                mSettingsWindow;
     QMediaScan*                     mMediaScan;
@@ -57,7 +57,7 @@
 - (IBAction) visitFOD: (id) sender;
 
 - (void) setupDialog: (NSTimer*) timer;
-- (void) newGame: (id) sender;
+- (IBAction) newGame: (id) sender;
 - (void) initGame: (NSNotification*) notification;
 - (void) installFrameTimer;
 - (void) doFrame: (NSTimer*) timer;

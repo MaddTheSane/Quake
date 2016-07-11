@@ -3,9 +3,9 @@
 // "vid_osx.m" - MacOS X Video driver
 //
 // Written by:	Axel 'awe' Wefers			[mailto:awe@fruitz-of-dojo.de].
-//				©2001-2012 Fruitz Of Dojo 	[http://www.fruitz-of-dojo.de].
+//				Â©2001-2012 Fruitz Of Dojo 	[http://www.fruitz-of-dojo.de].
 //
-// Quakeª is copyrighted by id software		[http://www.idsoftware.com].
+// Quakeâ„¢ is copyrighted by id software		[http://www.idsoftware.com].
 //
 // Version History:
 // v1.2.0: Replaced implementation with OpenGL texture due to CGDisplayBaseAddress() being deprecated with MacOS X v10.7.

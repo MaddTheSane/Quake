@@ -3,9 +3,9 @@
 // "gl_vidosx.m" - MacOS X OpenGL Video driver
 //
 // Written by:	Axel 'awe' Wefers			[mailto:awe@fruitz-of-dojo.de].
-//				©2001-2012 Fruitz Of Dojo 	[http://www.fruitz-of-dojo.de].
+//				Â©2001-2012 Fruitz Of Dojo 	[http://www.fruitz-of-dojo.de].
 //
-// Quakeª is copyrighted by id software		[http://www.idsoftware.com].
+// Quakeâ„¢ is copyrighted by id software		[http://www.idsoftware.com].
 //
 // Version History:
 // v1.2.0: Replaced calls to CGDirectDisplay functions that are deprecated under MacOS X 10.7.
