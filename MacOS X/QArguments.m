@@ -65,20 +65,6 @@ static QArguments*      sQArgumentsShared       = nil;
 
 //----------------------------------------------------------------------------------------------------------------------------
 
-- (void) setEditable: (BOOL) editable
-{
-    mIsEditable = editable;
-}
-
-//----------------------------------------------------------------------------------------------------------------------------
-
-- (BOOL) isEditable;
-{
-    return mIsEditable;
-}
-
-//----------------------------------------------------------------------------------------------------------------------------
-
 - (void) setArguments: (NSArray*) arguments
 {
     [mArguments release];
@@ -87,7 +73,7 @@ static QArguments*      sQArgumentsShared       = nil;
 
 //----------------------------------------------------------------------------------------------------------------------------
 
-- (NSMutableArray*) arguments
+- (NSArray*) arguments
 {
     return mArguments;
 }
@@ -188,7 +174,7 @@ static QArguments*      sQArgumentsShared       = nil;
 
 - (void) setArgumentsFromProccessInfo
 {
-    NSArray*        arguments = [NSProcessInfo processInfo].arguments;
+    NSArray *arguments = [NSProcessInfo processInfo].arguments;
     
     [self setArgumentsFromArray: arguments];
 }

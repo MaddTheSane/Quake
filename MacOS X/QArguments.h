@@ -13,7 +13,7 @@
 
 @interface QArguments : NSObject
 {
-    NSMutableArray* mArguments;
+    NSMutableArray<NSDictionary<NSString*,NSString*>*>* mArguments;
     BOOL            mIsEditable;
 }
 
@@ -25,12 +25,11 @@
 - (void) setArgumentsFromArray: (NSArray<NSString*>*) array;
 - (void) setArgumentsFromProccessInfo;
 
-- (void) setArguments: (NSArray*) arguments;
-- (NSMutableArray*) arguments;
+@property (copy) NSArray<NSDictionary<NSString*,NSString*>*> *arguments;
 
 - (BOOL) validateWithBasePath: (NSString*) basePath;
 
-- (char**) cArguments: (int*) count NS_RETURNS_INNER_POINTER;
+- (char**) cArguments: (int*) count;
 
 @end
 
