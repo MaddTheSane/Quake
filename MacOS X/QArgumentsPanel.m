@@ -61,7 +61,7 @@
     mAddButton.enabled = isEditable;
     mRemoveButton.enabled = isEditable;
     
-    [self tableViewSelectionDidChange: nil];
+    [self tableViewSelectionDidChange: (id)self];
     self.title = @"CLI";
 }
 

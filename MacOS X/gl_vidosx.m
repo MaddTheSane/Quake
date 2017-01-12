@@ -1154,7 +1154,7 @@ void	GL_CheckLuminanceLightmaps (void)
     //
     // NSAppKitVersionNumber10_1 is defined as 620.0. 10.2 has 663.0. So test against 663.0:
     
-    gl_luminace_lightmaps = (NSAppKitVersionNumber >= 663.0);
+    gl_luminace_lightmaps = (NSAppKitVersionNumber >= NSAppKitVersionNumber10_2);
     
     if (gl_luminace_lightmaps)
     {
@@ -1248,6 +1248,9 @@ void	GL_Init (void)
 
     // check if FSAA is available:
     GL_CheckSwitchFSAAOnTheFly ();
+    
+    // check for paletted textures extension:
+    GL_CheckPalettedTexture ();
 
     // setup OpenGL:    
     glClearColor (1,0,0,0);
