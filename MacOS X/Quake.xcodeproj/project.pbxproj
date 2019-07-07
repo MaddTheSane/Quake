@@ -420,6 +420,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5509500B22D1AAC700FEDA33 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 55AD3B8A1D337A8E000B0BE0 /* FruitzOfDojo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5531D5061E282D6000BDBF21;
+			remoteInfo = FDAudio;
+		};
 		55AD3B8F1D337A8F000B0BE0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 55AD3B8A1D337A8E000B0BE0 /* FruitzOfDojo.xcodeproj */;
@@ -847,7 +854,7 @@
 		D2C49D5514F05D1C00E07CC4 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.scriptTerminology; name = English; path = Quake.scriptTerminology; sourceTree = "<group>"; };
 		D2C49D5714F05D1C00E07CC4 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = Quake.xib; sourceTree = "<group>"; };
 		D2C49D5814F05D1C00E07CC4 /* Quake.scriptSuite */ = {isa = PBXFileReference; lastKnownFileType = text.plist.scriptSuite; path = Quake.scriptSuite; sourceTree = "<group>"; };
-		D2C49D5F14F05D5300E07CC4 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = InfoPlist.strings; sourceTree = "<group>"; };
+		D2C49D5F14F05D5300E07CC4 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = InfoPlist.strings; sourceTree = "<group>"; };
 		D2C49D6114F05D5300E07CC4 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.scriptTerminology; name = English; path = QuakeWorld.scriptTerminology; sourceTree = "<group>"; };
 		D2C49D6314F05D5300E07CC4 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = QuakeWorld.xib; sourceTree = "<group>"; };
 		D2C49D6514F05D5300E07CC4 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = ServicesMenu.strings; sourceTree = "<group>"; };
@@ -856,7 +863,7 @@
 		D2C49D7514F05D8F00E07CC4 /* Swedish */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Swedish; path = Resources/QuakeWorld/Swedish.lproj/ServicesMenu.strings; sourceTree = SOURCE_ROOT; };
 		D2C49D7914F05DAE00E07CC4 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.scriptTerminology; name = English; path = GLQuake.scriptTerminology; sourceTree = "<group>"; };
 		D2C49D7B14F05DAE00E07CC4 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = GLQuake.xib; sourceTree = "<group>"; };
-		D2C49D7D14F05DAE00E07CC4 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = InfoPlist.strings; sourceTree = "<group>"; };
+		D2C49D7D14F05DAE00E07CC4 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = InfoPlist.strings; sourceTree = "<group>"; };
 		D2C49D8314F05DCC00E07CC4 /* GLQuake.scriptSuite */ = {isa = PBXFileReference; lastKnownFileType = text.plist.scriptSuite; path = GLQuake.scriptSuite; sourceTree = "<group>"; };
 		D2C49D8714F05DF500E07CC4 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.scriptTerminology; name = English; path = GLQuakeWorld.scriptTerminology; sourceTree = "<group>"; };
 		D2C49D8914F05DF500E07CC4 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = GLQuakeWorld.xib; sourceTree = "<group>"; };
@@ -980,6 +987,7 @@
 			children = (
 				55AD3B901D337A8F000B0BE0 /* FruitzOfDojo.framework */,
 				55AD3B921D337A8F000B0BE0 /* FruitzOfDojoSwift.framework */,
+				5509500C22D1AAC700FEDA33 /* FDAudio.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2061,6 +2069,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		5509500C22D1AAC700FEDA33 /* FDAudio.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FDAudio.framework;
+			remoteRef = 5509500B22D1AAC700FEDA33 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		55AD3B901D337A8F000B0BE0 /* FruitzOfDojo.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;

@@ -24,7 +24,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #include <libc.h>
 #endif
 
-#if defined(__linux__) || defined(sun)
+#if defined(__linux__) || defined(sun) || defined(__APPLE__)
 #include <sys/stat.h>
 #include <unistd.h>
 #include <sys/time.h>
@@ -106,7 +106,7 @@ double Sys_DoubleTime (void)
 Sys_Error
 ================
 */
-void Sys_Error (char *error, ...)
+void Sys_Error (const char *error, ...)
 {
 	va_list		argptr;
 	char		string[1024];

@@ -179,6 +179,7 @@ static	void		GL_SetMultiTexture (UInt32 theState);
 //----------------------------------------------------------------------------------------------------------------------------
 
 #ifdef QUAKE_WORLD
+#undef VID_LockBuffer
 
 void 	VID_LockBuffer (void)
 {
@@ -189,6 +190,7 @@ void 	VID_LockBuffer (void)
 //----------------------------------------------------------------------------------------------------------------------------
 
 #ifdef QUAKE_WORLD
+#undef VID_UnlockBuffer
 
 void	VID_UnlockBuffer (void)
 {

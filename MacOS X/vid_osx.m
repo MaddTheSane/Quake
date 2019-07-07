@@ -323,6 +323,7 @@ void	VID_FlushBuffers (void)
 //----------------------------------------------------------------------------------------------------------------------------
 
 #if defined (QUAKE_WORLD)
+#undef VID_LockBuffer
 
 void 	VID_LockBuffer (void)
 {
@@ -333,6 +334,7 @@ void 	VID_LockBuffer (void)
 //----------------------------------------------------------------------------------------------------------------------------
 
 #if defined (QUAKE_WORLD)
+#undef VID_UnlockBuffer
 
 void	VID_UnlockBuffer (void)
 {

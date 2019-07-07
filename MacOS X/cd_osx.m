@@ -25,6 +25,10 @@
 
 #include <sys/mount.h>
 
+#ifdef QUAKE_WORLD
+#define Q_strcasecmp(s1, s2) strcasecmp((s1), (s2))
+#endif
+
 //----------------------------------------------------------------------------------------------------------------------------
 
 static FDAudioFile*     sCDAudio            = nil;
