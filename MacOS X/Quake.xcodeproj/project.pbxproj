@@ -557,6 +557,33 @@
 /* Begin PBXFileReference section */
 		5556CDED1CE93C0600C027F3 /* QIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = QIcons.xcassets; sourceTree = "<group>"; };
 		5556CDF41CE941A300C027F3 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		555D48C3235168790071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Resources/en.lproj/AboutPanel.xib; sourceTree = "<group>"; };
+		555D48C4235168790071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Resources/en.lproj/ArgumentEdit.xib; sourceTree = "<group>"; };
+		555D48C5235168790071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Resources/en.lproj/ArgumentsPanel.xib; sourceTree = "<group>"; };
+		555D48C6235168790071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = Resources/en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		555D48C7235168790071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Resources/en.lproj/DisplaysPanel.xib; sourceTree = "<group>"; };
+		555D48C8235168790071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Resources/en.lproj/GLDisplaysPanel.xib; sourceTree = "<group>"; };
+		555D48C9235168790071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Resources/en.lproj/MediaScan.xib; sourceTree = "<group>"; };
+		555D48CA235168790071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Resources/en.lproj/SettingsWindow.xib; sourceTree = "<group>"; };
+		555D48CB235168790071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Resources/en.lproj/SoundPanel.xib; sourceTree = "<group>"; };
+		555D48CC235168790071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.scriptTerminology; name = en; path = en.lproj/GLQuake.scriptTerminology; sourceTree = "<group>"; };
+		555D48CD2351687A0071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/GLQuake.xib; sourceTree = "<group>"; };
+		555D48CE2351687A0071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		555D48CF2351687A0071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.scriptTerminology; name = en; path = en.lproj/GLQuakeWorld.scriptTerminology; sourceTree = "<group>"; };
+		555D48D02351687A0071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/GLQuakeWorld.xib; sourceTree = "<group>"; };
+		555D48D12351687A0071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		555D48D22351687A0071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
+		555D48D32351687A0071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		555D48D42351687A0071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.scriptTerminology; name = en; path = en.lproj/Quake.scriptTerminology; sourceTree = "<group>"; };
+		555D48D52351687A0071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Quake.xib; sourceTree = "<group>"; };
+		555D48D62351687A0071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		555D48D72351687A0071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.scriptTerminology; name = en; path = en.lproj/QuakeWorld.scriptTerminology; sourceTree = "<group>"; };
+		555D48D82351687A0071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/QuakeWorld.xib; sourceTree = "<group>"; };
+		555D48D92351687B0071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
+		555D48DA235168820071AD9F /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
+		555D48DB235168820071AD9F /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
+		555D48DC235168860071AD9F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
+		555D48DD235168860071AD9F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
 		55AD3B8A1D337A8E000B0BE0 /* FruitzOfDojo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FruitzOfDojo.xcodeproj; path = FDFramework/FruitzOfDojo.xcodeproj; sourceTree = "<group>"; };
 		D246F59D149B07FE003433EB /* Quake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D246F5A1149B07FE003433EB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -850,39 +877,12 @@
 		D2C25B7E14D204BA00E275A0 /* QSettingsWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSettingsWindow.m; sourceTree = "<group>"; };
 		D2C49D4F14F05CE800E07CC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2C49D5014F05CF300E07CC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D2C49D5314F05D1C00E07CC4 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = InfoPlist.strings; sourceTree = "<group>"; };
-		D2C49D5514F05D1C00E07CC4 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.scriptTerminology; name = English; path = Quake.scriptTerminology; sourceTree = "<group>"; };
-		D2C49D5714F05D1C00E07CC4 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = Quake.xib; sourceTree = "<group>"; };
 		D2C49D5814F05D1C00E07CC4 /* Quake.scriptSuite */ = {isa = PBXFileReference; lastKnownFileType = text.plist.scriptSuite; path = Quake.scriptSuite; sourceTree = "<group>"; };
-		D2C49D5F14F05D5300E07CC4 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = InfoPlist.strings; sourceTree = "<group>"; };
-		D2C49D6114F05D5300E07CC4 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.scriptTerminology; name = English; path = QuakeWorld.scriptTerminology; sourceTree = "<group>"; };
-		D2C49D6314F05D5300E07CC4 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = QuakeWorld.xib; sourceTree = "<group>"; };
-		D2C49D6514F05D5300E07CC4 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = ServicesMenu.strings; sourceTree = "<group>"; };
 		D2C49D6914F05D5300E07CC4 /* QuakeWorld.scriptSuite */ = {isa = PBXFileReference; lastKnownFileType = text.plist.scriptSuite; path = QuakeWorld.scriptSuite; sourceTree = "<group>"; };
-		D2C49D7414F05D8000E07CC4 /* German */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = German; path = Resources/QuakeWorld/German.lproj/ServicesMenu.strings; sourceTree = SOURCE_ROOT; };
-		D2C49D7514F05D8F00E07CC4 /* Swedish */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Swedish; path = Resources/QuakeWorld/Swedish.lproj/ServicesMenu.strings; sourceTree = SOURCE_ROOT; };
-		D2C49D7914F05DAE00E07CC4 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.scriptTerminology; name = English; path = GLQuake.scriptTerminology; sourceTree = "<group>"; };
-		D2C49D7B14F05DAE00E07CC4 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = GLQuake.xib; sourceTree = "<group>"; };
-		D2C49D7D14F05DAE00E07CC4 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = InfoPlist.strings; sourceTree = "<group>"; };
 		D2C49D8314F05DCC00E07CC4 /* GLQuake.scriptSuite */ = {isa = PBXFileReference; lastKnownFileType = text.plist.scriptSuite; path = GLQuake.scriptSuite; sourceTree = "<group>"; };
-		D2C49D8714F05DF500E07CC4 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.scriptTerminology; name = English; path = GLQuakeWorld.scriptTerminology; sourceTree = "<group>"; };
-		D2C49D8914F05DF500E07CC4 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = GLQuakeWorld.xib; sourceTree = "<group>"; };
-		D2C49D8B14F05DF500E07CC4 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = InfoPlist.strings; sourceTree = "<group>"; };
-		D2C49D8D14F05DF500E07CC4 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = ServicesMenu.strings; sourceTree = "<group>"; };
 		D2C49D8E14F05DF500E07CC4 /* GLQuakeWorld.scriptSuite */ = {isa = PBXFileReference; lastKnownFileType = text.plist.scriptSuite; path = GLQuakeWorld.scriptSuite; sourceTree = "<group>"; };
-		D2C49D9414F05E0A00E07CC4 /* German */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = German; path = Resources/GLQuakeWorld/German.lproj/ServicesMenu.strings; sourceTree = SOURCE_ROOT; };
-		D2C49D9614F05E1200E07CC4 /* Swedish */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Swedish; path = Resources/GLQuakeWorld/Swedish.lproj/ServicesMenu.strings; sourceTree = SOURCE_ROOT; };
 		D2C49EAE14F05E3C00E07CC4 /* Quake.help */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Quake.help; sourceTree = "<group>"; };
 		D2C6A2C114EEC32300CDC3D1 /* QPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QPrefix.pch; sourceTree = "<group>"; };
-		D2C6A31A14F05B7A00CDC3D1 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = Resources/English.lproj/AboutPanel.xib; sourceTree = "<group>"; };
-		D2C6A31C14F05B7A00CDC3D1 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = Resources/English.lproj/ArgumentEdit.xib; sourceTree = "<group>"; };
-		D2C6A31E14F05B7A00CDC3D1 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = Resources/English.lproj/ArgumentsPanel.xib; sourceTree = "<group>"; };
-		D2C6A32014F05B7A00CDC3D1 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = English; path = Resources/English.lproj/Credits.rtf; sourceTree = "<group>"; };
-		D2C6A32214F05B7A00CDC3D1 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = Resources/English.lproj/MediaScan.xib; sourceTree = "<group>"; };
-		D2C6A32414F05B7A00CDC3D1 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = Resources/English.lproj/SettingsWindow.xib; sourceTree = "<group>"; };
-		D2C6A32614F05B7A00CDC3D1 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = Resources/English.lproj/SoundPanel.xib; sourceTree = "<group>"; };
-		D2C6A34414F05B9A00CDC3D1 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = Resources/English.lproj/DisplaysPanel.xib; sourceTree = "<group>"; };
-		D2C6A34814F05BA600CDC3D1 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = Resources/English.lproj/GLDisplaysPanel.xib; sourceTree = "<group>"; };
 		D2C6A34B14F05C4600CDC3D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2C6A34C14F05C6B00CDC3D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2C6A34D14F05C7900CDC3D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -2034,17 +2034,16 @@
 		D246F594149B07FE003433EB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 1110;
 			};
 			buildConfigurationList = D246F597149B07FE003433EB /* Build configuration list for PBXProject "Quake" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				English,
-				German,
-				Swedish,
+				sv,
+				de,
 			);
 			mainGroup = D246F592149B07FE003433EB;
 			productRefGroup = D246F59E149B07FE003433EB /* Products */;
@@ -2584,137 +2583,123 @@
 		D2C49D5214F05D1C00E07CC4 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D2C49D5314F05D1C00E07CC4 /* English */,
+				555D48D32351687A0071AD9F /* en */,
 			);
 			name = InfoPlist.strings;
-			path = English.lproj;
 			sourceTree = "<group>";
 		};
 		D2C49D5414F05D1C00E07CC4 /* Quake.scriptTerminology */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D2C49D5514F05D1C00E07CC4 /* English */,
+				555D48D42351687A0071AD9F /* en */,
 			);
 			name = Quake.scriptTerminology;
-			path = English.lproj;
 			sourceTree = "<group>";
 		};
 		D2C49D5614F05D1C00E07CC4 /* Quake.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D2C49D5714F05D1C00E07CC4 /* English */,
+				555D48D52351687A0071AD9F /* en */,
 			);
 			name = Quake.xib;
-			path = English.lproj;
 			sourceTree = "<group>";
 		};
 		D2C49D5E14F05D5300E07CC4 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D2C49D5F14F05D5300E07CC4 /* English */,
+				555D48D62351687A0071AD9F /* en */,
 			);
 			name = InfoPlist.strings;
-			path = English.lproj;
 			sourceTree = "<group>";
 		};
 		D2C49D6014F05D5300E07CC4 /* QuakeWorld.scriptTerminology */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D2C49D6114F05D5300E07CC4 /* English */,
+				555D48D72351687A0071AD9F /* en */,
 			);
 			name = QuakeWorld.scriptTerminology;
-			path = English.lproj;
 			sourceTree = "<group>";
 		};
 		D2C49D6214F05D5300E07CC4 /* QuakeWorld.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D2C49D6314F05D5300E07CC4 /* English */,
+				555D48D82351687A0071AD9F /* en */,
 			);
 			name = QuakeWorld.xib;
-			path = English.lproj;
 			sourceTree = "<group>";
 		};
 		D2C49D6414F05D5300E07CC4 /* ServicesMenu.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D2C49D6514F05D5300E07CC4 /* English */,
-				D2C49D7414F05D8000E07CC4 /* German */,
-				D2C49D7514F05D8F00E07CC4 /* Swedish */,
+				555D48D92351687B0071AD9F /* en */,
+				555D48DB235168820071AD9F /* sv */,
+				555D48DD235168860071AD9F /* de */,
 			);
 			name = ServicesMenu.strings;
-			path = English.lproj;
 			sourceTree = "<group>";
 		};
 		D2C49D7814F05DAE00E07CC4 /* GLQuake.scriptTerminology */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D2C49D7914F05DAE00E07CC4 /* English */,
+				555D48CC235168790071AD9F /* en */,
 			);
 			name = GLQuake.scriptTerminology;
-			path = English.lproj;
 			sourceTree = "<group>";
 		};
 		D2C49D7A14F05DAE00E07CC4 /* GLQuake.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D2C49D7B14F05DAE00E07CC4 /* English */,
+				555D48CD2351687A0071AD9F /* en */,
 			);
 			name = GLQuake.xib;
-			path = English.lproj;
 			sourceTree = "<group>";
 		};
 		D2C49D7C14F05DAE00E07CC4 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D2C49D7D14F05DAE00E07CC4 /* English */,
+				555D48CE2351687A0071AD9F /* en */,
 			);
 			name = InfoPlist.strings;
-			path = English.lproj;
 			sourceTree = "<group>";
 		};
 		D2C49D8614F05DF500E07CC4 /* GLQuakeWorld.scriptTerminology */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D2C49D8714F05DF500E07CC4 /* English */,
+				555D48CF2351687A0071AD9F /* en */,
 			);
 			name = GLQuakeWorld.scriptTerminology;
-			path = English.lproj;
 			sourceTree = "<group>";
 		};
 		D2C49D8814F05DF500E07CC4 /* GLQuakeWorld.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D2C49D8914F05DF500E07CC4 /* English */,
+				555D48D02351687A0071AD9F /* en */,
 			);
 			name = GLQuakeWorld.xib;
-			path = English.lproj;
 			sourceTree = "<group>";
 		};
 		D2C49D8A14F05DF500E07CC4 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D2C49D8B14F05DF500E07CC4 /* English */,
+				555D48D12351687A0071AD9F /* en */,
 			);
 			name = InfoPlist.strings;
-			path = English.lproj;
 			sourceTree = "<group>";
 		};
 		D2C49D8C14F05DF500E07CC4 /* ServicesMenu.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D2C49D8D14F05DF500E07CC4 /* English */,
-				D2C49D9414F05E0A00E07CC4 /* German */,
-				D2C49D9614F05E1200E07CC4 /* Swedish */,
+				555D48D22351687A0071AD9F /* en */,
+				555D48DA235168820071AD9F /* sv */,
+				555D48DC235168860071AD9F /* de */,
 			);
 			name = ServicesMenu.strings;
-			path = English.lproj;
 			sourceTree = "<group>";
 		};
 		D2C6A31914F05B7A00CDC3D1 /* AboutPanel.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D2C6A31A14F05B7A00CDC3D1 /* English */,
+				555D48C3235168790071AD9F /* en */,
 			);
 			name = AboutPanel.xib;
 			path = ..;
@@ -2723,7 +2708,7 @@
 		D2C6A31B14F05B7A00CDC3D1 /* ArgumentEdit.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D2C6A31C14F05B7A00CDC3D1 /* English */,
+				555D48C4235168790071AD9F /* en */,
 			);
 			name = ArgumentEdit.xib;
 			path = ..;
@@ -2732,7 +2717,7 @@
 		D2C6A31D14F05B7A00CDC3D1 /* ArgumentsPanel.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D2C6A31E14F05B7A00CDC3D1 /* English */,
+				555D48C5235168790071AD9F /* en */,
 			);
 			name = ArgumentsPanel.xib;
 			path = ..;
@@ -2741,7 +2726,7 @@
 		D2C6A31F14F05B7A00CDC3D1 /* Credits.rtf */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D2C6A32014F05B7A00CDC3D1 /* English */,
+				555D48C6235168790071AD9F /* en */,
 			);
 			name = Credits.rtf;
 			path = ..;
@@ -2750,7 +2735,7 @@
 		D2C6A32114F05B7A00CDC3D1 /* MediaScan.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D2C6A32214F05B7A00CDC3D1 /* English */,
+				555D48C9235168790071AD9F /* en */,
 			);
 			name = MediaScan.xib;
 			path = ..;
@@ -2759,7 +2744,7 @@
 		D2C6A32314F05B7A00CDC3D1 /* SettingsWindow.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D2C6A32414F05B7A00CDC3D1 /* English */,
+				555D48CA235168790071AD9F /* en */,
 			);
 			name = SettingsWindow.xib;
 			path = ..;
@@ -2768,7 +2753,7 @@
 		D2C6A32514F05B7A00CDC3D1 /* SoundPanel.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D2C6A32614F05B7A00CDC3D1 /* English */,
+				555D48CB235168790071AD9F /* en */,
 			);
 			name = SoundPanel.xib;
 			path = ..;
@@ -2777,7 +2762,7 @@
 		D2C6A34314F05B9A00CDC3D1 /* DisplaysPanel.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D2C6A34414F05B9A00CDC3D1 /* English */,
+				555D48C7235168790071AD9F /* en */,
 			);
 			name = DisplaysPanel.xib;
 			path = ..;
@@ -2786,7 +2771,7 @@
 		D2C6A34714F05BA600CDC3D1 /* GLDisplaysPanel.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D2C6A34814F05BA600CDC3D1 /* English */,
+				555D48C8235168790071AD9F /* en */,
 			);
 			name = GLDisplaysPanel.xib;
 			path = ..;
@@ -2800,12 +2785,20 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -2842,12 +2835,20 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -2877,7 +2878,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = Quake;
-				CODE_SIGN_IDENTITY = "";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = QPrefix.pch;
@@ -2895,7 +2897,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = Quake;
-				CODE_SIGN_IDENTITY = "";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = QPrefix.pch;
@@ -2913,6 +2916,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = Quake;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = QPrefix.pch;
@@ -2932,6 +2937,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = Quake;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = QPrefix.pch;
@@ -2950,6 +2957,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "-";
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = SERVERONLY;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2960,6 +2969,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "-";
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = SERVERONLY;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2969,6 +2980,8 @@
 		D26CD3BD14DA7E5C00270FD9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -2976,6 +2989,8 @@
 		D26CD3BE14DA7E5C00270FD9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -2984,6 +2999,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = ReadMe;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
@@ -3000,6 +3017,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = ReadMe;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
@@ -3017,6 +3036,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = Quake;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = QPrefix.pch;
@@ -3035,6 +3056,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = Quake;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = QPrefix.pch;
@@ -3053,6 +3076,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = Quake;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = QPrefix.pch;
@@ -3074,6 +3099,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = Quake;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = QPrefix.pch;
