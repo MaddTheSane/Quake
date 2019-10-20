@@ -12,6 +12,10 @@
 		5556CDF01CE93C0600C027F3 /* QIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5556CDED1CE93C0600C027F3 /* QIcons.xcassets */; };
 		5556CDF11CE93C0600C027F3 /* QIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5556CDED1CE93C0600C027F3 /* QIcons.xcassets */; };
 		5556CDF51CE941A300C027F3 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5556CDF41CE941A300C027F3 /* Media.xcassets */; };
+		55871EB3235D1E1000528BDF /* Quake.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 55871EB0235D1E1000528BDF /* Quake.sdef */; };
+		55871EB5235D208E00528BDF /* QuakeWorld.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 55871EB4235D208E00528BDF /* QuakeWorld.sdef */; };
+		55871EB7235D209B00528BDF /* GLQuake.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 55871EB6235D209B00528BDF /* GLQuake.sdef */; };
+		55871EB9235D20AF00528BDF /* GLQuakeWorld.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 55871EB8235D20AF00528BDF /* GLQuakeWorld.sdef */; };
 		55AD3B931D337AA9000B0BE0 /* FruitzOfDojo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55AD3B901D337A8F000B0BE0 /* FruitzOfDojo.framework */; };
 		55AD3B941D337AA9000B0BE0 /* FruitzOfDojo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55AD3B901D337A8F000B0BE0 /* FruitzOfDojo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		55AD3B981D337AB1000B0BE0 /* FruitzOfDojo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55AD3B901D337A8F000B0BE0 /* FruitzOfDojo.framework */; };
@@ -584,6 +588,10 @@
 		555D48DB235168820071AD9F /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
 		555D48DC235168860071AD9F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
 		555D48DD235168860071AD9F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
+		55871EB0235D1E1000528BDF /* Quake.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Quake.sdef; sourceTree = "<group>"; };
+		55871EB4235D208E00528BDF /* QuakeWorld.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = QuakeWorld.sdef; sourceTree = "<group>"; };
+		55871EB6235D209B00528BDF /* GLQuake.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GLQuake.sdef; sourceTree = "<group>"; };
+		55871EB8235D20AF00528BDF /* GLQuakeWorld.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GLQuakeWorld.sdef; sourceTree = "<group>"; };
 		55AD3B8A1D337A8E000B0BE0 /* FruitzOfDojo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FruitzOfDojo.xcodeproj; path = FDFramework/FruitzOfDojo.xcodeproj; sourceTree = "<group>"; };
 		D246F59D149B07FE003433EB /* Quake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D246F5A1149B07FE003433EB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -1440,6 +1448,7 @@
 				D2C49D5214F05D1C00E07CC4 /* InfoPlist.strings */,
 				D2C49D5814F05D1C00E07CC4 /* Quake.scriptSuite */,
 				D2C49D5414F05D1C00E07CC4 /* Quake.scriptTerminology */,
+				55871EB0235D1E1000528BDF /* Quake.sdef */,
 				D2C49D5614F05D1C00E07CC4 /* Quake.xib */,
 			);
 			path = Quake;
@@ -1452,6 +1461,7 @@
 				D2C49D7C14F05DAE00E07CC4 /* InfoPlist.strings */,
 				D2C49D8314F05DCC00E07CC4 /* GLQuake.scriptSuite */,
 				D2C49D7814F05DAE00E07CC4 /* GLQuake.scriptTerminology */,
+				55871EB6235D209B00528BDF /* GLQuake.sdef */,
 				D2C49D7A14F05DAE00E07CC4 /* GLQuake.xib */,
 			);
 			path = GLQuake;
@@ -1877,6 +1887,7 @@
 				D2C49D5E14F05D5300E07CC4 /* InfoPlist.strings */,
 				D2C49D6914F05D5300E07CC4 /* QuakeWorld.scriptSuite */,
 				D2C49D6014F05D5300E07CC4 /* QuakeWorld.scriptTerminology */,
+				55871EB4235D208E00528BDF /* QuakeWorld.sdef */,
 				D2C49D6214F05D5300E07CC4 /* QuakeWorld.xib */,
 				D2C49D6414F05D5300E07CC4 /* ServicesMenu.strings */,
 			);
@@ -1890,6 +1901,7 @@
 				D2C49D8A14F05DF500E07CC4 /* InfoPlist.strings */,
 				D2C49D8E14F05DF500E07CC4 /* GLQuakeWorld.scriptSuite */,
 				D2C49D8614F05DF500E07CC4 /* GLQuakeWorld.scriptTerminology */,
+				55871EB8235D20AF00528BDF /* GLQuakeWorld.sdef */,
 				D2C49D8814F05DF500E07CC4 /* GLQuakeWorld.xib */,
 				D2C49D8C14F05DF500E07CC4 /* ServicesMenu.strings */,
 			);
@@ -2108,6 +2120,7 @@
 				D2C49D5914F05D1C00E07CC4 /* InfoPlist.strings in Resources */,
 				D2C49D5C14F05D1C00E07CC4 /* Quake.scriptSuite in Resources */,
 				5556CDEE1CE93C0600C027F3 /* QIcons.xcassets in Resources */,
+				55871EB3235D1E1000528BDF /* Quake.sdef in Resources */,
 				D2C49D5A14F05D1C00E07CC4 /* Quake.scriptTerminology in Resources */,
 				D2C49EAF14F05E3C00E07CC4 /* Quake.help in Resources */,
 			);
@@ -2119,6 +2132,7 @@
 			files = (
 				D2C6A33514F05B7A00CDC3D1 /* Credits.rtf in Resources */,
 				D2C6A32914F05B7A00CDC3D1 /* AboutPanel.xib in Resources */,
+				55871EB7235D209B00528BDF /* GLQuake.sdef in Resources */,
 				D2C6A32D14F05B7A00CDC3D1 /* ArgumentEdit.xib in Resources */,
 				D2C6A33114F05B7A00CDC3D1 /* ArgumentsPanel.xib in Resources */,
 				D2C6A33914F05B7A00CDC3D1 /* MediaScan.xib in Resources */,
@@ -2161,6 +2175,7 @@
 				5556CDEF1CE93C0600C027F3 /* QIcons.xcassets in Resources */,
 				D2C49D6E14F05D5300E07CC4 /* QuakeWorld.scriptTerminology in Resources */,
 				D2C49D7014F05D5300E07CC4 /* ServicesMenu.strings in Resources */,
+				55871EB5235D208E00528BDF /* QuakeWorld.sdef in Resources */,
 				D2C49EB014F05E3C00E07CC4 /* Quake.help in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2172,6 +2187,7 @@
 				D2C6A33614F05B7A00CDC3D1 /* Credits.rtf in Resources */,
 				D2C6A32A14F05B7A00CDC3D1 /* AboutPanel.xib in Resources */,
 				D2C6A32E14F05B7A00CDC3D1 /* ArgumentEdit.xib in Resources */,
+				55871EB9235D20AF00528BDF /* GLQuakeWorld.sdef in Resources */,
 				D2C6A33214F05B7A00CDC3D1 /* ArgumentsPanel.xib in Resources */,
 				D2C6A33A14F05B7A00CDC3D1 /* MediaScan.xib in Resources */,
 				D2C6A33E14F05B7A00CDC3D1 /* SettingsWindow.xib in Resources */,

@@ -53,5 +53,7 @@
 	<string>Quake</string>
 	<key>NSPrincipalClass</key>
 	<string>QApplication</string>
+	<key>OSAScriptingDefinition</key>
+	<string>Quake.sdef</string>
 </dict>
 </plist>

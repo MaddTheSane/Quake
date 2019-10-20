@@ -71,5 +71,7 @@
 			</array>
 		</dict>
 	</array>
+	<key>OSAScriptingDefinition</key>
+	<string>QuakeWorld.sdef</string>
 </dict>
 </plist>

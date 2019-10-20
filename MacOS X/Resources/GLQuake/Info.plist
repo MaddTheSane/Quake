@@ -53,5 +53,7 @@
 	<string>GLQuake</string>
 	<key>NSPrincipalClass</key>
 	<string>QApplication</string>
+	<key>OSAScriptingDefinition</key>
+	<string>GLQuake.sdef</string>
 </dict>
 </plist>
