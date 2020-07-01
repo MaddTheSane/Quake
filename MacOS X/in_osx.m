@@ -83,7 +83,7 @@ static void                     IN_Toggle_AuxLook_f (void);
 static void                     IN_Force_CenterView_f (void);
 static void                     IN_MouseMove (usercmd_t *);
 static void                     IN_JoyMove (usercmd_t *cmd);
-static void                     IN_UpdateActuators ();
+static void                     IN_UpdateActuators (void);
 
 //----------------------------------------------------------------------------------------------------------------------------
 
@@ -411,7 +411,7 @@ void IN_SendKeyEvents()
     {
         switch (pEvent->mType)
         {
-            case eFDHIDEventTypeGamePadAxis:
+            case FDHIDEventTypeGamePadAxis:
                 if (allowJoy == YES)
                 {
                     if (pEvent->mButton < FD_SIZE_OF_ARRAY (sInJoyValues))
@@ -421,7 +421,7 @@ void IN_SendKeyEvents()
                 }
                 break;
                 
-            case eFDHIDEventTypeGamePadButton:
+            case FDHIDEventTypeGamePadButton:
                 if (allowJoy == YES)
                 {
                     if (pEvent->mButton <= (K_AUX32 - K_AUX1))
@@ -431,26 +431,26 @@ void IN_SendKeyEvents()
                 }
                 break;
                 
-            case eFDHIDEventTypeKeyboard:
+            case FDHIDEventTypeKeyboard:
                 if (pEvent->mButton < 255)
                 {
                     Key_Event (pEvent->mButton, pEvent->mBoolVal);
                 }
                 break;
                 
-            case eFDHIDEventTypeMouseAxis:
+            case FDHIDEventTypeMouseAxis:
                 if (allowMouse == YES)
                 {
-                    if (pEvent->mButton == eFDHIDMouseAxisX)
+                    if (pEvent->mButton == FDHIDMouseAxisX)
                     {
                         sInMouseNewPosition.X += pEvent->mIntVal;
                         
                     }
-                    else if (pEvent->mButton == eFDHIDMouseAxisY)
+                    else if (pEvent->mButton == FDHIDMouseAxisY)
                     {
                         sInMouseNewPosition.Y += pEvent->mIntVal;
                     }
-                    else if (pEvent->mButton == eFDHIDMouseAxisWheel)
+                    else if (pEvent->mButton == FDHIDMouseAxisWheel)
                     {
                         if (pEvent->mIntVal != 0)
                         {
@@ -463,7 +463,7 @@ void IN_SendKeyEvents()
                 }
                 break;
                 
-            case eFDHIDEventTypeMouseButton:
+            case FDHIDEventTypeMouseButton:
                 if (allowMouse == YES)
                 {
                     if (pEvent->mButton < 5)

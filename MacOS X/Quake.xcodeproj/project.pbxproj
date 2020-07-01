@@ -561,28 +561,28 @@
 /* Begin PBXFileReference section */
 		5556CDED1CE93C0600C027F3 /* QIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = QIcons.xcassets; sourceTree = "<group>"; };
 		5556CDF41CE941A300C027F3 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
-		555D48C3235168790071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Resources/en.lproj/AboutPanel.xib; sourceTree = "<group>"; };
-		555D48C4235168790071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Resources/en.lproj/ArgumentEdit.xib; sourceTree = "<group>"; };
-		555D48C5235168790071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Resources/en.lproj/ArgumentsPanel.xib; sourceTree = "<group>"; };
+		55583D5324AD57F000D30229 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Quake.xib; sourceTree = "<group>"; };
+		55583D5424AD57F000D30229 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/QuakeWorld.xib; sourceTree = "<group>"; };
+		55583D5524AD57F000D30229 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/GLQuake.xib; sourceTree = "<group>"; };
+		55583D5624AD57F100D30229 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/GLQuakeWorld.xib; sourceTree = "<group>"; };
+		55583D5724AD57F100D30229 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Resources/Base.lproj/AboutPanel.xib; sourceTree = "<group>"; };
+		55583D5824AD57F100D30229 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Resources/Base.lproj/ArgumentEdit.xib; sourceTree = "<group>"; };
+		55583D5924AD57F100D30229 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Resources/Base.lproj/ArgumentsPanel.xib; sourceTree = "<group>"; };
+		55583D5A24AD57F100D30229 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Resources/Base.lproj/DisplaysPanel.xib; sourceTree = "<group>"; };
+		55583D5B24AD57F100D30229 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Resources/Base.lproj/GLDisplaysPanel.xib; sourceTree = "<group>"; };
+		55583D5C24AD57F200D30229 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Resources/Base.lproj/MediaScan.xib; sourceTree = "<group>"; };
+		55583D5D24AD57F200D30229 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Resources/Base.lproj/SettingsWindow.xib; sourceTree = "<group>"; };
+		55583D5E24AD57F200D30229 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Resources/Base.lproj/SoundPanel.xib; sourceTree = "<group>"; };
 		555D48C6235168790071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = Resources/en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		555D48C7235168790071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Resources/en.lproj/DisplaysPanel.xib; sourceTree = "<group>"; };
-		555D48C8235168790071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Resources/en.lproj/GLDisplaysPanel.xib; sourceTree = "<group>"; };
-		555D48C9235168790071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Resources/en.lproj/MediaScan.xib; sourceTree = "<group>"; };
-		555D48CA235168790071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Resources/en.lproj/SettingsWindow.xib; sourceTree = "<group>"; };
-		555D48CB235168790071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Resources/en.lproj/SoundPanel.xib; sourceTree = "<group>"; };
 		555D48CC235168790071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.scriptTerminology; name = en; path = en.lproj/GLQuake.scriptTerminology; sourceTree = "<group>"; };
-		555D48CD2351687A0071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/GLQuake.xib; sourceTree = "<group>"; };
 		555D48CE2351687A0071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		555D48CF2351687A0071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.scriptTerminology; name = en; path = en.lproj/GLQuakeWorld.scriptTerminology; sourceTree = "<group>"; };
-		555D48D02351687A0071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/GLQuakeWorld.xib; sourceTree = "<group>"; };
 		555D48D12351687A0071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		555D48D22351687A0071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
 		555D48D32351687A0071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		555D48D42351687A0071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.scriptTerminology; name = en; path = en.lproj/Quake.scriptTerminology; sourceTree = "<group>"; };
-		555D48D52351687A0071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Quake.xib; sourceTree = "<group>"; };
 		555D48D62351687A0071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		555D48D72351687A0071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.scriptTerminology; name = en; path = en.lproj/QuakeWorld.scriptTerminology; sourceTree = "<group>"; };
-		555D48D82351687A0071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/QuakeWorld.xib; sourceTree = "<group>"; };
 		555D48D92351687B0071AD9F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
 		555D48DA235168820071AD9F /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
 		555D48DB235168820071AD9F /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
@@ -1839,7 +1839,7 @@
 			children = (
 				D26CD3ED14DA855900270FD9 /* QReadMe.m */,
 			);
-			path = "Read Me";
+			name = "Read Me";
 			sourceTree = "<group>";
 		};
 		D26CD3EA14DA847400270FD9 /* Read Me */ = {
@@ -2046,7 +2046,7 @@
 		D246F594149B07FE003433EB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1110;
+				LastUpgradeCheck = 1200;
 			};
 			buildConfigurationList = D246F597149B07FE003433EB /* Build configuration list for PBXProject "Quake" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -2056,6 +2056,7 @@
 				en,
 				sv,
 				de,
+				Base,
 			);
 			mainGroup = D246F592149B07FE003433EB;
 			productRefGroup = D246F59E149B07FE003433EB /* Products */;
@@ -2615,7 +2616,7 @@
 		D2C49D5614F05D1C00E07CC4 /* Quake.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				555D48D52351687A0071AD9F /* en */,
+				55583D5324AD57F000D30229 /* Base */,
 			);
 			name = Quake.xib;
 			sourceTree = "<group>";
@@ -2639,7 +2640,7 @@
 		D2C49D6214F05D5300E07CC4 /* QuakeWorld.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				555D48D82351687A0071AD9F /* en */,
+				55583D5424AD57F000D30229 /* Base */,
 			);
 			name = QuakeWorld.xib;
 			sourceTree = "<group>";
@@ -2665,7 +2666,7 @@
 		D2C49D7A14F05DAE00E07CC4 /* GLQuake.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				555D48CD2351687A0071AD9F /* en */,
+				55583D5524AD57F000D30229 /* Base */,
 			);
 			name = GLQuake.xib;
 			sourceTree = "<group>";
@@ -2689,7 +2690,7 @@
 		D2C49D8814F05DF500E07CC4 /* GLQuakeWorld.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				555D48D02351687A0071AD9F /* en */,
+				55583D5624AD57F100D30229 /* Base */,
 			);
 			name = GLQuakeWorld.xib;
 			sourceTree = "<group>";
@@ -2715,7 +2716,7 @@
 		D2C6A31914F05B7A00CDC3D1 /* AboutPanel.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				555D48C3235168790071AD9F /* en */,
+				55583D5724AD57F100D30229 /* Base */,
 			);
 			name = AboutPanel.xib;
 			path = ..;
@@ -2724,7 +2725,7 @@
 		D2C6A31B14F05B7A00CDC3D1 /* ArgumentEdit.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				555D48C4235168790071AD9F /* en */,
+				55583D5824AD57F100D30229 /* Base */,
 			);
 			name = ArgumentEdit.xib;
 			path = ..;
@@ -2733,7 +2734,7 @@
 		D2C6A31D14F05B7A00CDC3D1 /* ArgumentsPanel.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				555D48C5235168790071AD9F /* en */,
+				55583D5924AD57F100D30229 /* Base */,
 			);
 			name = ArgumentsPanel.xib;
 			path = ..;
@@ -2751,7 +2752,7 @@
 		D2C6A32114F05B7A00CDC3D1 /* MediaScan.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				555D48C9235168790071AD9F /* en */,
+				55583D5C24AD57F200D30229 /* Base */,
 			);
 			name = MediaScan.xib;
 			path = ..;
@@ -2760,7 +2761,7 @@
 		D2C6A32314F05B7A00CDC3D1 /* SettingsWindow.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				555D48CA235168790071AD9F /* en */,
+				55583D5D24AD57F200D30229 /* Base */,
 			);
 			name = SettingsWindow.xib;
 			path = ..;
@@ -2769,7 +2770,7 @@
 		D2C6A32514F05B7A00CDC3D1 /* SoundPanel.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				555D48CB235168790071AD9F /* en */,
+				55583D5E24AD57F200D30229 /* Base */,
 			);
 			name = SoundPanel.xib;
 			path = ..;
@@ -2778,7 +2779,7 @@
 		D2C6A34314F05B9A00CDC3D1 /* DisplaysPanel.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				555D48C7235168790071AD9F /* en */,
+				55583D5A24AD57F100D30229 /* Base */,
 			);
 			name = DisplaysPanel.xib;
 			path = ..;
@@ -2787,7 +2788,7 @@
 		D2C6A34714F05BA600CDC3D1 /* GLDisplaysPanel.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				555D48C8235168790071AD9F /* en */,
+				55583D5B24AD57F100D30229 /* Base */,
 			);
 			name = GLDisplaysPanel.xib;
 			path = ..;
@@ -2813,6 +2814,7 @@
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -2840,7 +2842,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
@@ -2863,6 +2865,7 @@
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -2884,7 +2887,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LLVM_LTO = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				SDKROOT = macosx;
 			};
 			name = Release;
