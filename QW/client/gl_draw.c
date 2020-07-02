@@ -1344,7 +1344,7 @@ done: ;
 	}
 }
 
-extern qboolean VID_Is8bit();
+extern qboolean VID_Is8bit(void);
 
 /*
 ===============

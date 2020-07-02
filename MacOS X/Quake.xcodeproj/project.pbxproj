@@ -1113,6 +1113,7 @@
 			name = Quake;
 			path = ../WinQuake;
 			sourceTree = "<group>";
+			usesTabs = 1;
 		};
 		D26BDD49149B0A1F0018D5AE /* Generic */ = {
 			isa = PBXGroup;
@@ -1477,6 +1478,7 @@
 			name = QuakeWorld;
 			path = ../QW;
 			sourceTree = "<group>";
+			usesTabs = 1;
 		};
 		D26CD29114DA6E3900270FD9 /* Common */ = {
 			isa = PBXGroup;

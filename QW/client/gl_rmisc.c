@@ -27,7 +27,7 @@ extern qboolean	gl_palettedtex;
 
 #endif /* __APPLE__ || MACOSX */
 
-extern void R_InitBubble();
+extern void R_InitBubble(void);
 
 /*
 ==================
