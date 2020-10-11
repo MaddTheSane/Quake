@@ -16,6 +16,10 @@
 		5556CDF01CE93C0600C027F3 /* QIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5556CDED1CE93C0600C027F3 /* QIcons.xcassets */; };
 		5556CDF11CE93C0600C027F3 /* QIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5556CDED1CE93C0600C027F3 /* QIcons.xcassets */; };
 		5556CDF51CE941A300C027F3 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5556CDF41CE941A300C027F3 /* Media.xcassets */; };
+		55759CAA2533614E00153823 /* FruitzOfDojo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 551F725F2532F564007534B9 /* FruitzOfDojo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		55759CAB2533615B00153823 /* FruitzOfDojo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 551F725F2532F564007534B9 /* FruitzOfDojo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		55759CAC2533616800153823 /* FruitzOfDojo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 551F725F2532F564007534B9 /* FruitzOfDojo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		55759CAF2533617300153823 /* FruitzOfDojo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 551F725F2532F564007534B9 /* FruitzOfDojo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		55871EB3235D1E1000528BDF /* Quake.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 55871EB0235D1E1000528BDF /* Quake.sdef */; };
 		55871EB5235D208E00528BDF /* QuakeWorld.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 55871EB4235D208E00528BDF /* QuakeWorld.sdef */; };
 		55871EB7235D209B00528BDF /* GLQuake.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 55871EB6235D209B00528BDF /* GLQuake.sdef */; };
@@ -424,6 +428,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				55759CAA2533614E00153823 /* FruitzOfDojo.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,6 +439,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				55759CAB2533615B00153823 /* FruitzOfDojo.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,6 +450,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				55759CAC2533616800153823 /* FruitzOfDojo.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -454,6 +461,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				55759CAF2533617300153823 /* FruitzOfDojo.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
