@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		551F725A2532F52C007534B9 /* FruitzOfDojo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 551F725F2532F564007534B9 /* FruitzOfDojo.framework */; };
+		551F725C2532F541007534B9 /* FruitzOfDojo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 551F725F2532F564007534B9 /* FruitzOfDojo.framework */; };
+		551F725E2532F55E007534B9 /* FruitzOfDojo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 551F725F2532F564007534B9 /* FruitzOfDojo.framework */; };
+		551F72602532F564007534B9 /* FruitzOfDojo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 551F725F2532F564007534B9 /* FruitzOfDojo.framework */; };
 		5556CDEE1CE93C0600C027F3 /* QIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5556CDED1CE93C0600C027F3 /* QIcons.xcassets */; };
 		5556CDEF1CE93C0600C027F3 /* QIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5556CDED1CE93C0600C027F3 /* QIcons.xcassets */; };
 		5556CDF01CE93C0600C027F3 /* QIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5556CDED1CE93C0600C027F3 /* QIcons.xcassets */; };
@@ -16,16 +20,6 @@
 		55871EB5235D208E00528BDF /* QuakeWorld.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 55871EB4235D208E00528BDF /* QuakeWorld.sdef */; };
 		55871EB7235D209B00528BDF /* GLQuake.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 55871EB6235D209B00528BDF /* GLQuake.sdef */; };
 		55871EB9235D20AF00528BDF /* GLQuakeWorld.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 55871EB8235D20AF00528BDF /* GLQuakeWorld.sdef */; };
-		55AD3B931D337AA9000B0BE0 /* FruitzOfDojo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55AD3B901D337A8F000B0BE0 /* FruitzOfDojo.framework */; };
-		55AD3B941D337AA9000B0BE0 /* FruitzOfDojo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55AD3B901D337A8F000B0BE0 /* FruitzOfDojo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		55AD3B981D337AB1000B0BE0 /* FruitzOfDojo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55AD3B901D337A8F000B0BE0 /* FruitzOfDojo.framework */; };
-		55AD3B991D337AB1000B0BE0 /* FruitzOfDojo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55AD3B901D337A8F000B0BE0 /* FruitzOfDojo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		55AD3B9D1D337AB6000B0BE0 /* FruitzOfDojo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55AD3B901D337A8F000B0BE0 /* FruitzOfDojo.framework */; };
-		55AD3B9E1D337AB6000B0BE0 /* FruitzOfDojo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55AD3B901D337A8F000B0BE0 /* FruitzOfDojo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		55AD3BA21D337ABC000B0BE0 /* FruitzOfDojo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55AD3B901D337A8F000B0BE0 /* FruitzOfDojo.framework */; };
-		55AD3BA31D337ABC000B0BE0 /* FruitzOfDojo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55AD3B901D337A8F000B0BE0 /* FruitzOfDojo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		55AD3BA71D337AFC000B0BE0 /* FruitzOfDojo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55AD3B901D337A8F000B0BE0 /* FruitzOfDojo.framework */; };
-		55AD3BA81D337AFC000B0BE0 /* FruitzOfDojo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55AD3B901D337A8F000B0BE0 /* FruitzOfDojo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D23BEE3214B2535900E0909B /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D26BDEE2149EEBE30018D5AE /* OpenGL.framework */; };
 		D246F5A2149B07FE003433EB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D246F5A1149B07FE003433EB /* Cocoa.framework */; };
 		D246F5D5149B089C003433EB /* cd_osx.m in Sources */ = {isa = PBXBuildFile; fileRef = D246F5C7149B089C003433EB /* cd_osx.m */; };
@@ -423,65 +417,6 @@
 		D2F5E9A414FC92B900629A31 /* ServicesMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2C49D8C14F05DF500E07CC4 /* ServicesMenu.strings */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		5509500B22D1AAC700FEDA33 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 55AD3B8A1D337A8E000B0BE0 /* FruitzOfDojo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5531D5061E282D6000BDBF21;
-			remoteInfo = FDAudio;
-		};
-		55AD3B8F1D337A8F000B0BE0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 55AD3B8A1D337A8E000B0BE0 /* FruitzOfDojo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 556478241CECEE1000ECD01B;
-			remoteInfo = FruitzOfDojo;
-		};
-		55AD3B911D337A8F000B0BE0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 55AD3B8A1D337A8E000B0BE0 /* FruitzOfDojo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 55F926101CED18F900145952;
-			remoteInfo = FruitzOfDojoSwift;
-		};
-		55AD3B951D337AA9000B0BE0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 55AD3B8A1D337A8E000B0BE0 /* FruitzOfDojo.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 556478231CECEE1000ECD01B;
-			remoteInfo = FruitzOfDojo;
-		};
-		55AD3B9A1D337AB1000B0BE0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 55AD3B8A1D337A8E000B0BE0 /* FruitzOfDojo.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 556478231CECEE1000ECD01B;
-			remoteInfo = FruitzOfDojo;
-		};
-		55AD3B9F1D337AB6000B0BE0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 55AD3B8A1D337A8E000B0BE0 /* FruitzOfDojo.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 556478231CECEE1000ECD01B;
-			remoteInfo = FruitzOfDojo;
-		};
-		55AD3BA41D337ABC000B0BE0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 55AD3B8A1D337A8E000B0BE0 /* FruitzOfDojo.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 556478231CECEE1000ECD01B;
-			remoteInfo = FruitzOfDojo;
-		};
-		55AD3BA91D337AFC000B0BE0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 55AD3B8A1D337A8E000B0BE0 /* FruitzOfDojo.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 556478231CECEE1000ECD01B;
-			remoteInfo = FruitzOfDojo;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		55AD3B971D337AA9000B0BE0 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -489,7 +424,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				55AD3B941D337AA9000B0BE0 /* FruitzOfDojo.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -500,7 +434,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				55AD3B991D337AB1000B0BE0 /* FruitzOfDojo.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -511,7 +444,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				55AD3B9E1D337AB6000B0BE0 /* FruitzOfDojo.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -522,7 +454,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				55AD3BA31D337ABC000B0BE0 /* FruitzOfDojo.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -533,7 +464,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				55AD3BA81D337AFC000B0BE0 /* FruitzOfDojo.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -559,6 +489,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		551F725F2532F564007534B9 /* FruitzOfDojo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FruitzOfDojo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5556CDED1CE93C0600C027F3 /* QIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = QIcons.xcassets; sourceTree = "<group>"; };
 		5556CDF41CE941A300C027F3 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		55583D5324AD57F000D30229 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Quake.xib; sourceTree = "<group>"; };
@@ -592,7 +523,6 @@
 		55871EB4235D208E00528BDF /* QuakeWorld.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = QuakeWorld.sdef; sourceTree = "<group>"; };
 		55871EB6235D209B00528BDF /* GLQuake.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GLQuake.sdef; sourceTree = "<group>"; };
 		55871EB8235D20AF00528BDF /* GLQuakeWorld.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GLQuakeWorld.sdef; sourceTree = "<group>"; };
-		55AD3B8A1D337A8E000B0BE0 /* FruitzOfDojo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FruitzOfDojo.xcodeproj; path = FDFramework/FruitzOfDojo.xcodeproj; sourceTree = "<group>"; };
 		D246F59D149B07FE003433EB /* Quake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D246F5A1149B07FE003433EB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D246F5A4149B07FE003433EB /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -907,6 +837,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				551F725A2532F52C007534B9 /* FruitzOfDojo.framework in Frameworks */,
 				D26BDE55149B2B0F0018D5AE /* ApplicationServices.framework in Frameworks */,
 				D26BDE5E149D443C0018D5AE /* AudioToolbox.framework in Frameworks */,
 				D26BDE5C149D442B0018D5AE /* AudioUnit.framework in Frameworks */,
@@ -914,7 +845,6 @@
 				D2E123BE14DC44980041A7AB /* ForceFeedback.framework in Frameworks */,
 				D26BDE57149B2B270018D5AE /* IOKit.framework in Frameworks */,
 				D23BEE3214B2535900E0909B /* OpenGL.framework in Frameworks */,
-				55AD3B931D337AA9000B0BE0 /* FruitzOfDojo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -922,6 +852,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				551F725E2532F55E007534B9 /* FruitzOfDojo.framework in Frameworks */,
 				D26BDEBB149EE9710018D5AE /* ApplicationServices.framework in Frameworks */,
 				D26BDEBE149EE9710018D5AE /* AudioToolbox.framework in Frameworks */,
 				D26BDEBD149EE9710018D5AE /* AudioUnit.framework in Frameworks */,
@@ -929,7 +860,6 @@
 				D2E123C014DC44980041A7AB /* ForceFeedback.framework in Frameworks */,
 				D26BDEBC149EE9710018D5AE /* IOKit.framework in Frameworks */,
 				D26BDEE4149EEC080018D5AE /* OpenGL.framework in Frameworks */,
-				55AD3B9D1D337AB6000B0BE0 /* FruitzOfDojo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -953,7 +883,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D26CD3D314DA83F400270FD9 /* Cocoa.framework in Frameworks */,
-				55AD3BA71D337AFC000B0BE0 /* FruitzOfDojo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -961,6 +890,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				551F725C2532F541007534B9 /* FruitzOfDojo.framework in Frameworks */,
 				D2CAF41014DA6761006CAA0D /* ApplicationServices.framework in Frameworks */,
 				D2CAF41114DA6761006CAA0D /* AudioToolbox.framework in Frameworks */,
 				D2CAF41214DA6761006CAA0D /* AudioUnit.framework in Frameworks */,
@@ -968,7 +898,6 @@
 				D2E123BF14DC44980041A7AB /* ForceFeedback.framework in Frameworks */,
 				D2CAF41414DA6761006CAA0D /* IOKit.framework in Frameworks */,
 				D2CAF41514DA6761006CAA0D /* OpenGL.framework in Frameworks */,
-				55AD3B981D337AB1000B0BE0 /* FruitzOfDojo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -976,6 +905,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				551F72602532F564007534B9 /* FruitzOfDojo.framework in Frameworks */,
 				D2CAF48814DA6771006CAA0D /* ApplicationServices.framework in Frameworks */,
 				D2CAF48914DA6771006CAA0D /* AudioToolbox.framework in Frameworks */,
 				D2CAF48A14DA6771006CAA0D /* AudioUnit.framework in Frameworks */,
@@ -983,23 +913,12 @@
 				D2CAF48C14DA6771006CAA0D /* IOKit.framework in Frameworks */,
 				D2E123C114DC44980041A7AB /* ForceFeedback.framework in Frameworks */,
 				D2CAF48D14DA6771006CAA0D /* OpenGL.framework in Frameworks */,
-				55AD3BA21D337ABC000B0BE0 /* FruitzOfDojo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		55AD3B8B1D337A8E000B0BE0 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				55AD3B901D337A8F000B0BE0 /* FruitzOfDojo.framework */,
-				55AD3B921D337A8F000B0BE0 /* FruitzOfDojoSwift.framework */,
-				5509500C22D1AAC700FEDA33 /* FDAudio.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		D246F592149B07FE003433EB = {
 			isa = PBXGroup;
 			children = (
@@ -1032,6 +951,7 @@
 		D246F5A0149B07FE003433EB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				551F725F2532F564007534B9 /* FruitzOfDojo.framework */,
 				D246F5A1149B07FE003433EB /* Cocoa.framework */,
 				D246F5A3149B07FE003433EB /* Other Frameworks */,
 			);
@@ -1057,7 +977,6 @@
 		D246F5A7149B07FE003433EB /* MacOS X */ = {
 			isa = PBXGroup;
 			children = (
-				55AD3B8A1D337A8E000B0BE0 /* FruitzOfDojo.xcodeproj */,
 				D2C25ADC14D0D72600E275A0 /* Settings */,
 				D246F5C6149B0851003433EB /* Headers */,
 				D2C25B5F14D1E09200E275A0 /* QApplication.m */,
@@ -1925,7 +1844,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				55AD3B961D337AA9000B0BE0 /* PBXTargetDependency */,
 			);
 			name = Quake;
 			productName = Quake;
@@ -1944,7 +1862,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				55AD3BA01D337AB6000B0BE0 /* PBXTargetDependency */,
 			);
 			name = GLQuake;
 			productName = Quake;
@@ -1997,7 +1914,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				55AD3BAA1D337AFC000B0BE0 /* PBXTargetDependency */,
 			);
 			name = "Read Me";
 			productName = "Read Me";
@@ -2016,7 +1932,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				55AD3B9B1D337AB1000B0BE0 /* PBXTargetDependency */,
 			);
 			name = QuakeWorld;
 			productName = Quake;
@@ -2035,7 +1950,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				55AD3BA51D337ABC000B0BE0 /* PBXTargetDependency */,
 			);
 			name = GLQuakeWorld;
 			productName = Quake;
@@ -2063,12 +1977,6 @@
 			mainGroup = D246F592149B07FE003433EB;
 			productRefGroup = D246F59E149B07FE003433EB /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 55AD3B8B1D337A8E000B0BE0 /* Products */;
-					ProjectRef = 55AD3B8A1D337A8E000B0BE0 /* FruitzOfDojo.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				D246F59C149B07FE003433EB /* Quake */,
@@ -2081,30 +1989,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		5509500C22D1AAC700FEDA33 /* FDAudio.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = FDAudio.framework;
-			remoteRef = 5509500B22D1AAC700FEDA33 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		55AD3B901D337A8F000B0BE0 /* FruitzOfDojo.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = FruitzOfDojo.framework;
-			remoteRef = 55AD3B8F1D337A8F000B0BE0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		55AD3B921D337A8F000B0BE0 /* FruitzOfDojoSwift.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = FruitzOfDojoSwift.framework;
-			remoteRef = 55AD3B911D337A8F000B0BE0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		D246F59B149B07FE003433EB /* Resources */ = {
@@ -2569,34 +2453,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		55AD3B961D337AA9000B0BE0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = FruitzOfDojo;
-			targetProxy = 55AD3B951D337AA9000B0BE0 /* PBXContainerItemProxy */;
-		};
-		55AD3B9B1D337AB1000B0BE0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = FruitzOfDojo;
-			targetProxy = 55AD3B9A1D337AB1000B0BE0 /* PBXContainerItemProxy */;
-		};
-		55AD3BA01D337AB6000B0BE0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = FruitzOfDojo;
-			targetProxy = 55AD3B9F1D337AB6000B0BE0 /* PBXContainerItemProxy */;
-		};
-		55AD3BA51D337ABC000B0BE0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = FruitzOfDojo;
-			targetProxy = 55AD3BA41D337ABC000B0BE0 /* PBXContainerItemProxy */;
-		};
-		55AD3BAA1D337AFC000B0BE0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = FruitzOfDojo;
-			targetProxy = 55AD3BA91D337AFC000B0BE0 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D2C49D5214F05D1C00E07CC4 /* InfoPlist.strings */ = {
