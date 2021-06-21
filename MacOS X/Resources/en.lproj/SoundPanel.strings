@@ -1,0 +1,18 @@
+
+/* Class = "NSTextFieldCell"; title = "Please select a folder that holds audio files. The filenames must end on the extension \".mp3\" or \".mp4\". Files that are stored in subfolders will be recognized, too."; ObjectID = "15"; */
+"15.title" = "Please select a folder that holds audio files. The filenames must end on the extension \".mp3\" or \".mp4\". Files that are stored in subfolders will be recognized, too.";
+
+/* Class = "NSPopUpButton"; ibShadowedToolTip = "Select the display."; ObjectID = "33"; */
+"33.ibShadowedToolTip" = "Select the display.";
+
+/* Class = "NSTextField"; ibShadowedToolTip = "Select the display."; ObjectID = "34"; */
+"34.ibShadowedToolTip" = "Select the display.";
+
+/* Class = "NSTextFieldCell"; title = "Play audio files from:"; ObjectID = "35"; */
+"35.title" = "Play audio files from:";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "37"; */
+"37.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "Item1"; ObjectID = "38"; */
+"38.title" = "Item1";

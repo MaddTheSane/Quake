@@ -1,0 +1,81 @@
+
+/* Class = "NSButton"; ibShadowedToolTip = "Select whether the the game runs in fullscreen or windowed mode."; ObjectID = "4"; */
+"4.ibShadowedToolTip" = "Select whether the the game runs in fullscreen or windowed mode.";
+
+/* Class = "NSPopUpButton"; ibShadowedToolTip = "Select the color depth."; ObjectID = "5"; */
+"5.ibShadowedToolTip" = "Select the color depth.";
+
+/* Class = "NSButton"; ibShadowedToolTip = "Fade only the selected display to black or all."; ObjectID = "6"; */
+"6.ibShadowedToolTip" = "Fade only the selected display to black or all.";
+
+/* Class = "NSTextField"; ibShadowedToolTip = "Select the color depth."; ObjectID = "7"; */
+"7.ibShadowedToolTip" = "Select the color depth.";
+
+/* Class = "NSTextField"; ibShadowedToolTip = "Select the display."; ObjectID = "8"; */
+"8.ibShadowedToolTip" = "Select the display.";
+
+/* Class = "NSTextField"; ibShadowedToolTip = "Select the resolution."; ObjectID = "9"; */
+"9.ibShadowedToolTip" = "Select the resolution.";
+
+/* Class = "NSPopUpButton"; ibShadowedToolTip = "Select the resolution."; ObjectID = "10"; */
+"10.ibShadowedToolTip" = "Select the resolution.";
+
+/* Class = "NSPopUpButton"; ibShadowedToolTip = "Select the number of FSAA samples, if available for the selected display."; ObjectID = "11"; */
+"11.ibShadowedToolTip" = "Select the number of FSAA samples, if available for the selected display.";
+
+/* Class = "NSTextField"; ibShadowedToolTip = "Select the number of FSAA samples, if available for the selected display."; ObjectID = "12"; */
+"12.ibShadowedToolTip" = "Select the number of FSAA samples, if available for the selected display.";
+
+/* Class = "NSPopUpButton"; ibShadowedToolTip = "Select the display."; ObjectID = "13"; */
+"13.ibShadowedToolTip" = "Select the display.";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "15"; */
+"15.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "Item1"; ObjectID = "16"; */
+"16.title" = "Item1";
+
+/* Class = "NSTextFieldCell"; title = "FSAA Samples:"; ObjectID = "17"; */
+"17.title" = "FSAA Samples:";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "19"; */
+"19.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "Disabled"; ObjectID = "20"; */
+"20.title" = "Disabled";
+
+/* Class = "NSMenuItem"; title = "8"; ObjectID = "21"; */
+"21.title" = "8";
+
+/* Class = "NSMenuItem"; title = "4"; ObjectID = "22"; */
+"22.title" = "4";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "24"; */
+"24.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "Item1"; ObjectID = "25"; */
+"25.title" = "Item1";
+
+/* Class = "NSTextFieldCell"; title = "Mode:"; ObjectID = "26"; */
+"26.title" = "Mode:";
+
+/* Class = "NSTextFieldCell"; title = "Display:"; ObjectID = "27"; */
+"27.title" = "Display:";
+
+/* Class = "NSTextFieldCell"; title = "Colors:"; ObjectID = "28"; */
+"28.title" = "Colors:";
+
+/* Class = "NSButtonCell"; title = "Fade all displays"; ObjectID = "29"; */
+"29.title" = "Fade all displays";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "31"; */
+"31.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "Millions"; ObjectID = "32"; */
+"32.title" = "Millions";
+
+/* Class = "NSMenuItem"; title = "Thousands"; ObjectID = "33"; */
+"33.title" = "Thousands";
+
+/* Class = "NSButtonCell"; title = "Run in fullscreen mode"; ObjectID = "34"; */
+"34.title" = "Run in fullscreen mode";

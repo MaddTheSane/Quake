@@ -1,0 +1,21 @@
+
+/* Class = "NSButton"; ibShadowedToolTip = "Fade only the selected display to black or all."; ObjectID = "4"; */
+"4.ibShadowedToolTip" = "Fade only the selected display to black or all.";
+
+/* Class = "NSTextField"; ibShadowedToolTip = "Select the display."; ObjectID = "5"; */
+"5.ibShadowedToolTip" = "Select the display.";
+
+/* Class = "NSPopUpButton"; ibShadowedToolTip = "Select the display."; ObjectID = "6"; */
+"6.ibShadowedToolTip" = "Select the display.";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "8"; */
+"8.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "Item1"; ObjectID = "9"; */
+"9.title" = "Item1";
+
+/* Class = "NSTextFieldCell"; title = "Display:"; ObjectID = "10"; */
+"10.title" = "Display:";
+
+/* Class = "NSButtonCell"; title = "Fade all displays"; ObjectID = "11"; */
+"11.title" = "Fade all displays";

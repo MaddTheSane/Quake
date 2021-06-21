@@ -1,0 +1,12 @@
+
+/* Class = "NSTextFieldCell"; title = "Quake for MacOS X"; ObjectID = "12"; */
+"12.title" = "Quake for MacOS X";
+
+/* Class = "NSTextFieldCell"; title = "Visit:"; ObjectID = "13"; */
+"13.title" = "Visit:";
+
+/* Class = "NSTextFieldCell"; title = "Ported by: Axel 'awe' Wefers"; ObjectID = "15"; */
+"15.title" = "Ported by: Axel 'awe' Wefers";
+
+/* Class = "NSButtonCell"; title = "Display this dialog only when holding the Option key"; ObjectID = "16"; */
+"16.title" = "Display this dialog only when holding the Option key";
