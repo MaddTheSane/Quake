@@ -1,10 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <development version="7000" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
-        <capability name="box content view" minToolsVersion="7.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="QDisplaysPanel">
@@ -20,14 +19,14 @@
             <rect key="frame" x="0.0" y="0.0" width="433" height="128"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
-                <box boxType="oldStyle" borderType="none" titlePosition="noTitle" id="3">
+                <box fixedFrame="YES" boxType="oldStyle" borderType="none" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="3">
                     <rect key="frame" x="0.0" y="20" width="433" height="88"/>
                     <autoresizingMask key="autoresizingMask"/>
                     <view key="contentView" id="6mF-kS-Ofv">
                         <rect key="frame" x="0.0" y="0.0" width="433" height="88"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <popUpButton toolTip="Select the display." verticalHuggingPriority="750" id="6">
+                            <popUpButton toolTip="Select the display." verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6">
                                 <rect key="frame" x="158" y="48" width="174" height="26"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="clipping" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" id="7">
@@ -43,7 +42,7 @@
                                     <action selector="displayChanged:" target="-2" id="22"/>
                                 </connections>
                             </popUpButton>
-                            <textField toolTip="Select the display." verticalHuggingPriority="750" id="5">
+                            <textField toolTip="Select the display." verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5">
                                 <rect key="frame" x="101" y="54" width="55" height="17"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Display:" id="10">
@@ -52,7 +51,7 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button toolTip="Fade only the selected display to black or all." id="4">
+                            <button toolTip="Fade only the selected display to black or all." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4">
                                 <rect key="frame" x="159" y="16" width="126" height="18"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <buttonCell key="cell" type="check" title="Fade all displays" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="11">
@@ -65,11 +64,10 @@
                             </button>
                         </subviews>
                     </view>
-                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <font key="titleFont" metaFont="system"/>
                 </box>
             </subviews>
+            <point key="canvasLocation" x="14" y="135"/>
         </customView>
     </objects>
 </document>
