@@ -21,6 +21,14 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 #include <string.h>
 
+#ifdef __MACH__
+#include <CommonCrypto/CommonDigest.h>
+#define MD4_CTX CC_MD4_CTX
+#define MD4Init CC_MD4_Init
+#define MD4Update CC_MD4_Update
+#define MD4Final CC_MD4_Final
+#else
+
 /* POINTER defines a generic pointer type */
 typedef unsigned char *POINTER;
 
@@ -287,6 +295,8 @@ static void Decode (UINT4 *output, unsigned char *input, unsigned int len)
 }
 
 //===================================================================
+
+#endif
 
 unsigned Com_BlockChecksum (void *buffer, int length)
 {
