@@ -506,9 +506,9 @@ char*	Sys_GetClipboardData (void)
     NSPasteboard*   pasteboard  = [NSPasteboard generalPasteboard];
     NSArray*        types       = pasteboard.types;
     
-    if ([types containsObject: NSStringPboardType])
+    if ([types containsObject: NSPasteboardTypeString])
     {
-        NSString* clipboardString = [pasteboard stringForType: NSStringPboardType];
+        NSString* clipboardString = [pasteboard stringForType: NSPasteboardTypeString];
         
         if (clipboardString != NULL && clipboardString.length > 0)
         {

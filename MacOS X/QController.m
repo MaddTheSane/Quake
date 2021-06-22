@@ -410,9 +410,9 @@ extern void     M_Menu_Quit_f (void);
     
     NSArray*    pasteboardTypes = pasteboard.types;
     
-    if ([pasteboardTypes containsObject: NSStringPboardType])
+    if ([pasteboardTypes containsObject: NSPasteboardTypeString])
     {
-        NSString*   requestedServer = [pasteboard stringForType: NSStringPboardType];
+        NSString*   requestedServer = [pasteboard stringForType: NSPasteboardTypeString];
         
         if (requestedServer != nil)
         {

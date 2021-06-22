@@ -67,7 +67,7 @@
 			<string>QuakeWorld</string>
 			<key>NSSendTypes</key>
 			<array>
-				<string>NSStringPboardType</string>
+				<string>NSPasteboardTypeString</string>
 			</array>
 		</dict>
 	</array>

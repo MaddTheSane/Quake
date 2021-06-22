@@ -315,22 +315,14 @@
 		D2C25B7F14D204BA00E275A0 /* QSettingsWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C25B7E14D204BA00E275A0 /* QSettingsWindow.m */; };
 		D2C25B8014D204BA00E275A0 /* QSettingsWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C25B7E14D204BA00E275A0 /* QSettingsWindow.m */; };
 		D2C49D5914F05D1C00E07CC4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2C49D5214F05D1C00E07CC4 /* InfoPlist.strings */; };
-		D2C49D5A14F05D1C00E07CC4 /* Quake.scriptTerminology in Resources */ = {isa = PBXBuildFile; fileRef = D2C49D5414F05D1C00E07CC4 /* Quake.scriptTerminology */; };
 		D2C49D5B14F05D1C00E07CC4 /* Quake.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2C49D5614F05D1C00E07CC4 /* Quake.xib */; };
-		D2C49D5C14F05D1C00E07CC4 /* Quake.scriptSuite in Resources */ = {isa = PBXBuildFile; fileRef = D2C49D5814F05D1C00E07CC4 /* Quake.scriptSuite */; };
 		D2C49D6D14F05D5300E07CC4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2C49D5E14F05D5300E07CC4 /* InfoPlist.strings */; };
-		D2C49D6E14F05D5300E07CC4 /* QuakeWorld.scriptTerminology in Resources */ = {isa = PBXBuildFile; fileRef = D2C49D6014F05D5300E07CC4 /* QuakeWorld.scriptTerminology */; };
 		D2C49D6F14F05D5300E07CC4 /* QuakeWorld.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2C49D6214F05D5300E07CC4 /* QuakeWorld.xib */; };
 		D2C49D7014F05D5300E07CC4 /* ServicesMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2C49D6414F05D5300E07CC4 /* ServicesMenu.strings */; };
-		D2C49D7214F05D5300E07CC4 /* QuakeWorld.scriptSuite in Resources */ = {isa = PBXBuildFile; fileRef = D2C49D6914F05D5300E07CC4 /* QuakeWorld.scriptSuite */; };
-		D2C49D7F14F05DAE00E07CC4 /* GLQuake.scriptTerminology in Resources */ = {isa = PBXBuildFile; fileRef = D2C49D7814F05DAE00E07CC4 /* GLQuake.scriptTerminology */; };
 		D2C49D8014F05DAE00E07CC4 /* GLQuake.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2C49D7A14F05DAE00E07CC4 /* GLQuake.xib */; };
 		D2C49D8114F05DAE00E07CC4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2C49D7C14F05DAE00E07CC4 /* InfoPlist.strings */; };
-		D2C49D8414F05DCC00E07CC4 /* GLQuake.scriptSuite in Resources */ = {isa = PBXBuildFile; fileRef = D2C49D8314F05DCC00E07CC4 /* GLQuake.scriptSuite */; };
-		D2C49D8F14F05DF500E07CC4 /* GLQuakeWorld.scriptTerminology in Resources */ = {isa = PBXBuildFile; fileRef = D2C49D8614F05DF500E07CC4 /* GLQuakeWorld.scriptTerminology */; };
 		D2C49D9014F05DF500E07CC4 /* GLQuakeWorld.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2C49D8814F05DF500E07CC4 /* GLQuakeWorld.xib */; };
 		D2C49D9114F05DF500E07CC4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2C49D8A14F05DF500E07CC4 /* InfoPlist.strings */; };
-		D2C49D9314F05DF500E07CC4 /* GLQuakeWorld.scriptSuite in Resources */ = {isa = PBXBuildFile; fileRef = D2C49D8E14F05DF500E07CC4 /* GLQuakeWorld.scriptSuite */; };
 		D2C49EAF14F05E3C00E07CC4 /* Quake.help in Resources */ = {isa = PBXBuildFile; fileRef = D2C49EAE14F05E3C00E07CC4 /* Quake.help */; };
 		D2C49EB014F05E3C00E07CC4 /* Quake.help in Resources */ = {isa = PBXBuildFile; fileRef = D2C49EAE14F05E3C00E07CC4 /* Quake.help */; };
 		D2C49EB114F05E3C00E07CC4 /* Quake.help in Resources */ = {isa = PBXBuildFile; fileRef = D2C49EAE14F05E3C00E07CC4 /* Quake.help */; };
@@ -2020,10 +2012,8 @@
 				D2C6A34514F05B9A00CDC3D1 /* DisplaysPanel.xib in Resources */,
 				D2C49D5B14F05D1C00E07CC4 /* Quake.xib in Resources */,
 				D2C49D5914F05D1C00E07CC4 /* InfoPlist.strings in Resources */,
-				D2C49D5C14F05D1C00E07CC4 /* Quake.scriptSuite in Resources */,
 				5556CDEE1CE93C0600C027F3 /* QIcons.xcassets in Resources */,
 				55871EB3235D1E1000528BDF /* Quake.sdef in Resources */,
-				D2C49D5A14F05D1C00E07CC4 /* Quake.scriptTerminology in Resources */,
 				D2C49EAF14F05E3C00E07CC4 /* Quake.help in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2042,8 +2032,6 @@
 				D2C6A34114F05B7A00CDC3D1 /* SoundPanel.xib in Resources */,
 				D2C6A34914F05BA600CDC3D1 /* GLDisplaysPanel.xib in Resources */,
 				D2C49D8014F05DAE00E07CC4 /* GLQuake.xib in Resources */,
-				D2C49D8414F05DCC00E07CC4 /* GLQuake.scriptSuite in Resources */,
-				D2C49D7F14F05DAE00E07CC4 /* GLQuake.scriptTerminology in Resources */,
 				5556CDF01CE93C0600C027F3 /* QIcons.xcassets in Resources */,
 				D2C49D8114F05DAE00E07CC4 /* InfoPlist.strings in Resources */,
 				D2C49EB114F05E3C00E07CC4 /* Quake.help in Resources */,
@@ -2073,9 +2061,7 @@
 				D2C6A34614F05B9A00CDC3D1 /* DisplaysPanel.xib in Resources */,
 				D2C49D6F14F05D5300E07CC4 /* QuakeWorld.xib in Resources */,
 				D2C49D6D14F05D5300E07CC4 /* InfoPlist.strings in Resources */,
-				D2C49D7214F05D5300E07CC4 /* QuakeWorld.scriptSuite in Resources */,
 				5556CDEF1CE93C0600C027F3 /* QIcons.xcassets in Resources */,
-				D2C49D6E14F05D5300E07CC4 /* QuakeWorld.scriptTerminology in Resources */,
 				D2C49D7014F05D5300E07CC4 /* ServicesMenu.strings in Resources */,
 				55871EB5235D208E00528BDF /* QuakeWorld.sdef in Resources */,
 				D2C49EB014F05E3C00E07CC4 /* Quake.help in Resources */,
@@ -2097,9 +2083,7 @@
 				D2C6A34A14F05BA600CDC3D1 /* GLDisplaysPanel.xib in Resources */,
 				D2C49D9014F05DF500E07CC4 /* GLQuakeWorld.xib in Resources */,
 				D2C49D9114F05DF500E07CC4 /* InfoPlist.strings in Resources */,
-				D2C49D9314F05DF500E07CC4 /* GLQuakeWorld.scriptSuite in Resources */,
 				5556CDF11CE93C0600C027F3 /* QIcons.xcassets in Resources */,
-				D2C49D8F14F05DF500E07CC4 /* GLQuakeWorld.scriptTerminology in Resources */,
 				D2F5E9A414FC92B900629A31 /* ServicesMenu.strings in Resources */,
 				D2C49EB214F05E3C00E07CC4 /* Quake.help in Resources */,
 			);
