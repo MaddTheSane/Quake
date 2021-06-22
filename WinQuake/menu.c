@@ -192,7 +192,7 @@ static qboolean M_GetPasteString (int theKey, char *theString, int theStringSize
     return (false);
 }
 
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 
 void M_ConfigureNetSubsystem(void);
 
@@ -1152,7 +1152,7 @@ again:
 #define	OPTIONS_ITEMS	15
 #else
 #define	OPTIONS_ITEMS	13
-#endif /* _WIN32 ||Ê__APPLE__ ||ÊMACOSX */
+#endif /* _WIN32 || __APPLE__ || MACOSX */
 
 #define	SLIDER_RANGE	10
 
@@ -1176,7 +1176,7 @@ void M_Menu_Options_f (void)
 	{
 		options_cursor = 0;
 	}
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 }
 
 
@@ -1376,7 +1376,7 @@ void M_Options_Draw (void)
 		M_Print (16, 144, "             Use Mouse");
 		M_DrawCheckbox (220, 144, _windowed_mouse.value);
 	}
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
     
 #if defined (_WIN32)
     if (modestate == MS_WINDOWED)
@@ -2440,7 +2440,7 @@ void M_Menu_LanConfig_f (void)
 	snprintf(lanConfig_portname, 6, "%u", lanConfig_port);
 #else
 	sprintf(lanConfig_portname, "%u", lanConfig_port);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 
 	m_return_onerror = false;
 	m_return_reason[0] = 0;

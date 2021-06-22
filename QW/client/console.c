@@ -418,7 +418,7 @@ void Con_DPrintf (char *fmt, ...)
 	vsnprintf (msg,MAXPRINTMSG,fmt,argptr);
 #else
 	vsprintf (msg,fmt,argptr);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 	va_end (argptr);
 	
 	Con_Printf ("%s", msg);
@@ -561,7 +561,7 @@ void Con_DrawConsole (int lines)
 	char			dlbar[1024];
 #if defined (__APPLE__) || defined (MACOSX)
         int			dlbarlen;
-#endif /* __APPLE__ ||ÊMACOSX */	
+#endif /* __APPLE__ || MACOSX */	
 	if (lines <= 0)
 		return;
 

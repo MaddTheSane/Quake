@@ -1528,7 +1528,7 @@ int COM_FOpenFile (char *filename, FILE **file)
 			snprintf (netpath, MAX_OSPATH, "%s/%s",search->filename, filename);
 #else
 			sprintf (netpath, "%s/%s",search->filename, filename);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 			
 			findtime = Sys_FileTime (netpath);
 			if (findtime == -1)
@@ -1750,7 +1750,7 @@ void COM_AddGameDirectory (char *dir)
 		snprintf (pakfile, MAX_OSPATH, "%s/pak%i.pak", dir, i);
 #else
 		sprintf (pakfile, "%s/pak%i.pak", dir, i);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 		pak = COM_LoadPackFile (pakfile);
 		if (!pak)
 			break;
@@ -1834,7 +1834,7 @@ void COM_Gamedir (char *dir)
 		snprintf (pakfile, MAX_OSPATH, "%s/pak%i.pak", com_gamedir, i);
 #else
 		sprintf (pakfile, "%s/pak%i.pak", com_gamedir, i);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 		pak = COM_LoadPackFile (pakfile);
 		if (!pak)
 			break;

@@ -429,7 +429,7 @@ void CL_ParseDownload (void)
 #else
 				sprintf (oldn, "%s/%s", com_gamedir, cls.downloadtempname);
 				sprintf (newn, "%s/%s", com_gamedir, cls.downloadname);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 			} else {
 #if defined (__APPLE__) || defined (MACOSX)
 				snprintf (oldn, MAX_OSPATH, "qw/%s", cls.downloadtempname);
@@ -437,7 +437,7 @@ void CL_ParseDownload (void)
 #else
 				sprintf (oldn, "qw/%s", cls.downloadtempname);
 				sprintf (newn, "qw/%s", cls.downloadname);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 			}
 			r = rename (oldn, newn);
 			if (r)

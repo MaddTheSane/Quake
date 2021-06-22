@@ -1286,7 +1286,7 @@ static qsocket_t *_Datagram_Connect (char *host)
                                 sendaddr = readaddr;
                             }
                         }
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 
 			// if we got something, validate it
 			if (ret > 0)

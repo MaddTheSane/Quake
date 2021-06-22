@@ -1130,7 +1130,7 @@ void Mod_LoadBrushModel (model_t *mod, void *buffer)
 			snprintf (name, 10, "*%i", i+1);
 #else
 			sprintf (name, "*%i", i+1);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 			loadmodel = Mod_FindName (name);
 			*loadmodel = *mod;
 			strcpy (loadmodel->name, name);

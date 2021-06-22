@@ -1444,7 +1444,7 @@ void Master_Heartbeat (void)
 #else
 	sprintf (string, "%c\n%i\n%i\n", S2M_HEARTBEAT,
 		svs.heartbeat_sequence, active);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 
 	// send to group master
 	for (i=0 ; i<MAX_MASTERS ; i++)

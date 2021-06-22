@@ -955,7 +955,7 @@ void PF_vtos (void)
 	snprintf (pr_string_temp, 128, "'%5.1f %5.1f %5.1f'", G_VECTOR(OFS_PARM0)[0], G_VECTOR(OFS_PARM0)[1], G_VECTOR(OFS_PARM0)[2]);
 #else
 	sprintf (pr_string_temp, "'%5.1f %5.1f %5.1f'", G_VECTOR(OFS_PARM0)[0], G_VECTOR(OFS_PARM0)[1], G_VECTOR(OFS_PARM0)[2]);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 	G_INT(OFS_RETURN) = (int) (pr_string_temp - pr_strings);
 }
 
@@ -966,7 +966,7 @@ void PF_etos (void)
 	snprintf (pr_string_temp, 128, "entity %i", G_EDICTNUM(OFS_PARM0));
 #else
 	sprintf (pr_string_temp, "entity %i", G_EDICTNUM(OFS_PARM0));
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 	G_INT(OFS_RETURN) = pr_string_temp - pr_strings;
 }
 #endif

@@ -305,7 +305,7 @@ void Cmd_Exec_f (void)
                 myData++;
             }
         }
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 	if (!Cvar_Command () && (cl_warncmd.value || developer.value))
 		Con_Printf ("execing %s\n",Cmd_Argv(1));
 	

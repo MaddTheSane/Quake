@@ -1486,7 +1486,7 @@ void *Mod_LoadAllSkins (int numskins, daliasskintype_t *pskintype)
 					snprintf (name, 32, "%s_%i_%i", loadmodel->name, i,j);
 #else
 					sprintf (name, "%s_%i_%i", loadmodel->name, i,j);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 					pheader->gl_texturenum[i][j&3] = 
 						GL_LoadTexture (name, pheader->skinwidth, 
 						pheader->skinheight, (byte *)(pskintype), true, false);

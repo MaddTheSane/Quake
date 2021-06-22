@@ -150,7 +150,7 @@ void Con_DPrintf (char *fmt, ...)
 	vsnprintf (msg,MAXPRINTMSG,fmt,argptr);
 #else
 	vsprintf (msg,fmt,argptr);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 	va_end (argptr);
 	
 	Con_Printf ("%s", msg);

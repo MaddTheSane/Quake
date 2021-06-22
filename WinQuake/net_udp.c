@@ -88,7 +88,7 @@ int UDP_Init (void)
 	gethostname(buff, MAXHOSTNAMELEN);
 	local = gethostbyname(buff);
 
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 
 	myAddr = *(int *)local->h_addr_list[0];
 

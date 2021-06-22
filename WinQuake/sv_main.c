@@ -200,7 +200,7 @@ void SV_SendServerinfo (client_t *client)
 	snprintf (message, 2048, "%c\nVERSION %4.2f SERVER (%i CRC)", 2, VERSION, pr_crc);
 #else
 	sprintf (message, "%c\nVERSION %4.2f SERVER (%i CRC)", 2, VERSION, pr_crc);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 	MSG_WriteString (&client->message,message);
 
 	MSG_WriteByte (&client->message, svc_serverinfo);
@@ -216,7 +216,7 @@ void SV_SendServerinfo (client_t *client)
 	snprintf (message, 2048, "%s", pr_strings+sv.edicts->v.message);
 #else
 	sprintf (message, pr_strings+sv.edicts->v.message);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 
 	MSG_WriteString (&client->message,message);
 

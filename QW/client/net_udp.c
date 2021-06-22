@@ -304,7 +304,7 @@ void NET_GetLocalAddress (void)
 
 	Con_Printf ("UDP Initialized\n");
         
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 }
 
 /*
@@ -334,7 +334,7 @@ void NET_Init (int port)
 
 	Con_Printf("UDP Initialized\n");
         
-#endif /* !__APPLE__ &&Ê!MACOSX */
+#endif /* !__APPLE__ && !MACOSX */
 }
 
 /*

@@ -311,7 +311,7 @@ void Cmd_Exec_f (void)
                 myData++;
             }
         }
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 
 	Con_Printf ("execing %s\n",Cmd_Argv(1));
 	

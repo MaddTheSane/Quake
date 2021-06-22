@@ -771,7 +771,7 @@ void SCR_ScreenShot_f (void)
 	D_DisableBackBufferAccess ();	// for adapters that can't stay mapped in
                                         //  for linear writes all the time
 	Con_Printf ("Wrote %s\n", pcxname);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 } 
 
 /*
@@ -785,7 +785,7 @@ int MipColor(int r, int g, int b)
 	int best = 0;
 #else
 	int best;
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 	float bestdist;
 	int r1, g1, b1;
 	static int lr = -1, lg = -1, lb = -1;

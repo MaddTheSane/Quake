@@ -292,14 +292,14 @@ char *PR_ValueString (etype_t type, eval_t *val)
 		snprintf (line, 256, "%s", pr_strings + val->string);
 #else
 		sprintf (line, "%s", pr_strings + val->string);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 		break;
 	case ev_entity:	
 #if defined (__APPLE__) || defined (MACOSX)
 		snprintf (line, 256, "entity %i", NUM_FOR_EDICT(PROG_TO_EDICT(val->edict)) );
 #else
 		sprintf (line, "entity %i", NUM_FOR_EDICT(PROG_TO_EDICT(val->edict)) );
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 		break;
 	case ev_function:
 		f = pr_functions + val->function;
@@ -307,7 +307,7 @@ char *PR_ValueString (etype_t type, eval_t *val)
 		snprintf (line, 256, "%s()", pr_strings + f->s_name);
 #else
 		sprintf (line, "%s()", pr_strings + f->s_name);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 		break;
 	case ev_field:
 		def = ED_FieldAtOfs ( val->_int );
@@ -315,42 +315,42 @@ char *PR_ValueString (etype_t type, eval_t *val)
 		snprintf (line, 256, ".%s", pr_strings + def->s_name);
 #else
 		sprintf (line, ".%s", pr_strings + def->s_name);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 		break;
 	case ev_void:
 #if defined (__APPLE__) || defined (MACOSX)
 		snprintf (line, 256, "void");
 #else
 		sprintf (line, "void");
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 		break;
 	case ev_float:
 #if defined (__APPLE__) || defined (MACOSX)
 		snprintf (line, 256, "%5.1f", val->_float);
 #else
 		sprintf (line, "%5.1f", val->_float);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 		break;
 	case ev_vector:
 #if defined (__APPLE__) || defined (MACOSX)
 		snprintf (line, 256, "'%5.1f %5.1f %5.1f'", val->vector[0], val->vector[1], val->vector[2]);
 #else
 		sprintf (line, "'%5.1f %5.1f %5.1f'", val->vector[0], val->vector[1], val->vector[2]);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 		break;
 	case ev_pointer:
 #if defined (__APPLE__) || defined (MACOSX)
 		snprintf (line, 256, "pointer");
 #else
 		sprintf (line, "pointer");
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 		break;
 	default:
 #if defined (__APPLE__) || defined (MACOSX)
 		snprintf (line, 256, "bad type %i", type);
 #else
 		sprintf (line, "bad type %i", type);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 		break;
 	}
 	
@@ -461,7 +461,7 @@ char *PR_GlobalString (int ofs)
 		snprintf (line,128,"%i(???)", ofs);
 #else
 		sprintf (line,"%i(???)", ofs);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 	else
 	{
 		s = PR_ValueString (def->type, val);
@@ -469,7 +469,7 @@ char *PR_GlobalString (int ofs)
 		snprintf (line,128,"%i(%s)%s", ofs, pr_strings + def->s_name, s);
 #else
 		sprintf (line,"%i(%s)%s", ofs, pr_strings + def->s_name, s);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 	}
 	
 	i = (int) strlen(line);
@@ -962,7 +962,7 @@ snprintf (com_token, 1024, "0 %s 0", temp);
 #else
 strcpy (temp, com_token);
 sprintf (com_token, "0 %s 0", temp);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 }
 
 		if (!ED_ParseEpair ((void *)&ent->v, key, com_token))

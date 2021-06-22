@@ -383,7 +383,7 @@ void GL_MakeAliasModelDisplayLists (model_t *m, aliashdr_t *hdr)
 			snprintf (gldir, MAX_OSPATH, "%s/glquake", com_gamedir);
 #else
 			sprintf (gldir, "%s/glquake", com_gamedir);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 			Sys_mkdir (gldir);
 			f = fopen (fullpath, "wb");
 		}

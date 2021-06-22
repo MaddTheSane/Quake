@@ -627,7 +627,7 @@ void SCR_ScreenShot_f (void)
 		snprintf (checkname, MAX_OSPATH, "%s/%s", com_gamedir, pcxname);
 #else
 		sprintf (checkname, "%s/%s", com_gamedir, pcxname);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 		if (Sys_FileTime(checkname) == -1)
 			break;	// file doesn't exist
 	} 
@@ -672,7 +672,7 @@ void SCR_ScreenShot_f (void)
         if (GL_SaveScreenshot (checkname) == true)
             Con_Printf ("Wrote %s\n", pcxname);
         else
-#endif /* !__APPLE__ &&Ê!MACOSX */
+#endif /* !__APPLE__ && !MACOSX */
             Con_Printf ("Failed to write %s\n", pcxname);
 } 
 

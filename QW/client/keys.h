@@ -89,7 +89,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #define	K_MOUSE4		183
 #define	K_MOUSE5		184
 
-#endif /* APPLE ||ÊMACOSX */
+#endif /* APPLE || MACOSX */
 
 #define K_PAUSE			255
 

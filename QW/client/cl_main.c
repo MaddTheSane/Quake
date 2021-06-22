@@ -147,7 +147,7 @@ char soundlist_name[] =
 
 #if defined (__APPLE__) || defined (MACOSX)
 extern void	VID_SetWindowTitle (char *theTitle);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 
 /*
 ==================
@@ -690,7 +690,7 @@ void CL_SetInfo_f (void)
         if (!Q_strcasecmp(Cmd_Argv(1), pmodel_name) || !Q_strcasecmp(Cmd_Argv(1), emodel_name))        
 #else
 	if (!stricmp(Cmd_Argv(1), pmodel_name) || !strcmp(Cmd_Argv(1), emodel_name))
-#endif /* APPLE ||ÊMACOSX */
+#endif /* APPLE || MACOSX */
 		return;
 
 	Info_SetValueForKey (cls.userinfo, Cmd_Argv(1), Cmd_Argv(2), MAX_INFO_STRING);

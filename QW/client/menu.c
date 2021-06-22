@@ -100,7 +100,7 @@ extern qboolean	gVidDisplayFullscreen;
 extern cvar_t in_actuators;
 
 void IN_Damage (float duration);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 
 #define StartingGame	(m_multiplayer_cursor == 1)
 #define JoiningGame		(m_multiplayer_cursor == 0)

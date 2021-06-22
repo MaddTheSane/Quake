@@ -441,7 +441,7 @@ void Sbar_UpdateScoreboard (void)
 		snprintf (&scoreboardtext[i][1], 19, "%3i %s", s->frags, s->name);
 #else
 		sprintf (&scoreboardtext[i][1], "%3i %s", s->frags, s->name);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 
 		top = s->colors & 0xf0;
 		bottom = (s->colors & 15) <<4;
@@ -467,14 +467,14 @@ void Sbar_SoloScoreboard (void)
 	snprintf (str,80,"Monsters:%3i /%3i", cl.stats[STAT_MONSTERS], cl.stats[STAT_TOTALMONSTERS]);
 #else
 	sprintf (str,"Monsters:%3i /%3i", cl.stats[STAT_MONSTERS], cl.stats[STAT_TOTALMONSTERS]);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 	Sbar_DrawString (8, 4, str);
 
 #if defined (__APPLE__) || defined (MACOSX)
 	snprintf (str,80,"Secrets :%3i /%3i", cl.stats[STAT_SECRETS], cl.stats[STAT_TOTALSECRETS]);
 #else
 	sprintf (str,"Secrets :%3i /%3i", cl.stats[STAT_SECRETS], cl.stats[STAT_TOTALSECRETS]);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 	Sbar_DrawString (8, 12, str);
 
 // time
@@ -486,7 +486,7 @@ void Sbar_SoloScoreboard (void)
 	snprintf (str,80,"Time :%3i:%i%i", minutes, tens, units);
 #else
 	sprintf (str,"Time :%3i:%i%i", minutes, tens, units);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 	Sbar_DrawString (184, 4, str);
 
 // draw level name
@@ -1180,7 +1180,7 @@ void Sbar_DeathmatchOverlay (void)
 		snprintf (num, 12, "%3i:%i%i", minutes, tens, units);
 #else
 		sprintf (num, "%3i:%i%i", minutes, tens, units);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 
 		Draw_String ( x+48 , y, num);
 }
@@ -1290,7 +1290,7 @@ void Sbar_MiniDeathmatchOverlay (void)
 		snprintf (num, 12, "%3i:%i%i", minutes, tens, units);
 #else
 		sprintf (num, "%3i:%i%i", minutes, tens, units);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 
 		Draw_String ( x+48 , y, num);
 }

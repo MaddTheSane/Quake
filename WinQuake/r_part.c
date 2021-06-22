@@ -206,7 +206,7 @@ void R_ReadPointFile_f (void)
 	snprintf (name,MAX_OSPATH,"maps/%s.pts", sv.name);
 #else
 	sprintf (name,"maps/%s.pts", sv.name);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 
 	COM_FOpenFile (name, &f);
 	if (!f)

@@ -284,7 +284,7 @@ void Con_Print (char *txt)
         {
             return;
         }
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
         
 	con_backscroll = 0;
 

@@ -234,7 +234,7 @@ void CL_Record_f (void)
 	snprintf (name, MAX_OSPATH, "%s/%s", com_gamedir, Cmd_Argv(1));
 #else
 	sprintf (name, "%s/%s", com_gamedir, Cmd_Argv(1));
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 	
 //
 // start the map up

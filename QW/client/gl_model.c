@@ -1252,7 +1252,7 @@ void Mod_LoadBrushModel (model_t *mod, void *buffer)
 			snprintf (name, 10, "*%i", i+1);
 #else
 			sprintf (name, "*%i", i+1);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 			loadmodel = Mod_FindName (name);
 			*loadmodel = *mod;
 			strcpy (loadmodel->name, name);
@@ -1554,7 +1554,7 @@ void Mod_LoadAliasModel (model_t *mod, void *buffer)
 		snprintf(st, 40, "%d", (int) crc);
 #else	
 		sprintf(st, "%d", (int) crc);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 		Info_SetValueForKey (cls.userinfo, 
 			!strcmp(loadmodel->name, "progs/player.mdl") ? pmodel_name : emodel_name,
 			st, MAX_INFO_STRING);
@@ -1565,7 +1565,7 @@ void Mod_LoadAliasModel (model_t *mod, void *buffer)
 			snprintf(st, 40, "setinfo %s %d", 
 #else
 			sprintf(st, "setinfo %s %d", 
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 				!strcmp(loadmodel->name, "progs/player.mdl") ? pmodel_name : emodel_name,
 				(int)crc);
 			SZ_Print (&cls.netchan.message, st);

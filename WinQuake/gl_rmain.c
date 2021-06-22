@@ -110,7 +110,7 @@ cvar_t	gl_keeptjunctions = {"gl_keeptjunctions","1"};
 
 cvar_t	gl_keeptjunctions = {"gl_keeptjunctions","0"};
 
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 
 cvar_t	gl_reporttjunctions = {"gl_reporttjunctions","0"};
 cvar_t	gl_doubleeyes = {"gl_doubleeys", "1"};
@@ -1147,7 +1147,7 @@ void R_RenderView (void)
 	double	time1 = 0.0, time2;
 #else
 	double	time1, time2;
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 //	GLfloat colors[4] = {(GLfloat) 0.0, (GLfloat) 0.0, (GLfloat) 1, (GLfloat) 0.20};
 
 	if (r_norefresh.value)

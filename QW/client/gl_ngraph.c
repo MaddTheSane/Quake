@@ -115,7 +115,7 @@ void R_NetGraph (void)
 	snprintf(st, 80, "%3i%% packet loss", lost);
 #else
 	sprintf(st, "%3i%% packet loss", lost);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 	Draw_String(8, y, st);
 	y += 8;
 	

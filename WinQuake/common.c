@@ -1176,7 +1176,7 @@ char    *va(char *format, ...)
 	vsnprintf (string, 1024, format,argptr);
 #else
 	vsprintf (string, format,argptr);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 	va_end (argptr);
 
 	return string;  
@@ -1291,7 +1291,7 @@ void COM_WriteFile (char *filename, void *data, int len)
 	snprintf (name, MAX_OSPATH, "%s/%s", com_gamedir, filename);
 #else	
 	sprintf (name, "%s/%s", com_gamedir, filename);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 
 	handle = Sys_FileOpenWrite (name);
 	if (handle == -1)

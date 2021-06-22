@@ -710,7 +710,7 @@ void SCR_ScreenShot_f (void)
 	D_DisableBackBufferAccess ();	// for adapters that can't stay mapped in
                                         //  for linear writes all the time
 	Con_Printf ("Wrote %s\n", pcxname);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 
 } 
 

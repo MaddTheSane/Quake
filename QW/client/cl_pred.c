@@ -27,7 +27,7 @@ extern	frame_t		*view_frame;
 
 #if defined (__APPLE__) || defined (MACOSX)
 extern void	VID_SetWindowTitle (char *theTitle);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 
 /*
 =================

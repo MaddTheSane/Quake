@@ -791,7 +791,7 @@ void Key_Init (void)
 	consolekeys[K_8_PAD] = true;
 	consolekeys[K_9_PAD] = true;
 
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 
 	for (i=0 ; i<256 ; i++)
 		keyshift[i] = i;

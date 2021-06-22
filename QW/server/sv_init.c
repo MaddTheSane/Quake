@@ -341,7 +341,7 @@ void SV_SpawnServer (char *server)
 	snprintf (sv.modelname,MAX_QPATH,"maps/%s.bsp", server);
 #else
 	sprintf (sv.modelname,"maps/%s.bsp", server);
-#endif /* __APPLE__ ||ÊMACOSX */
+#endif /* __APPLE__ || MACOSX */
 	sv.worldmodel = Mod_ForName (sv.modelname, true);
 	SV_CalcPHS ();
 
