@@ -287,7 +287,7 @@ GL_MakeAliasModelDisplayLists
 */
 
 // <AWE> required for reading/writing cache files in little endian:
-static void	SwapBufferEndianess()
+static void	SwapBufferEndianess(void)
 {
 	int i = 0;
 	

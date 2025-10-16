@@ -154,7 +154,7 @@
      {
          NSString* path = nil;
          
-         if (result == NSFileHandlingPanelOKButton)
+        if (result == NSModalResponseOK)
          {
              path = openPanel.directoryURL.path;
              

@@ -52,7 +52,7 @@ qpic_t		*conback = (qpic_t *)&conback_buffer;
 #if defined(__APPLE__) || defined(MACOSX)
 
 extern int GL_LoadPicTexture (qpic_t *pic);
-extern qboolean VID_Is8bit();
+extern qboolean VID_Is8bit(void);
 
 #endif /* APPLE || MACOSX */
 

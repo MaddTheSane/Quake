@@ -1,0 +1,61 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Can't change to the selected path!" : {
+      "comment" : "Can't change to the selected path!",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Can’t change to the selected path!"
+          }
+        }
+      }
+    },
+    "Please locate the \"id1\" folder:" : {
+      "comment" : "Please locate the \"id1\" folder:",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Please locate the “id1” folder:"
+          }
+        }
+      }
+    },
+    "The selection was: \"%@\"" : {
+      "comment" : "The selection was: \"%@\"",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The selection was: “%@”"
+          }
+        }
+      }
+    },
+    "You have not selected the \"id1\" folder." : {
+      "comment" : "You have not selected the \"id1\" folder.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You have not selected the “id1” folder."
+          }
+        }
+      }
+    },
+    "You will now be asked to locate the \"id1\" folder." : {
+      "comment" : "You will now be asked to locate the \"id1\" folder.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You will now be asked to locate the “id1” folder."
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.1"
+}

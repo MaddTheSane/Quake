@@ -524,7 +524,7 @@ void	Sys_SendKeyEvents (void)
 {
     // will only be called if in modal loop
     NSAutoreleasePool*  pool    = [[NSAutoreleasePool alloc] init];
-    NSEvent*            event   = [NSApp nextEventMatchingMask: NSAnyEventMask
+    NSEvent*            event   = [NSApp nextEventMatchingMask: NSEventMaskAny
                                                      untilDate: [NSDate distantPast]
                                                         inMode: NSDefaultRunLoopMode
                                                        dequeue: YES];

@@ -383,7 +383,7 @@ void    IN_Damage (float duration)
 
 //----------------------------------------------------------------------------------------------------------------------------
 
-void    IN_UpdateActuators ()
+void    IN_UpdateActuators (void)
 {
     if ((sInActuatorEndTime >= 0.0) && (sInActuatorEndTime < Sys_FloatTime()))
     {
@@ -401,7 +401,7 @@ void    IN_UpdateActuators ()
 
 //----------------------------------------------------------------------------------------------------------------------------
 
-void IN_SendKeyEvents()
+void IN_SendKeyEvents(void)
 {
     const FDHIDEvent*   pEvent      = nil;
     const BOOL          allowJoy    = (in_joystick.value != 0.0f);

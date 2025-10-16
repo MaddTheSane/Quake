@@ -80,10 +80,8 @@ extern void     M_Menu_Quit_f (void);
 
 - (void) dealloc
 {
-    [mSettingsWindow release];
-    [mRequestedCommands release];
-    
-    [super dealloc];
+    mSettingsWindow = nil;
+    mRequestedCommands = nil;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------
@@ -202,7 +200,6 @@ extern void     M_Menu_Quit_f (void);
 {
     FD_UNUSED (notification);
     
-    [mSettingsWindow release];
     mSettingsWindow = nil;
     
     [[FDPreferences sharedPrefs] synchronize];
@@ -316,8 +313,12 @@ extern void     M_Menu_Quit_f (void);
                     }
                     else
                     {
-                        NSRunCriticalAlertPanel (@"Can\'t change to the selected path!",
-                                                 @"The selection was: \"%@\"", nil, nil, nil, basePath);
+                        NSAlert *alert = [[NSAlert alloc] init];
+                        alert.messageText = NSLocalizedString(@"Can\'t change to the selected path!", @"Can\'t change to the selected path!");
+                        [alert setInformativeText:[NSString localizedStringWithFormat:NSLocalizedString(@"The selection was: \"%@\"", @"The selection was: \"%@\""), basePath]];
+                        [alert setAlertStyle:NSAlertStyleCritical];
+
+                        [alert runModal];
                     }
                 }
             }
@@ -342,23 +343,27 @@ extern void     M_Menu_Quit_f (void);
     
     if (!success)
     {
-        NSRunInformationalAlertPanel (@"You will now be asked to locate the \"id1\" folder.",
-                                      @"This folder is part of the standard installation of "
-                                      @"Quake. You will only be asked for it again, if you "
-                                      @"change the location of this folder.", nil, nil, nil);
+        NSAlert *alert = [[NSAlert alloc] init];
+        alert.messageText = NSLocalizedString(@"You will now be asked to locate the \"id1\" folder.", @"You will now be asked to locate the \"id1\" folder.");
+        [alert setInformativeText:@"This folder is part of the standard installation of "
+         @"Quake. You will only be asked for it again, if you "
+         @"change the location of this folder."];
+        [alert setAlertStyle:NSAlertStyleInformational];
+
+        [alert runModal];
     }
     
     while (!success)
     {
         @autoreleasepool {
-		NSOpenPanel*        openPanel   = [[[NSOpenPanel alloc] init] autorelease];
+		NSOpenPanel*        openPanel   = [[NSOpenPanel alloc] init];
         
 		[openPanel setAllowsMultipleSelection: NO];
 		[openPanel setCanChooseFiles: NO];
 		[openPanel setCanChooseDirectories: YES];
-		openPanel.title = @"Please locate the \"id1\" folder:";
+		openPanel.title = NSLocalizedString(@"Please locate the \"id1\" folder:", @"Please locate the \"id1\" folder:");
         
-        if ([openPanel runModal] == NSCancelButton)
+        if ([openPanel runModal] == NSModalResponseCancel)
         {
             [NSApp terminate: nil];
             break;
@@ -370,10 +375,14 @@ extern void     M_Menu_Quit_f (void);
         
         if (!success)
         {
-            NSRunInformationalAlertPanel (@"You have not selected the \"id1\" folder.",
-                                          @"The \"id1\" folder comes with the shareware or retail "
-                                          @"version of Quake and has to contain at least the two "
-                                          @"files \"PAK0.PAK\" and \"PAK1.PAK\".", nil, nil, nil);
+            NSAlert *alert = [[NSAlert alloc] init];
+            [alert setMessageText:NSLocalizedString(@"You have not selected the \"id1\" folder.", @"You have not selected the \"id1\" folder.")];
+            [alert setInformativeText:@"The \"id1\" folder comes with the shareware or retail "
+             @"version of Quake and has to contain at least the two "
+             @"files \"PAK0.PAK\" and \"PAK1.PAK\"."];
+            [alert setAlertStyle:NSAlertStyleInformational];
+
+            [alert runModal];
         }
     }
 }
